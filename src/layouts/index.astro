@@ -4,12 +4,28 @@ import Footer from '../components/footer.astro';
 
 const {title} = Astro.props;
 const pathName = (new URL(Astro.request.url)).pathname;
-console.log({pathName: new URL(Astro.request.url)})
+const description = "Open Source Authentication and Authorization solution for your business. Easy to integrate and quick to implement with available SDKs"
 ---
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
 		<title>Authorizer {title ? `| ${title}` : ''}</title>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Open Source Authentication and Authorization solution for your business. Easy to integrate and quick to implement with available SDKs" />
+		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+		<meta name="keywords" content="auth,auth0,authorizer,security,authorization,open-source,heroku" />
+		<meta property="og:image" content="/images/logo.png" />
+		<meta property="og:description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:type" content={'website'} />
+		<meta property="og:url" content={`/`} />
+		<meta property="twitter:card" content="summary" />
+		<meta property="twitter:creator" content="authorizer.dev" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description}/>
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
