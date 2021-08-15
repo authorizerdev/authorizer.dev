@@ -1,0 +1,33 @@
+---
+// Component Imports
+import BaseLayout from '../layouts/index.astro'
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+<BaseLayout title="Homepage">
+	<div class="max-w-5xl px-6 pt-16 pb-32 mx-auto mt-10 space-y-10 sm:px-6 sm:pt-24">
+		<div>
+			<div>
+				<div>
+					<div class="text-4xl font-bold text-purple-500">Building a great product shound't be stressful</div>
+					<div class="text-2xl text-gray-600 mt-3">We’ve spent many sleepless nights worrying about security, authentication, authorization performance in our career. Now, we want to take care of that for you, so you can focus on building a great product instead.
+					</div>
+				</div>
+				<div class="mt-10 flex items-center justify-between">
+					<div class="flex items-center">
+						<div class="mr-3">
+							<img src="https://lakhan.me/images/profile.jpg" class="rounded-full h-16"/>
+						</div>
+						<div>
+							<b>Lakhan Samani</b>
+							<p>Software Consultant and Architect from 🇮🇳 India</p>
+						</div>
+					</div>
+					<a target="_blank" class="bg-purple-500 mr-10 py-3 px-5 text-center text-lg text-white rounded-md" href="https://github.com/authorizerdev/authorizer">
+						<i class="fa fa-github mr-3"></i>Start Contributing
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</BaseLayout>
