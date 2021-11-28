@@ -40,14 +40,14 @@ const getPathStyle = (currentPath) => {
 		<link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/global.css")}>
 		<script src="https://kit.fontawesome.com/9f098fb7e7.js" crossorigin="anonymous"></script>
 		<script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsKey}`}></script>
-		<script>
+		<script define:vars={{googleAnalyticsKey, pathName}}>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 
-			// gtag('config', googleAnalyticsKey, {
-			// 	page_path: pathName,
-			// });
+			gtag('config', googleAnalyticsKey, {
+				page_path: pathName,
+			});
 		</script>
 	</head>
 	<body>
