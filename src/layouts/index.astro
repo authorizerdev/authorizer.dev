@@ -5,6 +5,14 @@ import Footer from '../components/footer.astro';
 const {title} = Astro.props;
 const pathName = (new URL(Astro.request.url)).pathname;
 const description = "Open Source Authentication and Authorization solution for your business. Easy to integrate and quick to implement with available SDKs"
+const googleAnalyticsKey = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_KEY;
+
+const getPathStyle = (currentPath) => {
+	const activeClass = 'text-blue-500 border-blue-500 border-b';
+	const nonActiveClass = 'text-gray-800';
+
+	return pathName === currentPath ? activeClass : nonActiveClass
+}
 ---
 <html lang="en">
 	<head>
@@ -17,7 +25,7 @@ const description = "Open Source Authentication and Authorization solution for y
 		<meta property="og:description" content={description} />
 		<meta property="og:title" content={title} />
 		<meta property="og:type" content={'website'} />
-		<meta property="og:url" content={`/`} />
+		<meta property="og:url" content={pathName || `/`} />
 		<meta property="twitter:card" content="summary" />
 		<meta property="twitter:creator" content="authorizer.dev" />
 		<meta property="twitter:title" content={title} />
@@ -29,8 +37,18 @@ const description = "Open Source Authentication and Authorization solution for y
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="/styles/global.css">
+		<link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/global.css")}>
 		<script src="https://kit.fontawesome.com/9f098fb7e7.js" crossorigin="anonymous"></script>
+		<script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsKey}`}></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			// gtag('config', googleAnalyticsKey, {
+			// 	page_path: pathName,
+			// });
+		</script>
 	</head>
 	<body>
 	<div class="relative min-h-screen">
@@ -45,9 +63,9 @@ const description = "Open Source Authentication and Authorization solution for y
 						</a>
 					</div>
 					<div>
-						<a class={`pb-2 mr-5 hover:text-blue-500 ${pathName === `/features` ? 'text-blue-500 border-blue-500 border-b' : 'text-gray-800'}`} href="#features">Features</a>
-						<a class={`pb-2 mr-5 hover:text-blue-500 ${pathName === `/about` ? 'text-blue-500 border-blue-500 border-b' : 'text-gray-800'}`} href="#about">About</a>
-						<a class={`pb-2 mr-5 text-gray-800 hover:text-blue-500 ${pathName === `/docs` ? 'text-blue-500 border-blue-500 border-b' : ''}`} href="https://docs.authorizer.dev" target="_blank">Docs</a>
+						<a class={`pb-2 mr-5 hover:text-blue-500 ${getPathStyle('/features')}`} href="#features">Features</a>
+						<a class={`pb-2 mr-5 hover:text-blue-500 ${getPathStyle('/about')}`} href="#about">About</a>
+						<a class="pb-2 mr-5 text-gray-800 hover:text-blue-500" href="https://docs.authorizer.dev" target="_blank">Docs</a>
 						<a class="text-xl text-gray-800 hover:text-blue-500 mr-5" href="https://discord.gg/bSPgHKZR" target="_blank"><i class="fab fa-discord"></i></a>
 						<a class="text-xl text-gray-800 hover:text-blue-500" href="https://github.com/authorizerdev/authorizer" target="_blank"><i class="fab fa-github"></i></a>
 					</div>
