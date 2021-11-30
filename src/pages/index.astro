@@ -4,9 +4,11 @@ import BaseLayout from '../layouts/index.astro'
 import HeroSection from '../components/hero.astro'
 import FeaturesSection from '../components/features.astro'
 import AboutSection from '../components/about.astro'
+import Intro from '../components/intro.jsx'
 ---
 <BaseLayout>
 	<HeroSection />
 	<FeaturesSection />
 	<AboutSection />
+	<Intro client:load/>
 </BaseLayout>

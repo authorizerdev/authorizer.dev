@@ -11,5 +11,10 @@
 		"autoprefixer": "^10.4.0",
 		"postcss": "^8.4.4",
 		"tailwindcss": "^2.1.2"
+	},
+	"dependencies": {
+		"@astrojs/renderer-react": "^0.3.0",
+		"@headlessui/react": "^1.4.2",
+		"@heroicons/react": "^1.0.5"
 	}
 }
