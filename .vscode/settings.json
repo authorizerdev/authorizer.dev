@@ -1,0 +1,32 @@
+{
+  "editor.autoFixOnSave": true,
+  "editor.formatOnType": true,
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "prettier.configPath": ".prettierrc",
+  "prettier.useTabs": true,
+  "prettier.trailingComma": "none",
+  "prettier.singleQuote": true,
+  "css.lint.unknownAtRules": "ignore",
+  "[html]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": false
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  }
+}
