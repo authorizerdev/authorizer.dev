@@ -134,6 +134,7 @@ export const USPSection = () => {
           width={{ xl: "540px" }}
           height={{ xl: "868px" }}
           position="relative"
+          zIndex="10"
         >
           <Image src="/images/login.png" alt="Login" layout="fill" />
         </Box>

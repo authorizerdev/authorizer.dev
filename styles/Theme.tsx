@@ -5,6 +5,7 @@ export const authorizerTheme = extendTheme({
   colors: {
     textStyles: {},
   },
+
   components: {
     Button: AButton,
   },

@@ -31,6 +31,10 @@ export const AButton = {
     ghost: {
       bg: COLORS.transparent,
       color: COLORS.primary,
+      _hover: {
+        bg: COLORS.primaryLight,
+        textDecoration: "none",
+      },
     },
     circular: {
       borderRadius: "40px",
