@@ -56,7 +56,7 @@ export const Team = () => {
       <Box
         margin="90px auto"
         width={{ base: "280px", md: "520px", lg: "520px", xl: "75%" }}
-        textAlign="center"
+        textAlign={{ base: "left", md: "center" }}
       >
         <Flex justify="space-around" wrap="wrap" marginTop="90px">
           {contributors.map((contributor) => {
@@ -70,12 +70,12 @@ export const Team = () => {
                 marginBottom="50px"
                 marginLeft={contributors.length === 1 ? "0px" : "20px"}
               >
-                <Center>
+                <Center justifyContent={{ base: "left", md: "center" }}>
                   <Box
                     borderRadius="50%"
                     width="100px"
                     height="100px"
-                    textAlign="center"
+                    textAlign={{ base: "left", md: "center" }}
                     overflow="hidden"
                   >
                     <Image
@@ -98,13 +98,13 @@ export const Team = () => {
                     fontWeight="semibold"
                     fontSize="sm"
                     target="_blank"
-                    textAlign="center"
+                    textAlign={{ base: "left", md: "center" }}
                     href={contributor.github}
                     _hover={{
                       color: COLORS.primary,
                     }}
                   >
-                    <Flex justify="center">
+                    <Flex justify={{ base: "flex-start", md: "center" }}>
                       <Box position="relative" top="5px" paddingRight="10px">
                         <FaGithub fontSize="1.2rem" />
                       </Box>
