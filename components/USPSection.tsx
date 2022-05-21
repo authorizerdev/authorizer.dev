@@ -23,7 +23,7 @@ export const USPSection = () => {
     "OAuth2 and OpenID compatible APIs",
   ];
   return (
-    <Box>
+    <Box paddingTop="120px">
       <Flex justify="space-around">
         <Box as="span" width={{ base: "280px", md: "520px" }}>
           <Link
