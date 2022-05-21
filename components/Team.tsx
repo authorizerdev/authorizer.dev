@@ -14,7 +14,7 @@ export const Team = () => {
     },
     {
       name: "Yash Joshi",
-      img: "https://avatars.githubusercontent.com/u/22376783?v=4",
+      img: "https://mir-s3-cdn-cf.behance.net/user/115/f8602e40061729.594049a0c06d5.jpg",
       github: "https://github.com/jyash97",
       username: "jyash97",
     },
