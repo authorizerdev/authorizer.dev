@@ -46,7 +46,7 @@ export const Team = () => {
     >
       <Box marginBottom="20px">
         <Heading fontWeight="semibold" fontSize="3xl">
-          Our team
+          Contributors
         </Heading>
       </Box>
       <Center>
