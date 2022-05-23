@@ -1,91 +1,135 @@
-import { Menu, Transition } from '@headlessui/react';
-import Link from 'next/link';
-import { FaDiscord, FaGithub } from 'react-icons/fa';
-import { HiClipboardList, HiMenu } from 'react-icons/hi';
-import Logo from './Logo';
+import {
+  Box,
+  Center,
+  Flex,
+  IconButton,
+  Link,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+} from "@chakra-ui/react";
+import { FaDiscord, FaGithub } from "react-icons/fa";
+import { MdMenu } from "react-icons/md";
+import { COLORS } from "../styles/colors";
+import { Logo } from "./Logo";
 
-const menuItems = [
-	{
-		id: `docs`,
-		label: `Docs`,
-		icon: <HiClipboardList />,
-		link: 'https://docs.authorizer.dev',
-		isExternal: true,
-	},
-	{
-		id: `github`,
-		label: `Github`,
-		icon: <FaGithub />,
-		link: 'https://github.com/authorizer/authorizer',
-		isExternal: true,
-	},
-	{
-		id: `Discord`,
-		label: `Discord`,
-		icon: <FaDiscord />,
-		link: 'https://discord.gg/Zv2D5h6kkK',
-		isExternal: true,
-	},
+const NavItems = [
+  {
+    id: "features",
+    label: "Features",
+    link: "#features",
+    target: "_self",
+  },
+  {
+    id: "resources",
+    label: "Resources",
+    link: "https://www.youtube.com/watch?v=uQka5O2RwpU&list=PLSQGbUjHc6bpaAgCiQPzNxiUPr7SkDAFR&ab_channel=LakhanSamani",
+    target: "_blank",
+  },
+  {
+    id: "documentation",
+    label: "Documentation",
+    link: "https://docs.authorizer.dev/getting-started",
+    target: "_blank",
+  },
+  {
+    id: "github",
+    iconOnly: true,
+    label: "Github",
+    icon: <FaGithub />,
+    link: "https://github.com/authorizerdev/authorizer",
+    target: "_blank",
+  },
+  {
+    id: "discord",
+    iconOnly: true,
+    label: "Discord",
+    icon: <FaDiscord />,
+    link: "https://discord.gg/Zv2D5h6kkK",
+    target: "_blank",
+  },
 ];
 
 export default function Nav() {
-	return (
-		<nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded">
-			<div className="container flex flex-wrap justify-between items-center mx-auto">
-				<Link href="/">
-					<a className="flex items-center">
-						<Logo />
-						<span className="self-center text-xl font-semibold whitespace-nowrap font-major-mono ml-2">
-							Authorizer
-						</span>
-					</a>
-				</Link>
-				<div className="flex items-center">
-					<div className="hidden md:flex">
-						{menuItems.map(({ id, label, icon, link, isExternal }) => (
-							<Link href={link} key={id}>
-								<a
-									className="flex items-center self-center text-gray-700 hover:text-blue-600 ml-5"
-									target={isExternal ? '_blank' : undefined}
-								>
-									{icon} <span className="ml-1"> {label}</span>
-								</a>
-							</Link>
-						))}
-					</div>
-					<div className="block md:hidden">
-						<Menu as="div" className="ml-3 relative">
-							<Menu.Button className=" flex text-xl rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2">
-								<span className="sr-only">Menu</span>
-								<HiMenu />
-							</Menu.Button>
-							<Transition
-								enter="transition duration-100 ease-out"
-								enterFrom="transform scale-95 opacity-0"
-								enterTo="transform scale-100 opacity-100"
-								leave="transition duration-75 ease-out"
-								leaveFrom="transform scale-100 opacity-100"
-								leaveTo="transform scale-95 opacity-0"
-							>
-								<Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-									{menuItems.map(({ id, label, icon, link, isExternal }) => (
-										<Menu.Item key={id}>
-											<Link href={link}>
-												<a
-													className="flex items-center self-center text-gray-700 hover:text-blue-600 px-4 py-2"
-													target={isExternal ? '_blank' : undefined}
-												>
-													{icon} <span className="ml-1"> {label}</span>
-												</a>
-											</Link>
-										</Menu.Item>
-									))}
-								</Menu.Items>
-							</Transition>
-						</Menu>
-					</div>
-				</div>
-			</div>
-		</nav>
-	);
+  return (
+    <>
+      <Box
+        maxWidth="80%"
+        margin="0 auto"
+        padding="0"
+        display={{ base: "none", md: "none", lg: "inherit", xl: "inherit" }}
+      >
+        <Flex justify="space-between">
+          <Logo />
+          <Center height="120px">
+            {NavItems.map((item) => (
+              <Box as="div" marginLeft="50px" key={item.link}>
+                {item.iconOnly ? (
+                  <Link href={item.link} target={item.target}>
+                    <Box fontSize="2rem">{item.icon}</Box>
+                  </Link>
+                ) : (
+                  <Link href={item.link} target={item.target}>
+                    <Text textTransform="uppercase" fontWeight="semibold">
+                      {item.label}
+                    </Text>
+                  </Link>
+                )}
+              </Box>
+            ))}
+          </Center>
+        </Flex>
+      </Box>
+      <Box
+        width="100%"
+        height="80px"
+        borderBottom={`1px solid ${COLORS.primaryDark}`}
+        padding="0"
+        display={{ base: "inherit", md: "inherit", lg: "none", xl: "none" }}
+      >
+        <Menu preventOverflow gutter={0} matchWidth>
+          <MenuButton
+            width="100%"
+            margin="0"
+            paddingLeft="20px"
+            height="80px"
+            borderRadius="0"
+            as={IconButton}
+            icon={
+              <Flex justify="space-between">
+                <Logo />
+                <Box marginRight="30px">
+                  <MdMenu fontSize="2rem" />
+                </Box>
+              </Flex>
+            }
+            variant="ghost"
+            display={{ base: "inherit", md: "inherit", lg: "none", xl: "none" }}
+          />
+          <MenuList width="100%" borderRadius="0">
+            {NavItems.map((item) => (
+              <>
+                <MenuItem width="100%" height="50px" borderRadius="0" key={item.link}>
+                  <Link href={item.link} target={item.target}>
+                    <Text textTransform="uppercase" fontWeight="semibold">
+                      <Flex>
+                        {item.icon && (
+                          <Box fontSize="1.4rem" marginRight="10px" position="relative" top="2px">
+                            {item.icon}
+                          </Box>
+                        )}
+                        {item.label}
+                      </Flex>
+                    </Text>
+                  </Link>
+                </MenuItem>
+              </>
+            ))}
+          </MenuList>
+        </Menu>
+      </Box>
+    </>
+  );
 }

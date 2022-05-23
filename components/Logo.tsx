@@ -1,7 +1,29 @@
-export default function Logo({}) {
-	return (
-		<div className="h-10 w-10 flex justify-center items-center rounded-full text-white bg-blue-500 shadow-md">
-			<h2 className="font-major-mono text-lg md:text-2xl -mt-1">A</h2>
-		</div>
-	);
-}
+import { Box, Center, Flex } from "@chakra-ui/react";
+import Image from "next/image";
+import React from "react";
+import { COLORS } from "../styles/colors";
+
+export const Logo = () => {
+  return (
+    <Flex>
+      <Center>
+        <Image
+          src="/images/logo.png"
+          alt="Authorizer Logo"
+          layout="fixed"
+          width="40px"
+          height="40px"
+        />
+        <Box
+          textStyle={"logo"}
+          fontWeight="600"
+          marginLeft="10px"
+          fontSize="xl"
+          color={COLORS.appBlack}
+        >
+          Authorizer
+        </Box>
+      </Center>
+    </Flex>
+  );
+};
