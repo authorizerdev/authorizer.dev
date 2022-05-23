@@ -30,6 +30,12 @@ export const Team = () => {
       github: "https://github.com/nikhil-varma",
       username: "nikhil-varma",
     },
+    {
+      name: "Samyak Bhuta",
+      img: "https://avatars.githubusercontent.com/u/738746?v=4",
+      github: "https://github.com/samyakbhuta/",
+      username: "samyakbhuta",
+    },
   ];
   return (
     <Box
@@ -46,15 +52,18 @@ export const Team = () => {
           Our team
         </Heading>
       </Box>
-
-      <Box>
-        <Text fontWeight="normal" fontSize="2xl">
-          Integrate with any of these database out of the box
-        </Text>
-      </Box>
+      <Center>
+        <Box width={{ base: "280px", md: "80%", lg: "520px", xl: "60%" }} margin="o auto">
+          <Text fontWeight="normal" fontSize="2xl">
+            Developers behind this project. We’ve spent many sleepless nights worrying about
+            security, authentication, authorization performance in our career. Now, we want to take
+            care of that for you, so you can focus on building a great product instead.
+          </Text>
+        </Box>
+      </Center>
 
       <Box
-        margin="90px auto"
+        margin="90px auto 10px auto"
         width={{ base: "280px", md: "520px", lg: "520px", xl: "75%" }}
         textAlign={{ base: "left", md: "center" }}
       >
@@ -119,6 +128,28 @@ export const Team = () => {
             );
           })}
         </Flex>
+      </Box>
+      <Box marginBottom="50px">
+        <Link
+          fontWeight="semibold"
+          fontSize="sm"
+          target="_blank"
+          href="https://www.buymeacoffee.com/lakhansamani"
+          _hover={{
+            color: COLORS.primary,
+          }}
+        >
+          <Image
+            loader={({ src }) => {
+              return src;
+            }}
+            src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+            layout="fixed"
+            width="250px"
+            height="60px"
+            alt="Buy Me A Coffee"
+          />
+        </Link>
       </Box>
     </Box>
   );

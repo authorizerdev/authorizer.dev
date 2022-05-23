@@ -18,24 +18,24 @@ const NavItems = [
   {
     id: "features",
     label: "Features",
-    link: "",
+    link: "#features",
   },
   {
     id: "resources",
     label: "Resources",
-    link: "",
+    link: "https://www.youtube.com/watch?v=uQka5O2RwpU&list=PLSQGbUjHc6bpaAgCiQPzNxiUPr7SkDAFR&ab_channel=LakhanSamani",
   },
   {
     id: "documentation",
     label: "Documentation",
-    link: "https://docs.authorizer.dev",
+    link: "https://docs.authorizer.dev/getting-started",
   },
   {
     id: "github",
     iconOnly: true,
     label: "Github",
     icon: <FaGithub />,
-    link: "https://github.com/authorizer/authorizer",
+    link: "https://github.com/authorizerdev/authorizer",
   },
   {
     id: "discord",
@@ -97,7 +97,7 @@ export default function Nav() {
             {NavItems.map((item) => (
               <>
                 <MenuItem width="100%" height="50px" borderRadius="0">
-                  <Link href={item.link}>
+                  <Link href={item.link} target="_blank">
                     <Text textTransform="uppercase" fontWeight="semibold">
                       <Flex>
                         {item.icon && (

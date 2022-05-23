@@ -188,6 +188,9 @@ export const StartingSteps = () => {
           fontSize="l"
           padding="30px"
           width={{ base: "280px", md: "520px", lg: "520px", xl: "520px" }}
+          as="a"
+          href="https://www.youtube.com/watch?v=uQka5O2RwpU&list=PLSQGbUjHc6bpaAgCiQPzNxiUPr7SkDAFR&ab_channel=LakhanSamani"
+          target="_blank"
         >
           Watch videos
         </Button>

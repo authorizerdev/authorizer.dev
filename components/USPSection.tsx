@@ -99,6 +99,9 @@ export const USPSection = () => {
               size="small"
               marginRight={{ md: "20px", lg: "0", xl: "0" }}
               rightIcon={<MdSend size="1.2rem" color={COLORS.appWhite} />}
+              as="a"
+              href="https://railway.app/new/template?template=https://github.com/authorizerdev/authorizer-railway&amp;plugins=postgresql,redis"
+              target="_blank"
             >
               Deploy your instance
             </Button>
@@ -122,6 +125,9 @@ export const USPSection = () => {
               size="small"
               leftIcon={<MdPlayCircleOutline fontSize="1.2rem" color={COLORS.primary} />}
               textTransform="uppercase"
+              as="a"
+              href="https://www.youtube.com/watch?v=uQka5O2RwpU"
+              target="_blank"
             >
               Watch a demo
             </Button>
