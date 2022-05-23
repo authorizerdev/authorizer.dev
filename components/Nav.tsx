@@ -59,11 +59,11 @@ export default function Nav() {
             {NavItems.map((item) => (
               <Box as="div" marginLeft="50px" key={item.link}>
                 {item.iconOnly ? (
-                  <Link href={item.link}>
+                  <Link href={item.link} target="_blank">
                     <Box fontSize="2rem">{item.icon}</Box>
                   </Link>
                 ) : (
-                  <Link href={item.link}>
+                  <Link href={item.link} target="_blank">
                     <Text textTransform="uppercase" fontWeight="semibold">
                       {item.label}
                     </Text>

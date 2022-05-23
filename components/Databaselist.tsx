@@ -25,19 +25,37 @@ export const DatabaseList = () => {
       img: "/images/arangodb.svg",
       position: 4,
     },
+    {
+      label: "MySQL",
+      img: "/images/mysql.svg",
+      position: 5,
+    },
+    {
+      label: "SQLite",
+      img: "/images/SQLite.svg",
+      position: 6,
+    },
+    {
+      label: "SQL Server",
+      img: "/images/sqlServer.svg",
+      position: 7,
+    },
+    {
+      label: "YugaByte",
+      img: "/images/yugabyteLogo.png",
+      position: 8,
+    },
+    {
+      label: "MariaDB",
+      img: "/images/mariadb.svg",
+      position: 9,
+    },
   ];
   return (
-    <Box
-      backgroundColor={COLORS.successLight}
-      padding="50px 0 50px 0"
-      position="relative"
-      top={{ base: "50px", md: "100px", lg: "100px", xl: "100px" }}
-    >
+    <Box backgroundColor={COLORS.successLight} position="relative">
       <Box
         textAlign={{ base: "left", md: "left", lg: "left", xl: "center" }}
-        padding="50px 0 150px 0"
-        position="relative"
-        top={{ base: "50px", md: "150px", lg: "150px", xl: "30px" }}
+        padding="50px 0 50px 0"
         width={{ base: "280px", md: "520px", lg: "520px", xl: "100%" }}
         margin="0 auto"
       >
@@ -52,11 +70,20 @@ export const DatabaseList = () => {
             Integrate with any of these database out of the box
           </Text>
         </Box>
-        <Box margin="0 auto" width={{ base: "280px", md: "520px", lg: "520px", xl: "75%" }}>
+        <Box margin="0 auto" width={{ base: "280px", md: "480px", lg: "520px", xl: "70%" }}>
           <Flex justify="space-around" wrap="wrap" marginTop="90px">
             {sortBy(databases, (database) => database.position).map((database) => {
               return (
-                <Box key={database.label} width="230px" height="150px">
+                <Box
+                  key={database.label}
+                  width="250px"
+                  height={{
+                    base: "180px",
+                    md: "250px",
+                    lg: "250px",
+                    xl: "250px",
+                  }}
+                >
                   <Image src={database.img} width="200px" height="100px" alt={database.label} />
                 </Box>
               );

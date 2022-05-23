@@ -47,17 +47,11 @@ export const Features = () => {
     },
   ];
   return (
-    <Box
-      backgroundColor={COLORS.appWhite}
-      position="relative"
-      top={{ base: "50px", md: "100px", lg: "100px", xl: "-100px" }}
-      id="features"
-    >
+    <Box backgroundColor={COLORS.appWhite} position="relative" id="features">
       <Box
         textAlign={{ base: "left", md: "left", lg: "left", xl: "center" }}
         paddingTop="50px"
         position="relative"
-        top={{ base: "50px", md: "150px", lg: "150px", xl: "30px" }}
         width={{ base: "280px", md: "520px", lg: "520px", xl: "100%" }}
         margin="0 auto"
       >

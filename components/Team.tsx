@@ -41,11 +41,8 @@ export const Team = () => {
     <Box
       backgroundColor={COLORS.appWhite}
       textAlign={{ base: "left", md: "left", lg: "left", xl: "center" }}
-      padding="50px 0 50px 0"
-      position="relative"
-      top={{ base: "50px", md: "150px", lg: "150px", xl: "30px" }}
       width={{ base: "280px", md: "520px", lg: "520px", xl: "100%" }}
-      margin="0 auto"
+      margin="100px auto"
     >
       <Box marginBottom="20px">
         <Heading fontWeight="semibold" fontSize="3xl">
@@ -54,7 +51,7 @@ export const Team = () => {
       </Box>
       <Center>
         <Box width={{ base: "280px", md: "80%", lg: "520px", xl: "60%" }} margin="o auto">
-          <Text fontWeight="normal" fontSize="2xl">
+          <Text fontWeight="normal" fontSize="xl">
             Developers behind this project. We’ve spent many sleepless nights worrying about
             security, authentication, authorization performance in our career. Now, we want to take
             care of that for you, so you can focus on building a great product instead.

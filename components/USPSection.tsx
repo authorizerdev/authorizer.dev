@@ -141,6 +141,9 @@ export const USPSection = () => {
           height={{ xl: "868px" }}
           position="relative"
           zIndex="10"
+          as="a"
+          href="https://docs.authorizer.dev/getting-started"
+          target="_blank"
         >
           <Image src="/images/login.png" alt="Login" layout="fill" />
         </Box>
