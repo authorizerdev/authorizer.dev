@@ -1,5 +1,6 @@
 export const COLORS = {
   appWhite: "#ffffff",
+  appBlack: "#3e3e3e",
   primary: "#005AED",
   secondary: "#BB1415",
   teritiary: "#202838",
