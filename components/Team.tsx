@@ -19,7 +19,7 @@ export const Team = () => {
       username: "jyash97",
     },
     {
-      name: "Anik Gosh",
+      name: "Anik Ghosh",
       img: "https://avatars.githubusercontent.com/u/59804102?v=4",
       github: "https://github.com/anik-ghosh-au7",
       username: "anik-ghosh-au7",
