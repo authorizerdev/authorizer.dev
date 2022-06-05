@@ -102,6 +102,7 @@ export const Features = () => {
                     layout="fixed"
                     width="100px"
                     height="100px"
+                    loading="eager"
                   />
                   <Heading fontSize="xl" marginBottom="15px" marginTop="10px">
                     {feature.label}

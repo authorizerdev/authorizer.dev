@@ -94,6 +94,7 @@ export const Team = () => {
                       layout="fixed"
                       width="100px"
                       height="100px"
+                      loading="eager"
                     />
                   </Box>
                 </Center>

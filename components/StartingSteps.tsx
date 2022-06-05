@@ -51,7 +51,6 @@ export const StartingSteps = () => {
   ];
 
   return (
-      <Box
     <Box backgroundColor={COLORS.primaryExtraLight}>
       <DefaultSection>
         <Flex justify="space-between" wrap="wrap">
