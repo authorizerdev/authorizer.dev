@@ -110,22 +110,20 @@ export default function Nav() {
           />
           <MenuList width="100%" borderRadius="0">
             {NavItems.map((item) => (
-              <>
-                <MenuItem width="100%" height="50px" borderRadius="0" key={item.link}>
-                  <Link href={item.link} target={item.target}>
-                    <Text textTransform="uppercase" fontWeight="semibold">
-                      <Flex>
-                        {item.icon && (
-                          <Box fontSize="1.4rem" marginRight="10px" position="relative" top="2px">
-                            {item.icon}
-                          </Box>
-                        )}
-                        {item.label}
-                      </Flex>
-                    </Text>
-                  </Link>
-                </MenuItem>
-              </>
+              <MenuItem width="100%" height="50px" borderRadius="0" key={item.link}>
+                <Link href={item.link} target={item.target}>
+                  <Text textTransform="uppercase" fontWeight="semibold">
+                    <Flex>
+                      {item.icon && (
+                        <Box fontSize="1.4rem" marginRight="10px" position="relative" top="2px">
+                          {item.icon}
+                        </Box>
+                      )}
+                      {item.label}
+                    </Flex>
+                  </Text>
+                </Link>
+              </MenuItem>
             ))}
           </MenuList>
         </Menu>
