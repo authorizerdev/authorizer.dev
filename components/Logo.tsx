@@ -5,13 +5,6 @@ export const Logo = () => {
   return (
     <Flex>
       <Center>
-        {/* <Image
-          src="/images/logo.png"
-          alt="Authorizer Logo"
-          layout="fixed"
-          width="40px"
-          height="40px"
-        /> */}
         <Box
           textStyle={"logo"}
           height={10}

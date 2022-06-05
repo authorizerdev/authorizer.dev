@@ -1,8 +1,9 @@
-import { Box, Center, Flex, Heading, Link, Text } from "@chakra-ui/react";
+import { Box, Button, Center, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
-import { MdOpenInNew } from "react-icons/md";
+import { MdFavorite, MdOpenInNew } from "react-icons/md";
 import { COLORS } from "../styles/colors";
+import { DefaultSection } from "./Section";
 
 export const Team = () => {
   const contributors = [
@@ -41,42 +42,42 @@ export const Team = () => {
     <Box
       backgroundColor={COLORS.appWhite}
       textAlign={{ base: "left", md: "left", lg: "left", xl: "center" }}
-      width={{ base: "280px", md: "520px", lg: "520px", xl: "100%" }}
-      margin="100px auto"
     >
-      <Box marginBottom="20px">
-        <Heading fontWeight="semibold" fontSize="3xl">
-          Contributors
-        </Heading>
-      </Box>
-      <Center>
-        <Box width={{ base: "280px", md: "80%", lg: "520px", xl: "60%" }} margin="o auto">
+      <DefaultSection>
+        <Box marginBottom="20px">
+          <Heading fontWeight="semibold" fontSize="3xl">
+            Contributors
+          </Heading>
+        </Box>
+        <Box
+          width="100%"
+          margin={{
+            base: "0 0",
+            md: "0 0",
+            lg: "0 0",
+            xl: "0 auto",
+          }}
+        >
           <Text fontWeight="normal" fontSize="xl">
             Developers behind this project. We’ve spent many sleepless nights worrying about
             security, authentication, authorization performance in our career. Now, we want to take
             care of that for you, so you can focus on building a great product instead.
           </Text>
         </Box>
-      </Center>
 
-      <Box
-        margin="90px auto 10px auto"
-        width={{ base: "280px", md: "520px", lg: "520px", xl: "75%" }}
-        textAlign={{ base: "left", md: "center" }}
-      >
         <Flex justify="space-around" wrap="wrap" marginTop="90px">
           {contributors.map((contributor) => {
             return (
               <Box
-                width="240px"
-                height="240px"
+                width="250px"
+                height="220px"
                 borderRadius="20px"
                 paddingTop="30px"
                 key={contributor.github}
                 marginBottom="50px"
                 marginLeft={contributors.length === 1 ? "0px" : "20px"}
               >
-                <Center justifyContent={{ base: "left", md: "center" }}>
+                <Center justifyContent={{ base: "left", md: "left", lg: "left", xl: "center" }}>
                   <Box
                     borderRadius="50%"
                     width="100px"
@@ -93,6 +94,7 @@ export const Team = () => {
                       layout="fixed"
                       width="100px"
                       height="100px"
+                      loading="eager"
                     />
                   </Box>
                 </Center>
@@ -104,13 +106,13 @@ export const Team = () => {
                     fontWeight="semibold"
                     fontSize="sm"
                     target="_blank"
-                    textAlign={{ base: "left", md: "center" }}
+                    textAlign={{ base: "left", md: "left", lg: "left", xl: "center" }}
                     href={contributor.github}
                     _hover={{
                       color: COLORS.primary,
                     }}
                   >
-                    <Flex justify={{ base: "flex-start", md: "center" }}>
+                    <Flex justify={{ base: "left", md: "left", lg: "left", xl: "center" }}>
                       <Box position="relative" top="5px" paddingRight="10px">
                         <FaGithub fontSize="1.2rem" />
                       </Box>
@@ -125,29 +127,18 @@ export const Team = () => {
             );
           })}
         </Flex>
-      </Box>
-      <Box marginBottom="50px">
-        <Link
-          fontWeight="semibold"
-          fontSize="sm"
-          target="_blank"
-          href="https://www.buymeacoffee.com/lakhansamani"
-          _hover={{
-            color: COLORS.primary,
-          }}
-        >
-          <Image
-            loader={({ src }) => {
-              return src;
-            }}
-            src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-            layout="fixed"
-            width="250px"
-            height="60px"
-            alt="Buy Me A Coffee"
-          />
-        </Link>
-      </Box>
+        <Center>
+          <Button
+            variant="outline"
+            size="lg"
+            leftIcon={<MdFavorite color={COLORS.pink} />}
+            as="a"
+            href="https://github.com/sponsors/authorizerdev/"
+          >
+            Sponsor the project on Github
+          </Button>
+        </Center>
+      </DefaultSection>
     </Box>
   );
 };
