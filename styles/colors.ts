@@ -11,6 +11,7 @@ export const COLORS = {
   success: "#14a019",
   successLight: "#F0F7FB",
   successDark: "#0A7100",
+  pink: "#FF00BA",
   transparent: "transparent",
   railway:
     "transparent linear-gradient(90deg, #48229B 0%, #A547C6 100%) 0% 0% no-repeat padding-box",

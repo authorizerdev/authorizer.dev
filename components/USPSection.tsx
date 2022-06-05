@@ -12,6 +12,7 @@ import {
 import Image from "next/image";
 import { MdCheckCircleOutline, MdPlayCircleOutline, MdSend } from "react-icons/md";
 import { COLORS } from "../styles/colors";
+import { DefaultSection } from "./Section";
 
 export const USPSection = () => {
   const uspList = [
@@ -23,9 +24,9 @@ export const USPSection = () => {
     "OAuth2 and OpenID compatible APIs",
   ];
   return (
-    <Box paddingTop="120px">
-      <Flex justify="space-around">
-        <Box as="span" width={{ base: "280px", md: "520px" }}>
+    <DefaultSection>
+      <Flex justify="space-between">
+        <Box width={{ base: "100%", md: "100%", lg: "100%", xl: "50%" }}>
           <Link
             href="https://www.producthunt.com/posts/authorizer?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-authorizer"
             target="_blank"
@@ -97,7 +98,7 @@ export const USPSection = () => {
               marginTop="40px"
               variant="primary"
               size="small"
-              marginRight={{ md: "20px", lg: "0", xl: "0" }}
+              marginRight={{ md: "20px", lg: "20px", xl: "0" }}
               rightIcon={<MdSend size="1.2rem" color={COLORS.appWhite} />}
               as="a"
               href="https://railway.app/new/template?template=https://github.com/authorizerdev/authorizer-railway&amp;plugins=postgresql,redis"
@@ -135,19 +136,21 @@ export const USPSection = () => {
         </Box>
         <Box
           display={{ base: "none", md: "none", lg: "none", xl: "inherit" }}
-          padding="0"
-          marginTop="-60px"
-          width={{ xl: "540px" }}
-          height={{ xl: "868px" }}
+          width="380px"
+          height="634px"
           position="relative"
           zIndex="10"
           as="a"
           href="https://docs.authorizer.dev/getting-started"
           target="_blank"
+          boxShadow="0px 0px 20px 0px rgba(62, 62, 62, 0.3)"
+          borderRadius="20px"
+          background="transparent"
+          marginTop="10px"
         >
-          <Image src="/images/login.png" alt="Login" layout="fill" />
+          <Image src="/images/login.svg" alt="Login" layout="fill" loading="eager" />
         </Box>
       </Flex>
-    </Box>
+    </DefaultSection>
   );
 };

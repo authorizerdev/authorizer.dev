@@ -2,6 +2,7 @@ import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { sortBy } from "lodash";
 import Image from "next/image";
 import { COLORS } from "../styles/colors";
+import { DefaultSection } from "./Section";
 
 export const DatabaseList = () => {
   const databases = [
@@ -52,13 +53,11 @@ export const DatabaseList = () => {
     },
   ];
   return (
-    <Box backgroundColor={COLORS.successLight} position="relative">
-      <Box
-        textAlign={{ base: "left", md: "left", lg: "left", xl: "center" }}
-        padding="50px 0 50px 0"
-        width={{ base: "280px", md: "520px", lg: "520px", xl: "100%" }}
-        margin="0 auto"
-      >
+    <Box
+      backgroundColor={COLORS.successLight}
+      textAlign={{ base: "left", md: "left", lg: "left", xl: "center" }}
+    >
+      <DefaultSection>
         <Box marginBottom="20px">
           <Heading fontWeight="semibold" fontSize="3xl">
             Myriad Database stupport
@@ -70,27 +69,38 @@ export const DatabaseList = () => {
             Integrate with any of these database out of the box
           </Text>
         </Box>
-        <Box margin="0 auto" width={{ base: "280px", md: "480px", lg: "520px", xl: "70%" }}>
-          <Flex justify="space-around" wrap="wrap" marginTop="90px">
+        <Box margin="0 auto" width={{ base: "100%", md: "100%", lg: "100%", xl: "90%" }}>
+          <Flex justify="space-around" wrap="wrap">
             {sortBy(databases, (database) => database.position).map((database) => {
               return (
                 <Box
                   key={database.label}
-                  width="250px"
-                  height={{
-                    base: "180px",
-                    md: "250px",
+                  width={{
+                    base: "300px",
+                    md: "300px",
                     lg: "250px",
-                    xl: "250px",
+                    xl: "500px",
+                  }}
+                  marginTop={{
+                    base: "100px",
+                    md: "100px",
+                    lg: "100px",
+                    xl: "150px",
                   }}
                 >
-                  <Image src={database.img} width="200px" height="100px" alt={database.label} />
+                  <Image
+                    src={database.img}
+                    width="200px"
+                    height="100px"
+                    alt={database.label}
+                    loading="eager"
+                  />
                 </Box>
               );
             })}
           </Flex>
         </Box>
-      </Box>
+      </DefaultSection>
     </Box>
   );
 };

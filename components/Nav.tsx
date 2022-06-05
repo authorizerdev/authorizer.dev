@@ -12,8 +12,8 @@ import {
 } from "@chakra-ui/react";
 import { FaDiscord, FaGithub } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
-import { COLORS } from "../styles/colors";
 import { Logo } from "./Logo";
+import { Section } from "./Section";
 
 const NavItems = [
   {
@@ -54,13 +54,8 @@ const NavItems = [
 
 export default function Nav() {
   return (
-    <>
-      <Box
-        maxWidth="80%"
-        margin="0 auto"
-        padding="0"
-        display={{ base: "none", md: "none", lg: "inherit", xl: "inherit" }}
-      >
+    <Section>
+      <Box display={{ base: "none", md: "none", lg: "inherit", xl: "inherit" }} marginBottom="40px">
         <Flex justify="space-between">
           <Logo />
           <Center height="120px">
@@ -82,52 +77,43 @@ export default function Nav() {
           </Center>
         </Flex>
       </Box>
-      <Box
-        width="100%"
-        height="80px"
-        borderBottom={`1px solid ${COLORS.primaryDark}`}
-        padding="0"
-        display={{ base: "inherit", md: "inherit", lg: "none", xl: "none" }}
-      >
-        <Menu preventOverflow gutter={0} matchWidth>
-          <MenuButton
-            width="100%"
-            margin="0"
-            paddingLeft="20px"
-            height="80px"
-            borderRadius="0"
-            as={IconButton}
-            icon={
-              <Flex justify="space-between">
-                <Logo />
-                <Box marginRight="30px">
-                  <MdMenu fontSize="2rem" />
-                </Box>
-              </Flex>
-            }
-            variant="ghost"
-            display={{ base: "inherit", md: "inherit", lg: "none", xl: "none" }}
-          />
-          <MenuList width="100%" borderRadius="0">
-            {NavItems.map((item) => (
-              <MenuItem width="100%" height="50px" borderRadius="0" key={item.link}>
-                <Link href={item.link} target={item.target}>
-                  <Text textTransform="uppercase" fontWeight="semibold">
-                    <Flex>
-                      {item.icon && (
-                        <Box fontSize="1.4rem" marginRight="10px" position="relative" top="2px">
-                          {item.icon}
-                        </Box>
-                      )}
-                      {item.label}
-                    </Flex>
-                  </Text>
-                </Link>
-              </MenuItem>
-            ))}
-          </MenuList>
-        </Menu>
-      </Box>
-    </>
+      <Menu preventOverflow gutter={0} matchWidth>
+        <MenuButton
+          width="100%"
+          margin="0"
+          height="120px"
+          borderRadius="0"
+          as={IconButton}
+          icon={
+            <Flex justify="space-between">
+              <Logo />
+              <Box>
+                <MdMenu fontSize="2rem" />
+              </Box>
+            </Flex>
+          }
+          variant="ghost"
+          display={{ base: "inherit", md: "inherit", lg: "none", xl: "none" }}
+        />
+        <MenuList width="100%" borderRadius="0">
+          {NavItems.map((item) => (
+            <MenuItem width="100%" height="50px" borderRadius="0" key={item.link}>
+              <Link href={item.link} target={item.target}>
+                <Text textTransform="uppercase" fontWeight="semibold">
+                  <Flex>
+                    {item.icon && (
+                      <Box fontSize="1.4rem" marginRight="10px" position="relative" top="2px">
+                        {item.icon}
+                      </Box>
+                    )}
+                    {item.label}
+                  </Flex>
+                </Text>
+              </Link>
+            </MenuItem>
+          ))}
+        </MenuList>
+      </Menu>
+    </Section>
   );
 }

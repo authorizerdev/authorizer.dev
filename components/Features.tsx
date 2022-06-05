@@ -2,6 +2,7 @@ import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { sortBy } from "lodash";
 import Image from "next/image";
 import { COLORS } from "../styles/colors";
+import { DefaultSection } from "./Section";
 
 export const Features = () => {
   const features = [
@@ -47,21 +48,18 @@ export const Features = () => {
     },
   ];
   return (
-    <Box backgroundColor={COLORS.appWhite} position="relative" id="features">
-      <Box
-        textAlign={{ base: "left", md: "left", lg: "left", xl: "center" }}
-        paddingTop="50px"
-        position="relative"
-        width={{ base: "280px", md: "520px", lg: "520px", xl: "100%" }}
-        margin="0 auto"
-      >
+    <Box
+      backgroundColor={COLORS.appWhite}
+      id="features"
+      textAlign={{ base: "left", md: "left", lg: "left", xl: "center" }}
+    >
+      <DefaultSection>
         <Box marginBottom="20px">
           <Heading fontWeight="semibold" fontSize="3xl">
             Authentication <Text as="span">|</Text> Authorization <Text as="span">|</Text> Security{" "}
             <Text as="span">|</Text> Integrations
           </Heading>
         </Box>
-
         <Box>
           <Heading fontWeight="normal" fontSize="2xl">
             The hardest part of the application development,{" "}
@@ -79,11 +77,25 @@ export const Features = () => {
             We rather have you focused on your core business and build stuff that matters.
           </Text>
         </Box>
-        <Box margin="0 auto" width={{ base: "280px", md: "520px", lg: "520px", xl: "75%" }}>
-          <Flex justify="space-around" wrap="wrap" marginTop="90px">
+        <Box margin="0 auto" width={{ base: "100%", md: "100%", lg: "100%", xl: "90%" }}>
+          <Flex justify="space-around" wrap="wrap">
             {sortBy(features, (feature) => feature.position).map((feature) => {
               return (
-                <Box width="500px" key={feature.label} height="350px">
+                <Box
+                  width={{
+                    base: "300px",
+                    md: "300px",
+                    lg: "400px",
+                    xl: "500px",
+                  }}
+                  key={feature.label}
+                  marginTop={{
+                    base: "100px",
+                    md: "100px",
+                    lg: "100px",
+                    xl: "150px",
+                  }}
+                >
                   <Image
                     src={feature.img}
                     alt={feature.label}
@@ -100,7 +112,7 @@ export const Features = () => {
             })}
           </Flex>
         </Box>
-      </Box>
+      </DefaultSection>
     </Box>
   );
 };
