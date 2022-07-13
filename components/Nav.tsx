@@ -16,7 +16,7 @@ const menuItems = [
 		id: `github`,
 		label: `Github`,
 		icon: <FaGithub />,
-		link: 'https://github.com/authorizer/authorizer',
+		link: 'https://github.com/authorizerdev/authorizer',
 		isExternal: true,
 	},
 	{
@@ -30,17 +30,19 @@ const menuItems = [
 
 export default function Nav() {
 	return (
-		<nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded">
-			<div className="container flex flex-wrap justify-between items-center mx-auto">
-				<Link href="/">
-					<a className="flex items-center">
-						<Logo />
-						<span className="self-center text-xl font-semibold whitespace-nowrap font-major-mono ml-2">
-							Authorizer
-						</span>
-					</a>
-				</Link>
-				<div className="flex items-center">
+		<nav className="bg-white border-gray-200 px-4 py-5 fixed w-full z-50 top-0 left-0 right-0 md:px-0">
+			<div className="container flex flex-nowrap justify-between items-center mx-auto max-w-7xl">
+				<div>
+					<Link href="/">
+						<a className="flex items-center">
+							<Logo />
+							<span className="self-center text-xl font-semibold whitespace-nowrap font-major-mono ml-2">
+								Authorizer
+							</span>
+						</a>
+					</Link>
+				</div>
+				<div className="flex justify-end md:justify-center w-1/2">
 					<div className="hidden md:flex">
 						{menuItems.map(({ id, label, icon, link, isExternal }) => (
 							<Link href={link} key={id}>

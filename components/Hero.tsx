@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Authorizer, useAuthorizer } from '@authorizerdev/authorizer-react';
-import { FaCheckCircle, FaPlay } from 'react-icons/fa';
+import { FaAngleUp, FaArrowUp, FaCheckCircle, FaPlay } from 'react-icons/fa';
 import { IoClose } from 'react-icons/io5';
 import Loader from './Loader';
 import Modal from './Modal';
@@ -10,7 +10,7 @@ export default function Hero() {
 	const { loading, user, logout } = useAuthorizer();
 	const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 	return (
-		<div className="flex mt-16 flex-col md:flex-row">
+		<div className="container mx-auto max-w-7xl flex my-20 flex-col pt-0 md:flex-row md:pt-10">
 			<div className="flex-1 flex flex-col items-center md:items-start justify-center md:justify-start text-center md:text-left px-5 md:px-0">
 				<h2 className="font-extrabold text-m-h1 text-[length:48px] leading-[48px] md:text-[length:54px] md:leading-[56px] xl:text-d-j text-transparent bg-clip-text bg-gradient-to-br from-pink-600 to-yellow-300">
 					Your Data, Your Control
@@ -128,10 +128,7 @@ export default function Hero() {
 				</div>
 			</div>
 
-			<div className="flex-1 flex flex-col justify-center items-center bg-gray-50 rounded p-10 ml-0 md:ml-10 shadow-sm mt-10 md:-mt-12">
-				<h3 className="font-extrabold text-2xl sm:text-3xl flex items-center pb-10">
-					Try it now 👇
-				</h3>
+			<div className="flex-1 flex flex-col justify-center items-center p-10 ml-0 md:ml-10 mt-10 md:-mt-12">
 				<div className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md w-full">
 					{loading ? (
 						<Loader />
@@ -168,6 +165,9 @@ export default function Hero() {
 						</>
 					)}
 				</div>
+				<h3 className="mt-5 text-lg font-semibold flex items-center">
+					Try it now ☝️
+				</h3>
 			</div>
 		</div>
 	);
