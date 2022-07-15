@@ -12,7 +12,7 @@ export default function Hero() {
 	return (
 		<div className="container mx-auto max-w-7xl flex my-20 flex-col pt-0 md:flex-row md:pt-10">
 			<div className="flex-1 flex flex-col items-center md:items-start justify-center md:justify-start text-center md:text-left px-5 md:px-0">
-				<h2 className="font-extrabold text-m-h1 text-[length:48px] leading-[48px] md:text-[length:54px] md:leading-[56px] xl:text-d-j text-transparent bg-clip-text bg-gradient-to-br from-pink-600 to-yellow-300">
+				<h2 className="font-extrabold text-m-h1 text-[length:48px] leading-[48px] md:text-[length:54px] md:leading-[56px] xl:text-d-j text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-pink-300">
 					Your Data, Your Control
 				</h2>
 				<h3 className="font-extrabold text-2xl sm:text-3xl pt-5">

@@ -87,10 +87,10 @@ export default function Contributors() {
 						href="https://github.com/sponsors/authorizerdev/"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex items-center text-blue-500 border border-blue-500 font-medium rounded-lg text-lg px-8 py-4 mr-2 mb-2"
+						className="flex items-center text-blue-500 border border-blue-500 bg-white font-medium rounded-lg text-lg px-8 py-4 mr-2 mb-2"
 					>
 						<FaHeart className="text-pink-500" />
-						&nbsp;&nbsp;Sponsor On Github
+						&nbsp;&nbsp;Sponsor Us On Github
 					</a>
 				</div>
 			</div>
