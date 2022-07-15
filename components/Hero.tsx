@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Authorizer, useAuthorizer } from '@authorizerdev/authorizer-react';
-import { FaAngleUp, FaArrowUp, FaCheckCircle, FaPlay } from 'react-icons/fa';
+import { FaCheckCircle, FaPlay } from 'react-icons/fa';
 import { IoClose } from 'react-icons/io5';
 import Loader from './Loader';
 import Modal from './Modal';
