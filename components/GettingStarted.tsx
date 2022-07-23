@@ -30,7 +30,7 @@ const COLORS = {
 
 const deploymentButtons = [
 	{
-		href: 'https://railway.app/new/template?template=https://github.com/authorizerdev/authorizer-railway&amp;plugins=postgresql,redis',
+		href: `https://railway.app/new/template?template=https://github.com/authorizerdev/authorizer-railway&plugins=postgresql,redis`,
 		img: 'https://railway.app/button.svg',
 		label: 'Deploy to Railway',
 		bgColor: COLORS.railway,
