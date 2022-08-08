@@ -11,6 +11,11 @@ const testimonials = [
 		user: 'Rattley',
 		link: 'https://github.com/0t4u/',
 	},
+	{
+		description: `I have been working on an edutainment product for the past few months. The authentication, authorization flow was one of the tasks that I had to take care of. I used the Authorizer for the same and it did not take me much time, from integration with the product to setting it up on the cloud. It was a great experience as a developer to be able to use an open-source solution to a fairly complex problem with such ease. Thanks to the authorizer team.`,
+		user: 'Nitesh Agarwal',
+		link: 'https://github.com/agarwal-nitesh',
+	},
 ];
 
 export default function Testimonials() {
