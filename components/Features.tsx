@@ -8,42 +8,43 @@ import {
 	FaMailBulk,
 	FaShieldAlt,
 	FaUserAstronaut,
+	FaUsers,
 } from 'react-icons/fa';
 
 const features = [
 	{
-		label: 'MODERN STACK',
-		icon: <FaBuffer className="text-blue-500 text-2xl" />,
-		description:
-			'Built using modern stack with best practises. It uses Go, GraphQL, Javascript',
-		position: 1,
-	},
-	{
 		label: 'SECURE SESSION MANAGEMENT',
 		icon: <FaShieldAlt className="text-blue-500 text-2xl" />,
 		description:
-			'Auth with best services baked in. Session management implemented with HTTP only cookies. JWT bearer tokens implemented with access token and refresh token.',
-		position: 2,
+			'Auth with best services baked in. Secure Session management implemented with HTTP only cookies. Authorization Code flow implemented for mobile based auth.',
+		position: 1,
 	},
 	{
 		label: 'AUTH RECIPES',
 		icon: <FaUserAstronaut className="text-blue-500 text-2xl" />,
 		description:
 			'MuLtiple auth recipes supported out of the box. Supports major social login, basic auth, magic link auth and more coming soon…',
-		position: 3,
+		position: 2,
 	},
 	{
-		label: 'CONNECT TO ANY DATABASE',
+		label: 'CONNECT TO YOUR DATABASE',
 		icon: <FaDatabase className="text-blue-500 text-2xl" />,
 		description:
 			'It supports 11+ databases including major SQL, NoSQL and GraphDBs',
-		position: 4,
+		position: 3,
 	},
 	{
 		label: 'INTEGRATE OR IMPLEMENT',
 		icon: <FaCode className="text-blue-500 text-2xl" />,
 		description:
-			' Got a framework? We’ve it all covered. Be it javascript, react or any framework! Moresdks coming soon…',
+			'Comes with built in universal login page. But want to build custom UI? We’ve it all covered. Be it javascript, react or any framework! Moresdks coming soon…',
+		position: 4,
+	},
+	{
+		label: 'Role Based Access Control',
+		icon: <FaUsers className="text-blue-500 text-2xl" />,
+		description:
+			'Define the roles and authorize your APIs with role based session tokens',
 		position: 5,
 	},
 	{
@@ -68,7 +69,7 @@ const features = [
 		icon: <FaConnectdevelop className="text-blue-500 text-2xl" />,
 		description:
 			'Configure webhooks for various events on the authorizer service and take perform necessary actions with event data',
-		position: 7,
+		position: 8,
 	},
 	{
 		label: 'MULTI FACTOR AUTHENTICATION',
@@ -76,7 +77,7 @@ const features = [
 		icon: <FaLock className="text-blue-500 text-2xl" />,
 		description:
 			'Added layer of security with email based OTP for your basic authentication recipe',
-		position: 7,
+		position: 9,
 	},
 ];
 
