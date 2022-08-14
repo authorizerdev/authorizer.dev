@@ -2,7 +2,10 @@ import {
 	FaBuffer,
 	FaCloud,
 	FaCode,
+	FaConnectdevelop,
 	FaDatabase,
+	FaLock,
+	FaMailBulk,
 	FaShieldAlt,
 	FaUserAstronaut,
 } from 'react-icons/fa';
@@ -33,7 +36,7 @@ const features = [
 		label: 'CONNECT TO ANY DATABASE',
 		icon: <FaDatabase className="text-blue-500 text-2xl" />,
 		description:
-			'Built using modern stack with best practises. It uses Go, GraphQL, Javascript',
+			'It supports 11+ databases including major SQL, NoSQL and GraphDBs',
 		position: 4,
 	},
 	{
@@ -50,6 +53,30 @@ const features = [
 		description:
 			'With multiple deployment options deploy your authentication and authorization serviceany where. Currently supporting Heroku, Docker and Kubernetes.',
 		position: 6,
+	},
+	{
+		label: 'CUSTOMIZE EMAILS',
+
+		icon: <FaMailBulk className="text-blue-500 text-2xl" />,
+		description:
+			'Send emails with custom email templates and dynamic variables',
+		position: 7,
+	},
+	{
+		label: 'LISTEN TO EVENTS',
+
+		icon: <FaConnectdevelop className="text-blue-500 text-2xl" />,
+		description:
+			'Configure webhooks for various events on the authorizer service and take perform necessary actions with event data',
+		position: 7,
+	},
+	{
+		label: 'MULTI FACTOR AUTHENTICATION',
+
+		icon: <FaLock className="text-blue-500 text-2xl" />,
+		description:
+			'Added layer of security with email based OTP for your basic authentication recipe',
+		position: 7,
 	},
 ];
 
