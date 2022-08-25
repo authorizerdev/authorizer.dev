@@ -16,6 +16,11 @@ const testimonials = [
 		user: 'Nitesh Agarwal',
 		link: 'https://github.com/agarwal-nitesh',
 	},
+	{
+		description: `Authorization/Authentication has been always big pain but I found Authorizer is the simplest and fastest way of building auth service for our app. I also was able to partially adopt our own customized authentication flow with Authorizer because they provide flexible enough libs and APIs. I would not be able to fine other product that can handle this easily. Truly, all in one solution ever.`,
+		user: 'Peter Choi',
+		link: 'https://github.com/peter-wd-1',
+	},
 ];
 
 export default function Testimonials() {
