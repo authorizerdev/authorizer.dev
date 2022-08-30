@@ -15,21 +15,22 @@ export default function Hero() {
 				<h2 className="font-extrabold text-m-h1 text-[length:48px] leading-[48px] md:text-[length:54px] md:leading-[56px] xl:text-d-j text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-pink-300">
 					Hardest part of the application made easy &amp; free
 				</h2>
-				<p className="text-lg text-gray-600">
+				<p className="text-xl font-bold text-gray-600 mt-2">
 					Authorizer is Open Source Auth0 alternative. It is database
 					independent solution, bring your database and have auth layer ready in
 					minutes. Easy to deploy, and easy to integrate
 				</p>
 
 				<a
-					className="py-3 text-center"
-					href="https://www.producthunt.com/posts/authorizer?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-authorizer"
+					href="https://www.producthunt.com/posts/authorizer?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-authorizer"
 					target="_blank"
-					rel="noopener noreferrer"
+					rel="noreferrer"
+					className="my-5"
 				>
 					<img
-						src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=321526&theme=light&period=daily"
-						alt="Authorizer - Open source authentication and authorization solution | Product Hunt"
+						src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=321526&theme=light"
+						alt="Authorizer - Open&#0032;source&#0032;authentication&#0032;and&#0032;authorization&#0032;solution | Product Hunt"
+						style={{ width: '250px', height: '54px' }}
 						width="250"
 						height="54"
 					/>
