@@ -13,14 +13,12 @@ export default function Hero() {
 		<div className="container mx-auto max-w-7xl flex my-20 flex-col pt-0 md:flex-row md:pt-10">
 			<div className="flex-1 flex flex-col items-center md:items-start justify-center md:justify-start text-center md:text-left px-5 md:px-0">
 				<h2 className="font-extrabold text-m-h1 text-[length:48px] leading-[48px] md:text-[length:54px] md:leading-[56px] xl:text-d-j text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-pink-300">
-					Your Data, Your Control
+					Hardest part of the application made easy &amp; free
 				</h2>
-				<h3 className="font-extrabold text-2xl sm:text-3xl pt-5">
-					Authenticate Users | Build Business
-				</h3>
 				<p className="text-lg text-gray-600">
-					Open Source Authentication and Authorization solution for your
-					business. Easy to deploy, and easy to integrate
+					Authorizer is Open Source Auth0 alternative. It is database
+					independent solution, bring your database and have auth layer ready in
+					minutes. Easy to deploy, and easy to integrate
 				</p>
 
 				<a
@@ -103,7 +101,7 @@ export default function Hero() {
 											as="h3"
 											className="text-xl leading-6 font-medium text-gray-900"
 										>
-											Introducing Authorizer 🚀
+											Introducing Authorizer 1.0 🚀
 										</Dialog.Title>
 									</div>
 									<button onClick={() => setIsDemoModalOpen(false)}>
@@ -115,7 +113,7 @@ export default function Hero() {
 										className="rounded"
 										width="100%"
 										height="315"
-										src="https://www.youtube.com/embed/uQka5O2RwpU"
+										src="https://www.youtube.com/embed/DFgo0TuA4c8"
 										title="YouTube video player"
 										frameBorder="0"
 										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

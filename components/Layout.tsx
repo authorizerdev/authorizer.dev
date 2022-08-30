@@ -55,6 +55,20 @@ export default function Layout({ children }) {
 					href="/images/favicon_io/android-chrome-512x512.png"
 				></link>
 			</Head>
+			<iframe
+				src="https://ghbtns.com/github-btn.html?user=authorizerdev&repo=authorizer&type=star&count=true&size=large"
+				frameBorder="0"
+				scrolling="0"
+				width="170"
+				height="30"
+				title="GitHub"
+				style={{
+					position: 'fixed',
+					bottom: '25px',
+					right: '0',
+					zIndex: 100,
+				}}
+			/>
 			<div className="min-h-screen">
 				<Nav />
 				<main className="pt-10">{children}</main>
