@@ -31,7 +31,7 @@ export const StartingSteps = () => {
 
   const deploymentButtons = [
     {
-      href: "https://railway.app/new/template?template=https://github.com/authorizerdev/authorizer-railway&amp;plugins=postgresql,redis",
+      href: "https://railway.app/new/template/nwXp1C?referralCode=FEF4uT",
       img: "https://railway.app/button.svg",
       label: "Deploy to Railway",
       bgColor: COLORS.railway,

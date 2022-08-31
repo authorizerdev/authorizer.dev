@@ -101,7 +101,7 @@ export const USPSection = () => {
               marginRight={{ md: "20px", lg: "20px", xl: "0" }}
               rightIcon={<MdSend size="1.2rem" color={COLORS.appWhite} />}
               as="a"
-              href="https://railway.app/new/template?template=https://github.com/authorizerdev/authorizer-railway&amp;plugins=postgresql,redis"
+              href="https://railway.app/new/template/nwXp1C?referralCode=FEF4uT"
               target="_blank"
             >
               Deploy your instance
