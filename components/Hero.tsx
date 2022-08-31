@@ -75,7 +75,7 @@ export default function Hero() {
 				</ul>
 				<div className="mt-8 flex items-center justify-evenly flex-wrap">
 					<a
-						href="https://railway.app/new/template?template=https://github.com/authorizerdev/authorizer-railway&plugins=postgresql,redis"
+						href="https://railway.app/new/template/nwXp1C?referralCode=FEF4uT"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="text-white bg-blue-500 hover:bg-blue-400 font-medium rounded-lg text-lg px-8 py-4 mr-2 mb-2"
