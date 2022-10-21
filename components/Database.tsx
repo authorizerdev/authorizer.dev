@@ -56,6 +56,11 @@ const databases = [
 		img: '/images/db/scylla.svg',
 		position: 11,
 	},
+	{
+		label: 'AWS DynamoDB',
+		img: '/images/db/aws_dynamodb.png',
+		position: 12,
+	},
 ];
 
 export default function Database() {
