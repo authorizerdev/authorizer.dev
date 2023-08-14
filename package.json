@@ -11,7 +11,7 @@
     "lint:fix": "eslint --fix ."
   },
   "dependencies": {
-    "@authorizerdev/authorizer-react": "0.19.0",
+    "@authorizerdev/authorizer-react": "1.1.14",
     "@chakra-ui/react": "1.8.8",
     "@emotion/react": "11",
     "@emotion/styled": "11",
