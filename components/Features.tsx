@@ -1,5 +1,4 @@
 import {
-	FaBuffer,
 	FaCloud,
 	FaCode,
 	FaConnectdevelop,
@@ -23,7 +22,7 @@ const features = [
 		label: 'AUTH RECIPES',
 		icon: <FaUserAstronaut className="text-blue-500 text-2xl" />,
 		description:
-			'MuLtiple auth recipes supported out of the box. Supports major social login, basic auth, magic link auth and more coming soon…',
+			'Multiple auth recipes supported out of the box: social login, email and password, magic link, and more.',
 		position: 2,
 	},
 	{
@@ -37,7 +36,7 @@ const features = [
 		label: 'INTEGRATE OR IMPLEMENT',
 		icon: <FaCode className="text-blue-500 text-2xl" />,
 		description:
-			'Comes with built in universal login page. But want to build custom UI? We’ve it all covered. Be it javascript, react or any framework! Moresdks coming soon…',
+			'Built-in universal login page, plus APIs and SDKs so you can build custom UI in JavaScript, React, or any framework.',
 		position: 4,
 	},
 	{
@@ -52,7 +51,7 @@ const features = [
 
 		icon: <FaCloud className="text-blue-500 text-2xl" />,
 		description:
-			'With multiple deployment options deploy your authentication and authorization serviceany where. Currently supporting Heroku, Docker and Kubernetes.',
+			'Deploy authentication and authorization anywhere you need: Railway, Heroku, Render, Docker, Kubernetes, and more.',
 		position: 6,
 	},
 	{

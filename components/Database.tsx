@@ -80,8 +80,21 @@ export default function Database() {
         </p>
         <ul className="flex flex-wrap justify-center mt-10">
           {databases.map((item) => (
-            <li key={item.position} className="m-5">
-              <Image src={item.img} alt={item.label} height={70} width={155} />
+            <li
+              key={item.position}
+              className="m-4 h-14 w-44"
+              title={item.label}
+            >
+              <div className="relative h-full w-full">
+                <Image
+                  src={item.img}
+                  alt={item.label}
+                  fill
+                  sizes="176px"
+                  style={{ objectFit: "contain" }}
+                  unoptimized
+                />
+              </div>
             </li>
           ))}
         </ul>

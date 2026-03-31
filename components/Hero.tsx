@@ -1,92 +1,93 @@
-import { useState } from "react";
-import { Dialog } from "@headlessui/react";
-import { Authorizer, useAuthorizer } from "@authorizerdev/authorizer-react";
-import { FaCheckCircle, FaPlay } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
-import Loader from "./Loader";
-import Modal from "./Modal";
+import { useState } from 'react';
+import Image from 'next/image';
+import { Dialog } from '@headlessui/react';
+import { Authorizer, useAuthorizer } from '@authorizerdev/authorizer-react';
+import { FaCheckCircle, FaPlay } from 'react-icons/fa';
+import { IoClose } from 'react-icons/io5';
+import Loader from './Loader';
+import Modal from './Modal';
 
 export default function Hero() {
   const { loading, user, logout } = useAuthorizer();
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   return (
-    <div className="container mx-auto max-w-7xl flex my-20 flex-col pt-0 md:flex-row md:pt-10">
-      <div className="flex-1 flex flex-col items-center md:items-start justify-center md:justify-start text-center md:text-left px-5 md:px-0">
-        <h2 className="font-extrabold text-m-h1 text-[length:48px] leading-[48px] md:text-[length:48px] md:leading-[48px] xl:text-d-j text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-pink-300">
-          Your Data Your Control
-        </h2>
-        <p className="text-2xl font-bold text-gray-600 mt-2">
-          Authenticate & Authorize User For Free
+    <div className='container mx-auto max-w-7xl flex my-20 flex-col pt-0 md:flex-row md:pt-10'>
+      <div className='flex-1 flex flex-col items-center md:items-start justify-center md:justify-start text-center md:text-left px-5 md:px-0'>
+        <h1 className='font-extrabold text-m-h1 text-[length:48px] leading-[48px] md:text-[length:48px] md:leading-[48px] xl:text-d-j text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-pink-300'>
+          Your data, your control
+        </h1>
+        <p className='text-2xl font-bold text-gray-600 mt-2'>
+          Authenticate and authorize users—open source, self-hosted
         </p>
 
         <a
-          href="https://www.producthunt.com/posts/authorizer?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-authorizer"
-          target="_blank"
-          rel="noreferrer"
-          className="my-5"
+          href='https://www.producthunt.com/posts/authorizer?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-authorizer'
+          target='_blank'
+          rel='noreferrer'
+          className='my-5'
         >
-          <img
-            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=321526&theme=light"
-            alt="Authorizer - Open&#0032;source&#0032;authentication&#0032;and&#0032;authorization&#0032;solution | Product Hunt"
-            style={{ width: "250px", height: "54px" }}
-            width="250"
-            height="54"
+          <Image
+            src='https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=321526&theme=light'
+            alt='Authorizer — open-source authentication on Product Hunt'
+            width={250}
+            height={54}
+            priority
           />
         </a>
-        <ul className="mt-4 text-gray-600 font-bold">
-          <li className="flex items-center mb-2">
-            <FaCheckCircle className="text-green-400 mr-3" />
-            <div className="flex-1 flex justify-start text-left">
-              Build Secure Apps 10x faster
+        <ul className='mt-4 text-gray-600 font-bold'>
+          <li className='flex items-center mb-2'>
+            <FaCheckCircle className='text-green-400 mr-3 shrink-0' />
+            <div className='flex-1 flex justify-start text-left'>
+              Build secure apps faster with OAuth2 and OpenID Connect
             </div>
           </li>
-          <li className="flex items-center mb-2">
-            <FaCheckCircle className="text-green-400 mr-3" />{" "}
-            <div className="flex-1 flex justify-start text-left">
-              Low code tool and low cost deployment
+          <li className='flex items-center mb-2'>
+            <FaCheckCircle className='text-green-400 mr-3 shrink-0' />
+            <div className='flex-1 flex justify-start text-left'>
+              Low-code setup and cost-effective deployment options
             </div>
           </li>
-          <li className="flex items-center mb-2">
-            <FaCheckCircle className="text-green-400 mr-3" />{" "}
-            <div className="flex-1 flex justify-start text-left">
-              Own your user data in your preferred database
+          <li className='flex items-center mb-2'>
+            <FaCheckCircle className='text-green-400 mr-3 shrink-0' />
+            <div className='flex-1 flex justify-start text-left'>
+              Own user data in your preferred database
             </div>
           </li>
-          <li className="flex items-center mb-2">
-            <FaCheckCircle className="text-green-400 mr-3" />
-            <div className="flex-1 flex justify-start text-left">
-              Authenticate users with multiple auth recipes
+          <li className='flex items-center mb-2'>
+            <FaCheckCircle className='text-green-400 mr-3 shrink-0' />
+            <div className='flex-1 flex justify-start text-left'>
+              Multiple auth methods: social, password, magic link, and more
             </div>
           </li>
-          <li className="flex items-center mb-2">
-            <FaCheckCircle className="text-green-400 mr-3" />
-            <div className="flex-1 flex justify-start text-left">
-              Authorize Users Based on your business roles
+          <li className='flex items-center mb-2'>
+            <FaCheckCircle className='text-green-400 mr-3 shrink-0' />
+            <div className='flex-1 flex justify-start text-left'>
+              Role-based access for your APIs and products
             </div>
           </li>
-          <li className="flex items-center mb-2">
-            <FaCheckCircle className="text-green-400 mr-3" />{" "}
-            <div className="flex-1 flex justify-start text-left">
-              OAuth2 and OpenID compatible APIs
+          <li className='flex items-center mb-2'>
+            <FaCheckCircle className='text-green-400 mr-3 shrink-0' />
+            <div className='flex-1 flex justify-start text-left'>
+              Standards-based APIs your stack already understands
             </div>
           </li>
         </ul>
-        <div className="mt-8 flex items-center justify-evenly flex-wrap">
+        <div className='mt-8 flex items-center justify-evenly flex-wrap'>
           <a
-            href="https://railway.app/new/template/nwXp1C?referralCode=FEF4uT"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white bg-blue-500 hover:bg-blue-400 font-medium rounded-lg text-lg px-8 py-4 mr-2 mb-2"
+            href='https://railway.app/new/template/nwXp1C?referralCode=FEF4uT'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-white bg-blue-500 hover:bg-blue-400 font-medium rounded-lg text-lg px-8 py-4 mr-2 mb-2'
           >
-            Deploy Your Instance
+            Deploy your instance
           </a>
 
           <button
-            className="flex text-lg items-center ml-0 md:ml-5 text-blue-500 hover:text-blue-400"
-            type="button"
+            className='flex text-lg items-center ml-0 md:ml-5 text-blue-500 hover:text-blue-400'
+            type='button'
             onClick={() => setIsDemoModalOpen(true)}
           >
-            <FaPlay className="mr-2" /> Watch Demo
+            <FaPlay className='mr-2' /> Watch demo
           </button>
           {isDemoModalOpen && (
             <Modal
@@ -94,30 +95,32 @@ export default function Hero() {
               onClose={() => setIsDemoModalOpen(false)}
             >
               <div>
-                <div className="flex items-center justify-between py-3 px-3">
-                  <div className="text-center pl-4 sm:text-left">
+                <div className='flex items-center justify-between py-3 px-3'>
+                  <div className='text-center pl-4 sm:text-left'>
                     <Dialog.Title
-                      as="h3"
-                      className="text-xl leading-6 font-medium text-gray-900"
+                      as='h3'
+                      className='text-xl leading-6 font-medium text-gray-900'
                     >
                       Introducing Authorizer 1.0 🚀
                     </Dialog.Title>
                   </div>
-                  <button onClick={() => setIsDemoModalOpen(false)}>
+                  <button
+                    type='button'
+                    onClick={() => setIsDemoModalOpen(false)}
+                  >
                     <IoClose />
                   </button>
                 </div>
-                <div className="mt-2 relative w-full p-5">
+                <div className='mt-2 relative w-full p-5'>
                   <iframe
-                    className="rounded"
-                    width="100%"
-                    height="315"
-                    src="https://www.youtube.com/embed/DFgo0TuA4c8"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    className='rounded'
+                    width='100%'
+                    height='315'
+                    src='https://www.youtube.com/embed/aQrpYCyrDjU'
+                    title='Authorizer demo on YouTube'
+                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
                     allowFullScreen
-                  ></iframe>
+                  />
                 </div>
               </div>
             </Modal>
@@ -125,46 +128,46 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="flex-1 flex flex-col justify-center items-center p-10 ml-0 md:ml-10 mt-10 md:-mt-12">
-        <div className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md w-full">
+      <div className='flex-1 flex flex-col justify-center items-center p-10 ml-0 md:ml-10 mt-10 md:-mt-12'>
+        <div className='block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md w-full'>
           {loading ? (
             <Loader />
           ) : (
             <>
               {user ? (
                 <div>
-                  <h1 className="font-extrabold text-xl md:text-2xl text-center">
+                  <p className='font-extrabold text-xl md:text-2xl text-center'>
                     🙇‍♂️
-                  </h1>
-                  <p className="text-lg text-gray-600 text-center">
+                  </p>
+                  <p className='text-lg text-gray-600 text-center'>
                     Welcome, {user.email}
                   </p>
-                  <h1 className="font-bold text-xl md:text-2xl text-center text-gray-800">
-                    Thank you for trying Authorizer demo
-                  </h1>
+                  <p className='font-bold text-xl md:text-2xl text-center text-gray-800'>
+                    Thank you for trying the Authorizer demo
+                  </p>
 
                   <br />
-                  <div className="flex justify-center">
+                  <div className='flex justify-center'>
                     <button
-                      type="button"
-                      className="text-white bg-blue-500 hover:bg-blue-400 font-medium rounded-lg text-lg px-8 py-2.5 mr-2 mb-2"
+                      type='button'
+                      className='text-white bg-blue-500 hover:bg-blue-400 font-medium rounded-lg text-lg px-8 py-2.5 mr-2 mb-2'
                       onClick={logout}
                     >
-                      Logout
+                      Log out
                     </button>
                   </div>
                 </div>
               ) : (
-                <div className="authorizer-login">
+                <div className='authorizer-login'>
                   <Authorizer />
                 </div>
               )}
             </>
           )}
         </div>
-        <h3 className="mt-5 text-lg font-semibold flex items-center">
+        <p className='mt-5 text-lg font-semibold flex items-center'>
           Try it now ☝️
-        </h3>
+        </p>
       </div>
     </div>
   );

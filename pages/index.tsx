@@ -1,8 +1,8 @@
-import Architecture from "../components/Architecture";
-import Contributors from "../components/Contributors";
+import CompareAlternatives from "../components/CompareAlternatives";
 import Database from "../components/Database";
 import Features from "../components/Features";
 import GettingStarted from "../components/GettingStarted";
+import MarketPosition from "../components/MarketPosition";
 
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
@@ -12,6 +12,8 @@ export default function Home() {
   return (
     <Layout>
       <Hero />
+      <CompareAlternatives />
+      <MarketPosition />
       <GettingStarted />
       <Features />
       <Database />

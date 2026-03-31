@@ -57,10 +57,12 @@ export default function Contributors() {
 										rel="noreferrer"
 										className="block relative"
 									>
-										<img
+										<Image
 											src={item.img}
 											alt={item.name}
-											className="mx-auto object-cover rounded-full h-20 w-20 border border-gray-300"
+											width={80}
+											height={80}
+											className="mx-auto object-cover rounded-full border border-gray-300"
 										/>
 									</a>
 								</div>

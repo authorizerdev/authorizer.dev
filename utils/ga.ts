@@ -1,12 +1,23 @@
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_KEY;
+
 export const pageview = (url: string) => {
-  // @ts-ignore
-  window.gtag("config", process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
-    page_path: url,
-  });
+  if (typeof window === "undefined" || !GA_ID || !window.gtag) return;
+  window.gtag("config", GA_ID, { page_path: url });
 };
 
-// log specific events happening.
-export const event = ({ action, params }: { action: string; params: Record<string, any> }) => {
-  // @ts-ignore
+export const event = ({
+  action,
+  params,
+}: {
+  action: string;
+  params: Record<string, unknown>;
+}) => {
+  if (typeof window === "undefined" || !window.gtag) return;
   window.gtag("event", action, params);
 };
