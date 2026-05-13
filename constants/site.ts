@@ -7,6 +7,16 @@ export const SITE_URL =
 
 export const SITE_NAME = "Authorizer";
 
+/** Path under `public/`; used for Open Graph, X/Twitter, LinkedIn, and similar link previews. */
+export const OG_IMAGE_PATH = "/images/authorizer-og.png";
+
+/** Absolute URL for social / OG crawlers (must be publicly reachable). */
+export const OG_IMAGE_URL = `${SITE_URL}${OG_IMAGE_PATH}`;
+
+/** Pixel size of `authorizer-og.png` — helps some crawlers (e.g. LinkedIn) pick dimensions. */
+export const OG_IMAGE_WIDTH = 1734;
+export const OG_IMAGE_HEIGHT = 907;
+
 /** ~155 chars for meta description snippets */
 export const META_DESCRIPTION =
   "Self-host open-source authentication: OAuth2, OpenID Connect, social login, magic links, RBAC & MFA. Your users stay in your database—an alternative to Clerk, Auth0, WorkOS, and Keycloak.";

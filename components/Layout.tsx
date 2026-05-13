@@ -6,6 +6,9 @@ import {
   SITE_NAME,
   SITE_URL,
   META_DESCRIPTION,
+  OG_IMAGE_URL,
+  OG_IMAGE_WIDTH,
+  OG_IMAGE_HEIGHT,
 } from "../constants/site";
 
 const PAGE_TITLE = `${SITE_NAME} | Open-source authentication — OAuth2 & OpenID Connect`;
@@ -33,7 +36,7 @@ const KEYWORDS = [
 
 export default function Layout({ children }) {
   const canonicalUrl = `${SITE_URL}/`;
-  const ogImage = `${SITE_URL}/images/logo.png`;
+  const ogImage = OG_IMAGE_URL;
 
   return (
     <>
@@ -55,13 +58,23 @@ export default function Layout({ children }) {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:image:alt" content={`${SITE_NAME} logo`} />
+        <meta property="og:image:width" content={String(OG_IMAGE_WIDTH)} />
+        <meta property="og:image:height" content={String(OG_IMAGE_HEIGHT)} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:image:alt"
+          content={`${SITE_NAME} — open-source authentication and authorization`}
+        />
         <meta property="og:locale" content="en_US" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={PAGE_TITLE} />
         <meta name="twitter:description" content={META_DESCRIPTION} />
         <meta name="twitter:image" content={ogImage} />
+        <meta
+          name="twitter:image:alt"
+          content={`${SITE_NAME} — open-source authentication and authorization`}
+        />
 
         <link
           rel="apple-touch-icon"
