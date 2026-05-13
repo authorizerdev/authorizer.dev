@@ -11,7 +11,7 @@ import {
   OG_IMAGE_HEIGHT,
 } from "../constants/site";
 
-const PAGE_TITLE = `${SITE_NAME} | Open-source authentication — OAuth2 & OpenID Connect`;
+const PAGE_TITLE = `${SITE_NAME} | Self-hosted auth for OAuth2 & OpenID Connect`;
 
 const KEYWORDS = [
   "open source authentication",
