@@ -7,19 +7,36 @@ export const SITE_URL =
 
 export const SITE_NAME = "Authorizer";
 
-/** Path under `public/`; used for Open Graph, X/Twitter, LinkedIn, and similar link previews. */
+/**
+ * Primary Open Graph image (`og:image`). Used by Facebook, LinkedIn, Slack,
+ * Discord, WhatsApp, Telegram, iMessage, Pinterest, and other consumers of
+ * Open Graph tags. Pixel size must match the file under `public/`.
+ */
 export const OG_IMAGE_PATH = "/images/authorizer-og.png";
 
-/** Absolute URL for social / OG crawlers (must be publicly reachable). */
+/** Absolute URL for `og:image` (HTTPS, no redirects). */
 export const OG_IMAGE_URL = `${SITE_URL}${OG_IMAGE_PATH}`;
 
-/** Pixel size of `authorizer-og.png` — helps some crawlers (e.g. LinkedIn) pick dimensions. */
-export const OG_IMAGE_WIDTH = 1734;
-export const OG_IMAGE_HEIGHT = 907;
+/** Pixel size of `authorizer-og.png` — must match the asset or previews break. */
+export const OG_IMAGE_WIDTH = 1200;
+export const OG_IMAGE_HEIGHT = 800;
+
+export const OG_IMAGE_TYPE = "image/png" as const;
+
+/**
+ * X (Twitter) `summary_large_image` expects a 2:1 image (see X Cards docs).
+ * Separate asset avoids wrong crops and crawler issues when `og:image` is not 2:1.
+ */
+export const TWITTER_CARD_IMAGE_PATH = "/images/authorizer-og-x.png";
+
+export const TWITTER_CARD_IMAGE_URL = `${SITE_URL}${TWITTER_CARD_IMAGE_PATH}`;
+
+export const TWITTER_CARD_IMAGE_WIDTH = 1200;
+export const TWITTER_CARD_IMAGE_HEIGHT = 600;
 
 /** ~155 chars for meta description snippets */
 export const META_DESCRIPTION =
-  "Self-host open-source auth with OAuth2, OpenID Connect, social login, magic links, RBAC, and MFA while keeping user data in your database.";
+  "Own your identity layer. Self-host open-source auth—OAuth2, OpenID Connect, social login, magic links, RBAC, MFA—with user data in your database.";
 
 export const DEFAULT_DESCRIPTION =
-  "Open-source authentication and authorization you can self-host. OAuth2, OpenID Connect, social login, magic links, RBAC, MFA—and your user data stays in your database. Alternative to Clerk, Auth0, and WorkOS when you need ownership and control.";
+  "Own your identity layer with open-source authentication and authorization you self-host. OAuth2, OpenID Connect, social login, magic links, RBAC, and MFA—your users stay in your own database, not someone else's dashboard. No per-seat auth tax.";

@@ -69,9 +69,8 @@ export default function MarketPosition() {
           v2 direction (based on the roadmap)
         </h3>
         <p className="mt-2 text-gray-700">
-          The v2 roadmap is focused on enterprise foundations that buyers expect
-          from vendors like WorkOS, Clerk, Auth0, and Keycloak—without giving up
-          self-hosting.
+          The v2 roadmap is focused on the enterprise foundations buyers expect
+          from hosted identity platforms—without giving up self-hosting.
         </p>
         <ul className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
           {roadmapHighlights.map((i) => (

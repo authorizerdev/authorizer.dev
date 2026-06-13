@@ -1,5 +1,6 @@
 import CompareAlternatives from "../components/CompareAlternatives";
 import Database from "../components/Database";
+import Faq from "../components/Faq";
 import Features from "../components/Features";
 import GettingStarted from "../components/GettingStarted";
 import MarketPosition from "../components/MarketPosition";
@@ -18,6 +19,7 @@ export default function Home() {
       <Features />
       <Database />
       <Testimonials />
+      <Faq />
       {/* <Contributors /> */}
     </Layout>
   );

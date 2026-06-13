@@ -9,6 +9,8 @@ import {
   OG_IMAGE_URL,
   OG_IMAGE_WIDTH,
   OG_IMAGE_HEIGHT,
+  OG_IMAGE_TYPE,
+  TWITTER_CARD_IMAGE_URL,
 } from "../constants/site";
 
 const PAGE_TITLE = `${SITE_NAME} | Self-hosted auth for OAuth2 & OpenID Connect`;
@@ -24,10 +26,8 @@ const KEYWORDS = [
   "magic link authentication",
   "RBAC",
   "MFA",
-  "Clerk alternative",
-  "Auth0 alternative",
-  "WorkOS alternative",
-  "Keycloak alternative",
+  "data sovereignty",
+  "own your user data",
   "authorizer",
   "docker auth",
   "kubernetes authentication",
@@ -36,7 +36,6 @@ const KEYWORDS = [
 
 export default function Layout({ children }) {
   const canonicalUrl = `${SITE_URL}/`;
-  const ogImage = OG_IMAGE_URL;
 
   return (
     <>
@@ -57,10 +56,11 @@ export default function Layout({ children }) {
         <meta property="og:description" content={META_DESCRIPTION} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content={ogImage} />
+        <meta property="og:image" content={OG_IMAGE_URL} />
+        <meta property="og:image:secure_url" content={OG_IMAGE_URL} />
         <meta property="og:image:width" content={String(OG_IMAGE_WIDTH)} />
         <meta property="og:image:height" content={String(OG_IMAGE_HEIGHT)} />
-        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:type" content={OG_IMAGE_TYPE} />
         <meta
           property="og:image:alt"
           content={`${SITE_NAME} — open-source authentication and authorization`}
@@ -70,7 +70,7 @@ export default function Layout({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={PAGE_TITLE} />
         <meta name="twitter:description" content={META_DESCRIPTION} />
-        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:image" content={TWITTER_CARD_IMAGE_URL} />
         <meta
           name="twitter:image:alt"
           content={`${SITE_NAME} — open-source authentication and authorization`}

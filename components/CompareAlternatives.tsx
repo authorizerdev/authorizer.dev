@@ -1,13 +1,14 @@
 /**
- * Competitive context for positioning (informational; trademarks belong to respective owners).
- * Links: WorkOS https://workos.com — Clerk https://clerk.com — Auth0 https://auth0.com
+ * Category-level positioning: Authorizer (self-hosted, open source) vs. the
+ * hosted-identity-platform category. Named, brand-by-brand comparisons live on
+ * dedicated /alternatives/* pages where that framing is on-intent—the homepage
+ * stays competitor-free and belief-driven ("own your identity layer").
  */
 const rows = [
   {
     factor: "Deployment",
     authorizer: "Self-hosted on your cloud or VPC; you operate the service",
-    others:
-      "Hosted SaaS (Clerk, Auth0); WorkOS is API-first hosted with enterprise features",
+    others: "Hosted SaaS you don't run; identity lives on vendor infrastructure",
   },
   {
     factor: "Data & residency",
@@ -17,19 +18,17 @@ const rows = [
   {
     factor: "Pricing model",
     authorizer: "Open source; pay for infra, not per-seat auth tax",
-    others: "Usage/seat/connection-based SaaS pricing at scale",
+    others: "Usage/seat/connection-based pricing that scales against you",
   },
   {
     factor: "Enterprise SSO (SAML/OIDC IdPs)",
     authorizer: "Core OAuth2/OIDC server; extend for your SSO needs",
-    others:
-      "WorkOS & Auth0 excel at multi-IdP SSO; Clerk adds org/B2B patterns",
+    others: "Mature multi-IdP SSO marketplaces and B2B org patterns",
   },
   {
     factor: "Drop-in UI",
     authorizer: "Built-in login + headless APIs; React SDK available",
-    others:
-      "Clerk is known for polished components; Auth0 Universal Login; WorkOS AuthKit",
+    others: "Polished hosted components and universal login pages",
   },
   {
     factor: "Best when",
@@ -54,36 +53,10 @@ export default function CompareAlternatives() {
           Authorizer vs hosted identity platforms
         </h2>
         <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-          Teams evaluating{" "}
-          <a
-            href="https://clerk.com/"
-            className="text-blue-600 hover:text-blue-500 underline-offset-2 hover:underline"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Clerk
-          </a>
-          ,{" "}
-          <a
-            href="https://auth0.com/"
-            className="text-blue-600 hover:text-blue-500 underline-offset-2 hover:underline"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Auth0
-          </a>
-          , or{" "}
-          <a
-            href="https://workos.com/"
-            className="text-blue-600 hover:text-blue-500 underline-offset-2 hover:underline"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            WorkOS
-          </a>{" "}
-          (and teams considering self-hosted IAM like Keycloak) often want hosted
-          dashboards, enterprise SSO marketplaces, and batteries-included UI.
-          Authorizer is a different tradeoff:{" "}
+          Hosted identity platforms give you dashboards, enterprise SSO
+          marketplaces, and batteries-included UI—in exchange for running your
+          most sensitive infrastructure on someone else&apos;s servers and paying
+          a per-seat auth tax as you grow. Authorizer is a different tradeoff:{" "}
           <span className="font-semibold text-gray-800">
             open source and self-hosted
           </span>{" "}
@@ -107,7 +80,7 @@ export default function CompareAlternatives() {
                 Authorizer
               </th>
               <th scope="col" className="px-4 py-3 font-semibold text-gray-900">
-                Typical SaaS (Clerk / Auth0 / WorkOS)
+                Hosted identity platforms
               </th>
             </tr>
           </thead>
@@ -132,8 +105,16 @@ export default function CompareAlternatives() {
         </table>
       </div>
       <p className="mt-6 text-center text-sm text-gray-500">
-        Product names are trademarks of their respective owners. Compare features
-        in docs for your exact requirements.
+        A category-level comparison. Check the{" "}
+        <a
+          href="https://docs.authorizer.dev"
+          className="text-blue-600 hover:text-blue-500 underline-offset-2 hover:underline"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          docs
+        </a>{" "}
+        for feature details against your exact requirements.
       </p>
     </section>
   );

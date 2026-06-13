@@ -1,0 +1,29 @@
+# Authorizer
+
+> Authorizer is an open-source authentication and authorization server you self-host on your own infrastructure. It implements OAuth2 and OpenID Connect and lets you keep every user record in a database you control—the "own your identity layer" alternative to hosted identity platforms, with no per-seat auth tax.
+
+## What it is
+- Open-source (self-hosted) authentication and authorization server.
+- Standards-based: OAuth2 and OpenID Connect.
+- Auth methods: social login, email/password, magic link, multi-factor authentication (MFA).
+- Authorization: role-based access control (RBAC) with role-based session tokens.
+- Extensibility: webhooks for events, customizable email templates, REST + GraphQL APIs, and SDKs (JavaScript, React, and more).
+- Single-binary Go service—no JVM or application server required.
+
+## Key differentiators
+- Data sovereignty: user directory lives in your own database, not a vendor dashboard.
+- Database-agnostic: 13+ backends across SQL, NoSQL, and graph (PostgreSQL, MySQL, MariaDB, SQLite, SQL Server, MongoDB, Cassandra, ScyllaDB, ArangoDB, YugabyteDB, PlanetScale, AWS DynamoDB, Couchbase).
+- Cost predictable: open source; pay for infrastructure, not per-seat usage.
+- Deploy anywhere: Railway, Heroku, Render, Docker, Kubernetes.
+
+## Best for
+Teams with data-residency or compliance needs (GDPR/HIPAA), cost-conscious developers avoiding per-seat SaaS pricing, and engineering teams that want to own and operate their authentication infrastructure.
+
+## Links
+- Website: https://authorizer.dev
+- Documentation: https://docs.authorizer.dev
+- Getting started: https://docs.authorizer.dev/getting-started
+- Blog: https://blog.authorizer.dev
+- Source code (GitHub): https://github.com/authorizerdev/authorizer
+- npm (JS SDK): https://www.npmjs.com/package/@authorizerdev/authorizer-js
+- Community (Discord): https://discord.gg/Zv2D5h6kkK

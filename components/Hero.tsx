@@ -14,10 +14,15 @@ export default function Hero() {
     <div className='container mx-auto max-w-7xl flex my-20 flex-col pt-0 md:flex-row md:pt-10'>
       <div className='flex-1 flex flex-col items-center md:items-start justify-center md:justify-start text-center md:text-left px-5 md:px-0'>
         <h1 className='font-extrabold text-m-h1 text-[length:48px] leading-[48px] md:text-[length:48px] md:leading-[48px] xl:text-d-j text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-pink-300'>
-          Your data, your control
+          Own your identity layer
         </h1>
         <p className='text-2xl font-bold text-gray-600 mt-2'>
-          Authenticate and authorize users—open source, self-hosted
+          Open-source, self-hosted authentication &amp; authorization
+        </p>
+        <p className='text-lg text-gray-500 mt-3 max-w-xl'>
+          Authorizer is an open-source authentication and authorization server
+          you run on your own infrastructure—your users live in your database,
+          not someone else&apos;s dashboard.
         </p>
 
         <a
@@ -44,7 +49,7 @@ export default function Hero() {
           <li className='flex items-center mb-2'>
             <FaCheckCircle className='text-green-400 mr-3 shrink-0' />
             <div className='flex-1 flex justify-start text-left'>
-              Low-code setup and cost-effective deployment options
+              No per-seat auth tax—pay for infrastructure, not usage
             </div>
           </li>
           <li className='flex items-center mb-2'>
