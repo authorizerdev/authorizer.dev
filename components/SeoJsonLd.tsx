@@ -45,6 +45,19 @@ const software = {
   },
   url: SITE_URL,
   description: DEFAULT_DESCRIPTION,
+  featureList: [
+    "OAuth2 and OpenID Connect authentication",
+    "Social login, email/password, and magic link",
+    "Multi-factor authentication (MFA)",
+    "Role-based access control (RBAC)",
+    "Fine-grained authorization with embedded OpenFGA (Zanzibar ReBAC)",
+    "Permission-aware AI and RAG access control",
+    "Built-in Model Context Protocol (MCP) server for AI agents",
+    "GraphQL, REST, and gRPC APIs",
+    "SDKs for Go, Python, JavaScript, and React (Vue, Svelte, Flutter coming soon)",
+    "13+ SQL, NoSQL, and graph database backends",
+    "Self-hosted on Docker, Kubernetes, and cloud PaaS",
+  ],
 };
 
 const faq = {

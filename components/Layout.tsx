@@ -13,7 +13,7 @@ import {
   TWITTER_CARD_IMAGE_URL,
 } from "../constants/site";
 
-const PAGE_TITLE = `${SITE_NAME} | Self-hosted auth for OAuth2 & OpenID Connect`;
+const PAGE_TITLE = `${SITE_NAME} | Self-hosted auth, fine-grained authorization & permission-aware AI`;
 
 const KEYWORDS = [
   "open source authentication",
@@ -26,6 +26,20 @@ const KEYWORDS = [
   "magic link authentication",
   "RBAC",
   "MFA",
+  "fine-grained authorization",
+  "FGA",
+  "OpenFGA",
+  "ReBAC",
+  "Zanzibar authorization",
+  "permission-aware RAG",
+  "AI authorization",
+  "MCP server",
+  "Model Context Protocol",
+  "GraphQL API",
+  "gRPC auth",
+  "Go SDK",
+  "Python SDK",
+  "JavaScript SDK",
   "data sovereignty",
   "own your user data",
   "authorizer",

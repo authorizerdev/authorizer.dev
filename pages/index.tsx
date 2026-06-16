@@ -4,6 +4,8 @@ import Faq from "../components/Faq";
 import Features from "../components/Features";
 import GettingStarted from "../components/GettingStarted";
 import MarketPosition from "../components/MarketPosition";
+import AiUseCase from "../components/AiUseCase";
+import DeveloperApi from "../components/DeveloperApi";
 
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
@@ -14,11 +16,13 @@ export default function Home() {
     <Layout>
       <Hero />
       <CompareAlternatives />
-      <MarketPosition />
-      <GettingStarted />
       <Features />
+      <AiUseCase />
+      <DeveloperApi />
       <Database />
+      <MarketPosition />
       <Testimonials />
+      <GettingStarted />
       <Faq />
       {/* <Contributors /> */}
     </Layout>

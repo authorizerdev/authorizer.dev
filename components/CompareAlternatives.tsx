@@ -31,6 +31,24 @@ const rows = [
     others: "Polished hosted components and universal login pages",
   },
   {
+    factor: "Authorization model",
+    authorizer:
+      "RBAC plus relationship-based, fine-grained authorization (embedded OpenFGA/Zanzibar) in the same binary",
+    others: "Often RBAC by default; fine-grained authz as a separate paid add-on",
+  },
+  {
+    factor: "AI / RAG access control",
+    authorizer:
+      "Permission-aware retrieval: list a user's allow-list and pre-filter the vector search, fully self-hosted",
+    others: "Usually out of scope; you wire authorization into AI yourself",
+  },
+  {
+    factor: "APIs & SDKs",
+    authorizer:
+      "GraphQL, REST, and gRPC with SDKs for Go, Python, JS, and React (Vue, Svelte, Flutter coming soon)",
+    others: "Mature REST/OIDC APIs and a broad SDK catalog",
+  },
+  {
     factor: "Best when",
     authorizer:
       "You need ownership, compliance-friendly data location, or deep backend control",

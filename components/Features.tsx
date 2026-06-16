@@ -5,6 +5,10 @@ import {
 	FaDatabase,
 	FaLock,
 	FaMailBulk,
+	FaNetworkWired,
+	FaPlug,
+	FaProjectDiagram,
+	FaRobot,
 	FaShieldAlt,
 	FaUserAstronaut,
 	FaUsers,
@@ -29,7 +33,7 @@ const features = [
 		label: 'CONNECT TO YOUR DATABASE',
 		icon: <FaDatabase className="text-blue-500 text-2xl" />,
 		description:
-			'It supports 11+ databases including major SQL, NoSQL and GraphDBs',
+			'It supports 13+ databases including major SQL, NoSQL and GraphDBs',
 		position: 3,
 	},
 	{
@@ -45,6 +49,34 @@ const features = [
 		description:
 			'Define the roles and authorize your APIs with role based session tokens',
 		position: 5,
+	},
+	{
+		label: 'FINE-GRAINED AUTHORIZATION (FGA)',
+		icon: <FaProjectDiagram className="text-blue-500 text-2xl" />,
+		description:
+			'Relationship-based access control with an embedded OpenFGA (Google Zanzibar) engine—check_permissions and list_permissions, in-process, no extra service to run.',
+		position: 10,
+	},
+	{
+		label: 'PERMISSION-AWARE AI & RAG',
+		icon: <FaRobot className="text-blue-500 text-2xl" />,
+		description:
+			'Build AI assistants and RAG pipelines that respect who can see what—pre-filter retrieval with the user’s own token so the model never reads what it shouldn’t.',
+		position: 11,
+	},
+	{
+		label: 'GraphQL, REST & gRPC APIs',
+		icon: <FaNetworkWired className="text-blue-500 text-2xl" />,
+		description:
+			'Integrate over three protocols on standard OAuth2 and OpenID Connect, with official SDKs for Go, Python, JavaScript, and React (Vue, Svelte, and Flutter coming soon).',
+		position: 12,
+	},
+	{
+		label: 'BUILT-IN MCP SERVER',
+		icon: <FaPlug className="text-blue-500 text-2xl" />,
+		description:
+			'Expose read-only identity and permission tools to Claude Desktop, Claude Code, Cursor, and any MCP host—so AI agents can check access before they act. Stdio-only and safe by design.',
+		position: 13,
 	},
 	{
 		label: 'DEPLOY ANYWHERE',
@@ -80,36 +112,57 @@ const features = [
 	},
 ];
 
+const pillars = [
+	'Authentication',
+	'Authorization',
+	'Security',
+	'Integrations',
+];
+
 export default function Features() {
 	return (
-		<div className="container mx-auto my-20 max-w-7xl">
-			<div className="mb-16 text-center">
-				<h2 className="mt-2 text-3xl leading-8 font-semibold tracking-tight text-gray-900 sm:text-4xl">
-					Authentication | Authorization | Security | Integrations
+		<div className="container mx-auto my-20 max-w-7xl px-4 md:px-0">
+			<div className="mb-14 text-center">
+				<span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 bg-blue-50 rounded-full px-3 py-1 mb-4">
+					Everything you need
+				</span>
+				<h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900">
+					The hardest part of app development,{' '}
+					<span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-pink-400">
+						made simple
+					</span>
 				</h2>
-				<p className="text-xl text-gray-600 m-2">
-					The hardest part of the application development,{' '}
-					<span className="font-semibold text-blue-500">made simple.</span>
+				<p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+					Use Authorizer off the shelf and ship a complete auth experience in
+					minutes—so you can stay focused on your core product, not on building
+					identity from scratch.
 				</p>
-				<p className="text-gray-600 m-2">
-					You can use Authorizer off the shelf and provide an amazing digital
-					experience in just 3 minutes. <br /> We rather have you focused on
-					your core business and build stuff that matters.
-				</p>
+				<div className="mt-6 flex flex-wrap justify-center gap-2">
+					{pillars.map((p) => (
+						<span
+							key={p}
+							className="inline-flex items-center rounded-full border border-gray-200 bg-white px-4 py-1.5 text-sm font-semibold text-gray-700 shadow-sm"
+						>
+							{p}
+						</span>
+					))}
+				</div>
 			</div>
-			<div className="flex flex-wrap my-12 ">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{features.map((item) => (
 					<div
-						className={`w-full border-b md:w-1/2 ${
-							item.position % 3 !== 0 ? `md:border-r` : ''
-						} lg:w-1/3 p-8`}
+						className="group rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-blue-200"
 						key={item.position}
 					>
-						<div className="flex items-center mb-6">
-							{item.icon}
-							<div className="ml-4 text-xl">{item.label}</div>
+						<div className="flex items-center mb-5">
+							<span className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 transition-colors duration-200 group-hover:bg-blue-100">
+								{item.icon}
+							</span>
+							<div className="ml-4 text-lg font-semibold text-gray-900">
+								{item.label}
+							</div>
 						</div>
-						<p className="leading-loose text-gray-500  text-md">
+						<p className="leading-relaxed text-gray-500 text-md">
 							{item.description}
 						</p>
 					</div>

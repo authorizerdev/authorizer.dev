@@ -72,17 +72,18 @@ export default function Database() {
   return (
     <div className="bg-slate-50 my-20">
       <div className="container mx-auto max-w-7xl py-16 px-10">
-        <h2 className="text-3xl font-semibold text-center">
-          Myriad Database Support
+        <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-center text-gray-900">
+          Bring your own database
         </h2>
-        <p className="text-center text-lg text-gray-600">
-          You name it and we have it covered for you
+        <p className="mt-4 text-center text-lg text-gray-600 max-w-2xl mx-auto">
+          Your users live where your app already lives—13+ SQL, NoSQL, and graph
+          databases supported out of the box.
         </p>
         <ul className="flex flex-wrap justify-center mt-10">
           {databases.map((item) => (
             <li
               key={item.position}
-              className="m-4 h-14 w-44"
+              className="m-3 h-20 w-40 rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200"
               title={item.label}
             >
               <div className="relative h-full w-full">
@@ -90,7 +91,7 @@ export default function Database() {
                   src={item.img}
                   alt={item.label}
                   fill
-                  sizes="176px"
+                  sizes="160px"
                   style={{ objectFit: "contain" }}
                   unoptimized
                 />
@@ -103,7 +104,7 @@ export default function Database() {
             href="https://github.com/authorizerdev/authorizer/issues/new?assignees=&labels=enhancement&template=feature_request.md&title="
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white bg-blue-500 hover:bg-blue-400 font-medium rounded-lg text-lg px-8 py-4 mr-2 mb-2"
+            className="text-white bg-blue-500 hover:bg-blue-400 font-medium rounded-lg text-lg px-8 py-4 mr-2 mb-2 shadow-sm hover:shadow-md transition-all duration-200"
           >
             Request new Database Support
           </a>

@@ -16,13 +16,14 @@ export default function Hero() {
         <h1 className='font-extrabold text-m-h1 text-[length:48px] leading-[48px] md:text-[length:48px] md:leading-[48px] xl:text-d-j text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-pink-300'>
           Own your identity layer
         </h1>
-        <p className='text-2xl font-bold text-gray-600 mt-2'>
-          Open-source, self-hosted authentication &amp; authorization
+        <p className='text-2xl font-bold text-gray-700 mt-2 max-w-xl'>
+          Self-hosted authentication and fine-grained authorization—plus
+          permission-aware AI your agents can&apos;t talk their way around.
         </p>
         <p className='text-lg text-gray-500 mt-3 max-w-xl'>
-          Authorizer is an open-source authentication and authorization server
-          you run on your own infrastructure—your users live in your database,
-          not someone else&apos;s dashboard.
+          Authorizer is one open-source binary you run on your own
+          infrastructure. Every user, role, and permission stays in your
+          database—never on someone else&apos;s dashboard.
         </p>
 
         <a
@@ -39,41 +40,64 @@ export default function Hero() {
             priority
           />
         </a>
-        <ul className='mt-4 text-gray-600 font-bold'>
-          <li className='flex items-center mb-2'>
-            <FaCheckCircle className='text-green-400 mr-3 shrink-0' />
-            <div className='flex-1 flex justify-start text-left'>
-              Build secure apps faster with OAuth2 and OpenID Connect
+        <ul className='mt-5 space-y-2.5 text-gray-600'>
+          <li className='flex items-start'>
+            <FaCheckCircle className='text-green-400 mr-3 mt-1 shrink-0' />
+            <div className='flex-1 text-left'>
+              <span className='font-bold text-gray-800'>Self-hosted &amp; sovereign</span>
+              <span className='text-gray-500'>
+                {' '}— your users live in your database, not someone else&apos;s
+                dashboard
+              </span>
             </div>
           </li>
-          <li className='flex items-center mb-2'>
-            <FaCheckCircle className='text-green-400 mr-3 shrink-0' />
-            <div className='flex-1 flex justify-start text-left'>
-              No per-seat auth tax—pay for infrastructure, not usage
+          <li className='flex items-start'>
+            <FaCheckCircle className='text-green-400 mr-3 mt-1 shrink-0' />
+            <div className='flex-1 text-left'>
+              <span className='font-bold text-gray-800'>No per-seat auth tax</span>
+              <span className='text-gray-500'>
+                {' '}— pay for infrastructure, not usage
+              </span>
             </div>
           </li>
-          <li className='flex items-center mb-2'>
-            <FaCheckCircle className='text-green-400 mr-3 shrink-0' />
-            <div className='flex-1 flex justify-start text-left'>
-              Own user data in your preferred database
+          <li className='flex items-start'>
+            <FaCheckCircle className='text-green-400 mr-3 mt-1 shrink-0' />
+            <div className='flex-1 text-left'>
+              <span className='font-bold text-gray-800'>Every way to sign in</span>
+              <span className='text-gray-500'>
+                {' '}— social, email/password, magic link, MFA, OAuth2 &amp; OIDC
+              </span>
             </div>
           </li>
-          <li className='flex items-center mb-2'>
-            <FaCheckCircle className='text-green-400 mr-3 shrink-0' />
-            <div className='flex-1 flex justify-start text-left'>
-              Multiple auth methods: social, password, magic link, and more
+          <li className='flex items-start'>
+            <FaCheckCircle className='text-green-400 mr-3 mt-1 shrink-0' />
+            <div className='flex-1 text-left'>
+              <span className='font-bold text-gray-800'>
+                Fine-grained authorization
+              </span>
+              <span className='text-gray-500'>
+                {' '}— RBAC + relationship-based access control (OpenFGA), built in
+              </span>
             </div>
           </li>
-          <li className='flex items-center mb-2'>
-            <FaCheckCircle className='text-green-400 mr-3 shrink-0' />
-            <div className='flex-1 flex justify-start text-left'>
-              Role-based access for your APIs and products
+          <li className='flex items-start'>
+            <FaCheckCircle className='text-green-400 mr-3 mt-1 shrink-0' />
+            <div className='flex-1 text-left'>
+              <span className='font-bold text-gray-800'>
+                Permission-aware AI &amp; MCP
+              </span>
+              <span className='text-gray-500'>
+                {' '}— agents and RAG only retrieve what the user is allowed to see
+              </span>
             </div>
           </li>
-          <li className='flex items-center mb-2'>
-            <FaCheckCircle className='text-green-400 mr-3 shrink-0' />
-            <div className='flex-1 flex justify-start text-left'>
-              Standards-based APIs your stack already understands
+          <li className='flex items-start'>
+            <FaCheckCircle className='text-green-400 mr-3 mt-1 shrink-0' />
+            <div className='flex-1 text-left'>
+              <span className='font-bold text-gray-800'>Built for your stack</span>
+              <span className='text-gray-500'>
+                {' '}— GraphQL, REST &amp; gRPC, with SDKs for Go, Python &amp; JS
+              </span>
             </div>
           </li>
         </ul>
@@ -82,13 +106,13 @@ export default function Hero() {
             href='https://railway.app/new/template/nwXp1C?referralCode=FEF4uT'
             target='_blank'
             rel='noopener noreferrer'
-            className='text-white bg-blue-500 hover:bg-blue-400 font-medium rounded-lg text-lg px-8 py-4 mr-2 mb-2'
+            className='text-white bg-blue-500 hover:bg-blue-400 font-medium rounded-lg text-lg px-8 py-4 mr-2 mb-2 shadow-sm hover:shadow-md transition-all duration-200'
           >
             Deploy your instance
           </a>
 
           <button
-            className='flex text-lg items-center ml-0 md:ml-5 text-blue-500 hover:text-blue-400'
+            className='flex text-lg items-center ml-0 md:ml-5 text-blue-500 hover:text-blue-400 transition-colors duration-200'
             type='button'
             onClick={() => setIsDemoModalOpen(true)}
           >

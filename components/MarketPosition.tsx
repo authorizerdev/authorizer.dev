@@ -56,7 +56,7 @@ export default function MarketPosition() {
         {pillars.map((p) => (
           <div
             key={p.title}
-            className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+            className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-1 hover:border-blue-200"
           >
             <h3 className="text-lg font-semibold text-gray-900">{p.title}</h3>
             <p className="mt-3 text-gray-600 leading-relaxed">{p.body}</p>

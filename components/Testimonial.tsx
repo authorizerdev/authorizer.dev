@@ -26,8 +26,10 @@ const testimonials = [
 export default function Testimonials() {
 	return (
 		<div className="">
-			<div className="container mx-auto my-20 max-w-7xl">
-				<h1 className="text-3xl text-center mb-3 font-bold">Loved By Users</h1>
+			<div className="container mx-auto my-20 max-w-7xl px-4 md:px-0">
+				<h2 className="text-3xl sm:text-4xl text-center mb-3 font-semibold tracking-tight text-gray-900">
+					Loved by developers
+				</h2>
 				<p className="text-center text-gray-600 mb-10 text-lg">
 					Join our community on{' '}
 					<a
@@ -52,7 +54,7 @@ export default function Testimonials() {
 				<div className="flex flex-wrap justify-center">
 					{testimonials.map((item, index) => (
 						<div
-							className="bg-white border border-gray-200 w-full md:w-72 shadow-lg mx-5 my-3 rounded-xl p-4"
+							className="bg-white border border-gray-200 w-full md:w-72 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 mx-5 my-3 rounded-xl p-5"
 							key={`testimonial_${index}`}
 						>
 							<p className="text-gray-600 ">

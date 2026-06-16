@@ -38,7 +38,7 @@ const menuItems = [
 
 export default function Nav() {
   return (
-    <nav className="bg-white border-gray-200 px-4 py-5 fixed w-full z-50 top-0 left-0 right-0 md:px-0">
+    <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200/80 shadow-sm px-4 py-4 fixed w-full z-50 top-0 left-0 right-0 md:px-0">
       <div className="container flex flex-nowrap justify-between items-center mx-auto max-w-7xl">
         <div>
           <Link href="/" className="flex items-center">
@@ -54,7 +54,7 @@ export default function Nav() {
               <Link
                 href={link}
                 key={id}
-                className="flex items-center self-center text-gray-700 hover:text-blue-600 ml-5"
+                className="flex items-center self-center text-gray-700 hover:text-blue-600 ml-5 transition-colors duration-200"
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noopener noreferrer" : undefined}
               >
