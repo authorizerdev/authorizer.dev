@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Banner from "./Banner";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import SeoJsonLd from "./SeoJsonLd";
@@ -136,6 +137,7 @@ export default function Layout({ children }) {
         }}
       />
       <div className="min-h-screen">
+        <Banner />
         <Nav />
         <main className="pt-10">{children}</main>
         <Footer />
