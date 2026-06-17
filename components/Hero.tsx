@@ -198,9 +198,18 @@ export default function Hero() {
           Try it now ☝️
         </p>
         <p className='mt-2 max-w-sm text-center text-sm text-gray-500 leading-relaxed'>
-          By trying the demo you&apos;ll see Authorizer&apos;s hosted login and
-          signup first-hand — and we&apos;ll only ever send you major product
-          updates. No spam.
+          Trying the demo shows Authorizer&apos;s hosted login and signup
+          first-hand — it&apos;s just a demo, so we won&apos;t add you to any
+          list. For major product updates,{' '}
+          <a
+            href='https://github.com/authorizerdev/authorizer'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-blue-500 hover:text-blue-400 underline'
+          >
+            watch the repo on GitHub
+          </a>
+          . No spam.
         </p>
       </div>
     </div>
