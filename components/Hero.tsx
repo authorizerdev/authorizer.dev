@@ -197,14 +197,11 @@ export default function Hero() {
         <p className='mt-5 text-lg font-semibold flex items-center'>
           Try it now ☝️
         </p>
-        <a
-          href='https://github.com/authorizerdev/authorizer/releases'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='mt-2 text-sm text-gray-500 hover:text-gray-700 transition-colors duration-200'
-        >
-          Want major product updates? Watch our releases on GitHub →
-        </a>
+        <p className='mt-2 max-w-sm text-center text-sm text-gray-500 leading-relaxed'>
+          By trying the demo you&apos;ll see Authorizer&apos;s hosted login and
+          signup first-hand — and we&apos;ll only ever send you major product
+          updates. No spam.
+        </p>
       </div>
     </div>
   );
