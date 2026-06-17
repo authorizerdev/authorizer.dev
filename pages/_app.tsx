@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Fonts from "../components/Fonts";
 import { AUTHORIZER_CONFIG } from "../constants/authorizer";
+import "@authorizerdev/authorizer-react/styles.css";
 import "../styles/globals.css";
 import { authorizerTheme } from "../styles/Theme";
 import { pageview } from "../utils/ga";

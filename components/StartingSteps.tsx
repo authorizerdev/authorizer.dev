@@ -1,6 +1,7 @@
 import { Box, Button, Center, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import { sortBy } from "lodash";
 import { MdOpenInNew, MdPlayCircleOutline } from "react-icons/md";
+import { DEPLOYMENT_BUTTONS } from "../constants/deployments";
 import { COLORS } from "../styles/colors";
 import { DefaultSection } from "./Section";
 
@@ -29,26 +30,7 @@ export const StartingSteps = () => {
     },
   ];
 
-  const deploymentButtons = [
-    {
-      href: "https://railway.app/new/template/nwXp1C?referralCode=FEF4uT",
-      img: "https://railway.app/button.svg",
-      label: "Deploy to Railway",
-      bgColor: COLORS.railway,
-    },
-    {
-      href: "https://heroku.com/deploy?template=https://github.com/authorizerdev/authorizer-heroku",
-      img: "https://www.herokucdn.com/deploy/button.svg",
-      label: "Deploy to Heroku",
-      bgColor: COLORS.heroku,
-    },
-    {
-      href: "https://render.com/deploy?repo=https://github.com/authorizerdev/authorizer-render",
-      img: "https://render.com/images/deploy-to-render-button.svg",
-      label: "Deploy to Render",
-      bgColor: COLORS.render,
-    },
-  ];
+  const deploymentButtons = DEPLOYMENT_BUTTONS;
 
   return (
     <Box backgroundColor={COLORS.primaryExtraLight}>

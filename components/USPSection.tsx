@@ -13,6 +13,7 @@ import Image from "next/image";
 import { MdCheckCircleOutline, MdPlayCircleOutline, MdSend } from "react-icons/md";
 import { COLORS } from "../styles/colors";
 import { DefaultSection } from "./Section";
+import { TryNow } from "./TryNow";
 
 export const USPSection = () => {
   const uspList = [
@@ -94,6 +95,7 @@ export const USPSection = () => {
             })}
           </Box>
           <Flex justify={{ base: "center", md: "left" }} wrap="wrap">
+            <TryNow />
             <Button
               marginTop="40px"
               variant="primary"

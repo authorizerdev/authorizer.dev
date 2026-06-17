@@ -10,3 +10,20 @@
 body {
   font-family: 16px;
 }
+
+/*
+ * The Authorizer widget (@authorizerdev/authorizer-react) ships a
+ * `.styled-wrapper` with `min-width: 300px`, which forces horizontal
+ * scrolling inside narrower containers and on small viewports.
+ * Let the embedding container control the width instead.
+ */
+.authorizer-widget .styled-wrapper {
+  min-width: 0;
+  width: 100%;
+}
+
+.authorizer-widget {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
