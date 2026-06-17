@@ -12,7 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@authorizerdev/authorizer-react": "^2.0.7",
+    "@authorizerdev/authorizer-react": "^2.0.2",
     "@headlessui/react": "^1.7.19",
     "next": "^14.2.18",
     "react": "^18.3.1",
