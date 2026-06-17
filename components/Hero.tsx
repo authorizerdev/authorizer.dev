@@ -10,6 +10,7 @@ import Modal from './Modal';
 export default function Hero() {
   const { loading, user, logout } = useAuthorizer();
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [wantsUpdates, setWantsUpdates] = useState(false);
   return (
     <div className='container mx-auto max-w-7xl flex my-20 flex-col pt-0 md:flex-row md:pt-10'>
       <div className='flex-1 flex flex-col items-center md:items-start justify-center md:justify-start text-center md:text-left px-5 md:px-0'>
@@ -189,6 +190,19 @@ export default function Hero() {
               ) : (
                 <div className='authorizer-login'>
                   <Authorizer />
+                  <label className='mt-5 flex items-start cursor-pointer select-none'>
+                    <input
+                      type='checkbox'
+                      checked={wantsUpdates}
+                      onChange={(e) => setWantsUpdates(e.target.checked)}
+                      className='mt-1 mr-3 h-4 w-4 shrink-0 rounded border-gray-300 text-blue-500 focus:ring-blue-400 cursor-pointer'
+                    />
+                    <span className='text-sm text-gray-500 leading-relaxed'>
+                      Keep me in the loop on Authorizer—a quiet note now and then
+                      about new releases and security updates. No spam, and you
+                      can opt out anytime.
+                    </span>
+                  </label>
                 </div>
               )}
             </>
