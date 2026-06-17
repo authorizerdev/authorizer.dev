@@ -5,3 +5,20 @@
 .authorizer-login input {
 	border: 1px solid rgb(59 130 246 / var(--tw-bg-opacity)) !important;
 }
+
+/*
+ * Keep the Authorizer widget contained within its card.
+ * The widget's own stylesheet sets `.styled-wrapper { min-width: 300px }`,
+ * which overflows narrow viewports and triggers horizontal scroll. Pin it
+ * to the container width instead.
+ */
+.authorizer-login,
+.authorizer-login .styled-wrapper {
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
+}
+
+.authorizer-login {
+	overflow-x: hidden;
+}
