@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Dialog } from '@headlessui/react';
 import { Authorizer, useAuthorizer } from '@authorizerdev/authorizer-react';
-import { FaPlay, FaArrowRight, FaUserShield } from 'react-icons/fa';
+import { FaPlay, FaArrowRight } from 'react-icons/fa';
 import { IoClose } from 'react-icons/io5';
 import Loader from './Loader';
 import Modal from './Modal';
@@ -89,7 +89,7 @@ export default function Hero() {
         </a>
       </div>
 
-      {/* Live demo modal: the Authorizer component + OSS-supporter consent notice */}
+      {/* Live demo modal: the Authorizer component */}
       {isTryModalOpen && (
         <Modal open={isTryModalOpen} onClose={() => setIsTryModalOpen(false)}>
           <div>
@@ -141,19 +141,6 @@ export default function Hero() {
                   <div className='authorizer-demo'>
                     <Authorizer />
                   </div>
-                  <p className='mt-5 flex items-start text-xs leading-relaxed text-gray-500 bg-gray-50 rounded-lg p-3'>
-                    <FaUserShield className='text-blue-500 mr-2 mt-0.5 shrink-0' />
-                    <span>
-                      By signing in you&apos;ll join Authorizer&apos;s{' '}
-                      <span className='font-semibold text-gray-700'>
-                        open-source supporters
-                      </span>{' '}
-                      — we&apos;ll email you only about major releases and
-                      security updates (a few times a year, never spam). We
-                      never sell or share your data, and you can unsubscribe
-                      anytime.
-                    </span>
-                  </p>
                 </div>
               )}
             </div>
