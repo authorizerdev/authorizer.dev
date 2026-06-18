@@ -126,7 +126,7 @@ export default function Features() {
 				<span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-600 bg-blue-50 rounded-full px-3 py-1 mb-4">
 					Everything you need
 				</span>
-				<h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900">
+				<h2 className="font-fraunces text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900">
 					The hardest part of app development,{' '}
 					<span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-pink-400">
 						made simple

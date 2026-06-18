@@ -24,7 +24,12 @@ const TRUST_SIGNALS = ['Apache-2.0 open source', 'Self-host in minutes', 'OAuth2
 
 const ECOSYSTEM = ['Kubernetes', 'Docker', 'Helm', 'Railway', 'PostgreSQL', 'MongoDB'];
 
-export default function Hero() {
+function formatStars(n: number): string {
+  if (n >= 1000) return `${(Math.round(n / 100) / 10).toFixed(1)}k`;
+  return String(n);
+}
+
+export default function Hero({ stars = 0 }: { stars?: number }) {
   const { loading, user, logout } = useAuthorizer();
   const [isTryModalOpen, setIsTryModalOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -74,8 +79,10 @@ export default function Hero() {
             Cloud-native · Open source · Apache-2.0
           </span>
 
-          <h1 className='mt-6 font-fraunces font-extrabold text-[44px] leading-[50px] md:text-[60px] md:leading-[66px] text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-pink-300'>
-            Own your identity layer
+          <h1 className='mt-6 font-fraunces font-extrabold text-[44px] leading-[50px] md:text-[60px] md:leading-[66px] text-gray-900'>
+            Own your{' '}
+            <span className='text-blue-600'>identity</span>{' '}
+            layer
           </h1>
 
           <p className='text-xl text-gray-600 mt-5 max-w-xl'>
@@ -102,7 +109,7 @@ export default function Hero() {
             >
               <FaGithub />
               <span>View on GitHub</span>
-              <span className='text-sm text-gray-400 font-normal'>4.8k ★</span>
+              <span className='text-sm text-gray-400 font-normal'>{stars > 0 ? formatStars(stars) : '4.8k'} ★</span>
             </a>
           </div>
 

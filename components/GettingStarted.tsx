@@ -53,7 +53,7 @@ export default function GettingStarted() {
         <div className="flex flex-wrap -mx-8">
           <div className="w-full lg:w-1/2 px-8">
             <div className="mb-12 lg:mb-0 pb-12 lg:pb-0 border-b lg:border-b-0">
-              <h2 className="mb-2 text-3xl font-semibold">
+              <h2 className="mb-2 font-fraunces text-3xl font-semibold">
                 Get started in{" "}
                 <span className="font-extrabold text-blue-500">
                   3 simple steps
