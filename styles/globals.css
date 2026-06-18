@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-.authorizer-login input {
-	border: 1px solid rgb(59 130 246 / var(--tw-bg-opacity)) !important;
+.authorizer-login input,
+.authorizer-demo input {
+	border: 1px solid rgb(59 130 246 / var(--tw-bg-opacity, 1)) !important;
+}
+
+/*
+ * The Authorizer widget ships `.styled-wrapper { min-width: 300px }`, which
+ * forces horizontal scroll inside narrow containers / small screens. Let the
+ * surrounding container control the width so the demo stays responsive.
+ */
+.authorizer-demo {
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+.authorizer-demo .styled-wrapper {
+	min-width: 0;
+	width: 100%;
 }

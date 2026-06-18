@@ -2,202 +2,196 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Dialog } from '@headlessui/react';
 import { Authorizer, useAuthorizer } from '@authorizerdev/authorizer-react';
-import { FaCheckCircle, FaPlay } from 'react-icons/fa';
+import { FaPlay, FaArrowRight, FaUserShield } from 'react-icons/fa';
 import { IoClose } from 'react-icons/io5';
 import Loader from './Loader';
 import Modal from './Modal';
 
+// TODO(authorizer): confirm the Authorizer 2.0 demo video id.
+const DEMO_VIDEO_ID = 'aQrpYCyrDjU';
+
+// Factual trust signals — kept deliberately short so the hero doesn't repeat
+// the value props the sections below already cover in depth.
+const TRUST_SIGNALS = ['Apache-2.0 open source', 'Self-host in minutes', 'OAuth2 & OIDC', '13+ databases'];
+
 export default function Hero() {
   const { loading, user, logout } = useAuthorizer();
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [isTryModalOpen, setIsTryModalOpen] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
   return (
-    <div className='container mx-auto max-w-7xl flex my-20 flex-col pt-0 md:flex-row md:pt-10'>
-      <div className='flex-1 flex flex-col items-center md:items-start justify-center md:justify-start text-center md:text-left px-5 md:px-0'>
-        <h1 className='font-extrabold text-m-h1 text-[length:48px] leading-[48px] md:text-[length:48px] md:leading-[48px] xl:text-d-j text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-pink-300'>
+    <div className='container mx-auto max-w-7xl my-20 px-5 md:pt-10'>
+      {/* Centered hero: one clear message, one primary path. */}
+      <div className='flex flex-col items-center text-center max-w-3xl mx-auto'>
+        <span className='inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-blue-600 bg-blue-50 rounded-full px-3 py-1'>
+          Open source · self-hosted
+        </span>
+
+        <h1 className='mt-6 font-extrabold text-m-h1 text-[length:44px] leading-[46px] md:text-[length:60px] md:leading-[64px] text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-pink-300'>
           Own your identity layer
         </h1>
-        <p className='text-2xl font-bold text-gray-700 mt-2 max-w-xl'>
-          Self-hosted authentication and fine-grained authorization—plus
-          permission-aware AI your agents can&apos;t talk their way around.
-        </p>
-        <p className='text-lg text-gray-500 mt-3 max-w-xl'>
-          Authorizer is one open-source binary you run on your own
-          infrastructure. Every user, role, and permission stays in your
-          database—never on someone else&apos;s dashboard.
+
+        <p className='text-xl text-gray-600 mt-5 max-w-2xl'>
+          The open-source auth platform you run yourself—authentication,
+          fine-grained authorization, and permission-aware AI, with every user
+          in <span className='font-semibold text-gray-800'>your own database</span>.
         </p>
 
-        <a
-          href='https://www.producthunt.com/posts/authorizer?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-authorizer'
-          target='_blank'
-          rel='noreferrer'
-          className='my-5'
-        >
-          <Image
-            src='https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=321526&theme=light'
-            alt='Authorizer — open-source authentication on Product Hunt'
-            width={250}
-            height={54}
-            priority
-          />
-        </a>
-        <ul className='mt-5 space-y-2.5 text-gray-600'>
-          <li className='flex items-start'>
-            <FaCheckCircle className='text-green-400 mr-3 mt-1 shrink-0' />
-            <div className='flex-1 text-left'>
-              <span className='font-bold text-gray-800'>Self-hosted &amp; sovereign</span>
-              <span className='text-gray-500'>
-                {' '}— your users live in your database, not someone else&apos;s
-                dashboard
-              </span>
-            </div>
-          </li>
-          <li className='flex items-start'>
-            <FaCheckCircle className='text-green-400 mr-3 mt-1 shrink-0' />
-            <div className='flex-1 text-left'>
-              <span className='font-bold text-gray-800'>No per-seat auth tax</span>
-              <span className='text-gray-500'>
-                {' '}— pay for infrastructure, not usage
-              </span>
-            </div>
-          </li>
-          <li className='flex items-start'>
-            <FaCheckCircle className='text-green-400 mr-3 mt-1 shrink-0' />
-            <div className='flex-1 text-left'>
-              <span className='font-bold text-gray-800'>Every way to sign in</span>
-              <span className='text-gray-500'>
-                {' '}— social, email/password, magic link, MFA, OAuth2 &amp; OIDC
-              </span>
-            </div>
-          </li>
-          <li className='flex items-start'>
-            <FaCheckCircle className='text-green-400 mr-3 mt-1 shrink-0' />
-            <div className='flex-1 text-left'>
-              <span className='font-bold text-gray-800'>
-                Fine-grained authorization
-              </span>
-              <span className='text-gray-500'>
-                {' '}— RBAC + relationship-based access control (OpenFGA), built in
-              </span>
-            </div>
-          </li>
-          <li className='flex items-start'>
-            <FaCheckCircle className='text-green-400 mr-3 mt-1 shrink-0' />
-            <div className='flex-1 text-left'>
-              <span className='font-bold text-gray-800'>
-                Permission-aware AI &amp; MCP
-              </span>
-              <span className='text-gray-500'>
-                {' '}— agents and RAG only retrieve what the user is allowed to see
-              </span>
-            </div>
-          </li>
-          <li className='flex items-start'>
-            <FaCheckCircle className='text-green-400 mr-3 mt-1 shrink-0' />
-            <div className='flex-1 text-left'>
-              <span className='font-bold text-gray-800'>Built for your stack</span>
-              <span className='text-gray-500'>
-                {' '}— GraphQL, REST &amp; gRPC, with SDKs for Go, Python &amp; JS
-              </span>
-            </div>
-          </li>
-        </ul>
-        <div className='mt-8 flex items-center justify-evenly flex-wrap'>
+        {/* Primary + secondary CTAs */}
+        <div className='mt-9 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto'>
           <a
             href='https://railway.app/new/template/nwXp1C?referralCode=FEF4uT'
             target='_blank'
             rel='noopener noreferrer'
-            className='text-white bg-blue-500 hover:bg-blue-400 font-medium rounded-lg text-lg px-8 py-4 mr-2 mb-2 shadow-sm hover:shadow-md transition-all duration-200'
+            className='w-full sm:w-auto text-center text-white bg-blue-500 hover:bg-blue-400 font-semibold rounded-lg text-lg px-8 py-4 shadow-sm hover:shadow-md transition-all duration-200'
           >
             Deploy your instance
           </a>
-
           <button
-            className='flex text-lg items-center ml-0 md:ml-5 text-blue-500 hover:text-blue-400 transition-colors duration-200'
             type='button'
-            onClick={() => setIsDemoModalOpen(true)}
+            onClick={() => setIsTryModalOpen(true)}
+            className='w-full sm:w-auto flex items-center justify-center text-lg font-semibold rounded-lg px-8 py-4 border border-blue-500 text-blue-500 hover:bg-blue-50 transition-colors duration-200'
           >
-            <FaPlay className='mr-2' /> Watch demo
+            Try the live demo <FaArrowRight className='ml-2 text-sm' />
           </button>
-          {isDemoModalOpen && (
-            <Modal
-              open={isDemoModalOpen}
-              onClose={() => setIsDemoModalOpen(false)}
-            >
-              <div>
-                <div className='flex items-center justify-between py-3 px-3'>
-                  <div className='text-center pl-4 sm:text-left'>
-                    <Dialog.Title
-                      as='h3'
-                      className='text-xl leading-6 font-medium text-gray-900'
-                    >
-                      Introducing Authorizer 1.0 🚀
-                    </Dialog.Title>
-                  </div>
-                  <button
-                    type='button'
-                    onClick={() => setIsDemoModalOpen(false)}
-                  >
-                    <IoClose />
-                  </button>
-                </div>
-                <div className='mt-2 relative w-full p-5'>
-                  <iframe
-                    className='rounded'
-                    width='100%'
-                    height='315'
-                    src='https://www.youtube.com/embed/aQrpYCyrDjU'
-                    title='Authorizer demo on YouTube'
-                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                    allowFullScreen
-                  />
-                </div>
-              </div>
-            </Modal>
-          )}
         </div>
+
+        <button
+          type='button'
+          onClick={() => setIsVideoModalOpen(true)}
+          className='mt-4 flex items-center text-gray-500 hover:text-blue-500 transition-colors duration-200'
+        >
+          <FaPlay className='mr-2 text-sm' /> Watch the 2.0 demo
+        </button>
+
+        {/* Compact trust strip + social proof */}
+        <ul className='mt-10 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-500'>
+          {TRUST_SIGNALS.map((signal) => (
+            <li key={signal} className='flex items-center'>
+              <span className='w-1.5 h-1.5 rounded-full bg-green-400 mr-2' />
+              {signal}
+            </li>
+          ))}
+        </ul>
+        <a
+          href='https://www.producthunt.com/posts/authorizer?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-authorizer'
+          target='_blank'
+          rel='noreferrer'
+          className='mt-6'
+        >
+          <Image
+            src='https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=321526&theme=light'
+            alt='Authorizer — open-source authentication on Product Hunt'
+            width={220}
+            height={48}
+            priority
+          />
+        </a>
       </div>
 
-      <div className='flex-1 flex flex-col justify-center items-center p-10 ml-0 md:ml-10 mt-10 md:-mt-12'>
-        <div className='block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md w-full'>
-          {loading ? (
-            <Loader />
-          ) : (
-            <>
-              {user ? (
-                <div>
-                  <p className='font-extrabold text-xl md:text-2xl text-center'>
-                    🙇‍♂️
-                  </p>
-                  <p className='text-lg text-gray-600 text-center'>
+      {/* Live demo modal: the Authorizer component + OSS-supporter consent notice */}
+      {isTryModalOpen && (
+        <Modal open={isTryModalOpen} onClose={() => setIsTryModalOpen(false)}>
+          <div>
+            <div className='flex items-center justify-between py-3 px-5 border-b border-gray-100'>
+              <Dialog.Title
+                as='h3'
+                className='text-xl leading-6 font-semibold text-gray-900'
+              >
+                Try the Authorizer demo
+              </Dialog.Title>
+              <button
+                type='button'
+                aria-label='Close'
+                className='text-gray-400 hover:text-gray-600'
+                onClick={() => setIsTryModalOpen(false)}
+              >
+                <IoClose size={22} />
+              </button>
+            </div>
+
+            <div className='p-5 sm:p-6'>
+              {loading ? (
+                <div className='py-10'>
+                  <Loader />
+                </div>
+              ) : user ? (
+                <div className='text-center py-6'>
+                  <p className='text-4xl'>🙇‍♂️</p>
+                  <p className='mt-3 text-lg text-gray-600'>
                     Welcome, {user.email}
                   </p>
-                  <p className='font-bold text-xl md:text-2xl text-center text-gray-800'>
-                    Thank you for trying the Authorizer demo
+                  <p className='font-bold text-xl text-gray-800'>
+                    Thanks for trying the Authorizer demo
                   </p>
-
-                  <br />
-                  <div className='flex justify-center'>
-                    <button
-                      type='button'
-                      className='text-white bg-blue-500 hover:bg-blue-400 font-medium rounded-lg text-lg px-8 py-2.5 mr-2 mb-2'
-                      onClick={logout}
-                    >
-                      Log out
-                    </button>
-                  </div>
+                  <button
+                    type='button'
+                    className='mt-6 text-white bg-blue-500 hover:bg-blue-400 font-medium rounded-lg text-lg px-8 py-2.5'
+                    onClick={logout}
+                  >
+                    Log out
+                  </button>
                 </div>
               ) : (
-                <div className='authorizer-login'>
-                  <Authorizer />
+                <div className='mx-auto w-full max-w-md'>
+                  <p className='text-center text-gray-500 mb-5'>
+                    Sign in to the hosted demo and explore the dashboard your
+                    users would get.
+                  </p>
+                  <div className='authorizer-demo'>
+                    <Authorizer />
+                  </div>
+                  <p className='mt-5 flex items-start text-xs leading-relaxed text-gray-500 bg-gray-50 rounded-lg p-3'>
+                    <FaUserShield className='text-blue-500 mr-2 mt-0.5 shrink-0' />
+                    <span>
+                      By signing in you&apos;ll join Authorizer&apos;s{' '}
+                      <span className='font-semibold text-gray-700'>
+                        open-source supporters
+                      </span>{' '}
+                      — we&apos;ll email you only about major releases and
+                      security updates (a few times a year, never spam). We
+                      never sell or share your data, and you can unsubscribe
+                      anytime.
+                    </span>
+                  </p>
                 </div>
               )}
-            </>
-          )}
-        </div>
-        <p className='mt-5 text-lg font-semibold flex items-center'>
-          Try it now ☝️
-        </p>
-      </div>
+            </div>
+          </div>
+        </Modal>
+      )}
+
+      {/* Watch the 2.0 demo video */}
+      {isVideoModalOpen && (
+        <Modal open={isVideoModalOpen} onClose={() => setIsVideoModalOpen(false)}>
+          <div>
+            <div className='flex items-center justify-between py-3 px-5'>
+              <Dialog.Title
+                as='h3'
+                className='text-xl leading-6 font-medium text-gray-900'
+              >
+                See Authorizer 2.0 in action 🚀
+              </Dialog.Title>
+              <button
+                type='button'
+                aria-label='Close'
+                onClick={() => setIsVideoModalOpen(false)}
+              >
+                <IoClose />
+              </button>
+            </div>
+            <div className='mt-2 relative w-full p-5'>
+              <iframe
+                className='rounded w-full aspect-video'
+                src={`https://www.youtube.com/embed/${DEMO_VIDEO_ID}`}
+                title='Authorizer 2.0 demo on YouTube'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 }
