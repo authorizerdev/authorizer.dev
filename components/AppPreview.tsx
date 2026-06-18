@@ -72,7 +72,7 @@ export default function AppPreview() {
             </button>
           </div>
         ) : (
-          <div className='w-full max-w-xs mx-auto authorizer-demo'>
+          <div className='w-full max-w-xs sm:w-72 mx-auto authorizer-demo'>
             <Authorizer />
           </div>
         )}
