@@ -9,7 +9,7 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				fraunces: ['var(--font-fraunces)', 'Georgia', 'serif'],
+				roboto: ['var(--font-roboto)', 'sans-serif'],
 			},
 		},
 	},

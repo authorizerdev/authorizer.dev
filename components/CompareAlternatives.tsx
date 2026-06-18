@@ -66,7 +66,7 @@ export default function CompareAlternatives() {
       <div className="text-center mb-12">
         <h2
           id="compare-heading"
-          className="font-fraunces text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900"
+          className="font-roboto text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900"
         >
           Authorizer vs hosted identity platforms
         </h2>

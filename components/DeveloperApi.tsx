@@ -55,7 +55,7 @@ export default function DeveloperApi() {
         <div className="text-center mb-12">
           <h2
             id="developer-api-heading"
-            className="font-fraunces text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900"
+            className="font-roboto text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900"
           >
             Three protocols. SDKs for every stack.
           </h2>

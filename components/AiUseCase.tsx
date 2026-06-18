@@ -44,7 +44,7 @@ export default function AiUseCase() {
         </span>
         <h2
           id="ai-usecase-heading"
-          className="font-fraunces text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900"
+          className="font-roboto text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900"
         >
           Authorization your AI can&apos;t talk its way around
         </h2>
