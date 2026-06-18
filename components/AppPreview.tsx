@@ -1,11 +1,13 @@
 import { useState } from 'react';
 
+type AccentColor = 'blue' | 'slate' | 'indigo' | 'violet';
+
 type Tab = {
   id: string;
   label: string;
   url: string;
   appName: string;
-  accent: string;
+  accent: AccentColor;
   loginTitle: string;
   content: 'email-password-google-github' | 'email-password-github' | 'email-google-apple' | 'magic-link';
 };
@@ -49,11 +51,11 @@ const TABS: Tab[] = [
   },
 ];
 
-const ACCENT_CLASSES: Record<string, { button: string; border: string }> = {
-  blue:   { button: 'bg-blue-500 hover:bg-blue-600',    border: 'border-blue-500' },
-  slate:  { button: 'bg-slate-700 hover:bg-slate-800',  border: 'border-slate-700' },
-  indigo: { button: 'bg-indigo-500 hover:bg-indigo-600', border: 'border-indigo-500' },
-  violet: { button: 'bg-violet-500 hover:bg-violet-600', border: 'border-violet-500' },
+const ACCENT_CLASSES: Record<AccentColor, { button: string }> = {
+  blue:   { button: 'bg-blue-500 hover:bg-blue-600' },
+  slate:  { button: 'bg-slate-700 hover:bg-slate-800' },
+  indigo: { button: 'bg-indigo-500 hover:bg-indigo-600' },
+  violet: { button: 'bg-violet-500 hover:bg-violet-600' },
 };
 
 function LoginCard({ tab }: { tab: Tab }) {
@@ -118,7 +120,7 @@ function LoginCard({ tab }: { tab: Tab }) {
 
       {/* Email field */}
       <div className='mb-3'>
-        <label className='block text-xs font-medium text-gray-600 mb-1'>Email address</label>
+        <p className='block text-xs font-medium text-gray-600 mb-1'>Email address</p>
         <div className='w-full border border-gray-200 rounded-lg py-2.5 px-3 text-sm text-gray-400 bg-gray-50 cursor-not-allowed'>
           you@company.com
         </div>
@@ -127,7 +129,7 @@ function LoginCard({ tab }: { tab: Tab }) {
       {/* Password field — not shown for magic-link or email-google-apple */}
       {(tab.content === 'email-password-google-github' || tab.content === 'email-password-github') && (
         <div className='mb-4'>
-          <label className='block text-xs font-medium text-gray-600 mb-1'>Password</label>
+          <p className='block text-xs font-medium text-gray-600 mb-1'>Password</p>
           <div className='w-full border border-gray-200 rounded-lg py-2.5 px-3 text-sm text-gray-300 bg-gray-50 cursor-not-allowed'>
             ••••••••
           </div>

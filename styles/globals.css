@@ -22,3 +22,11 @@
 	min-width: 0;
 	width: 100%;
 }
+
+/* Hide scrollbar on tab strips while keeping scroll functionality */
+.scrollbar-none::-webkit-scrollbar {
+	display: none;
+}
+.scrollbar-none {
+	scrollbar-width: none;
+}

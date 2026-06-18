@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { Dialog } from '@headlessui/react';
 import { Authorizer, useAuthorizer } from '@authorizerdev/authorizer-react';
@@ -29,6 +29,7 @@ export default function Hero() {
   const [isTryModalOpen, setIsTryModalOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const copyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Auto-reopen the demo modal when user returns from OAuth redirect.
   // The flag is set in openDemoModal() before social login redirects away.
@@ -39,6 +40,13 @@ export default function Hero() {
     }
   }, [loading, user]);
 
+  // Clean up the copy timer on unmount to avoid setState on unmounted component.
+  useEffect(() => {
+    return () => {
+      if (copyTimerRef.current) clearTimeout(copyTimerRef.current);
+    };
+  }, []);
+
   function openDemoModal() {
     sessionStorage.setItem('authorizer_demo_pending', '1');
     setIsTryModalOpen(true);
@@ -47,10 +55,11 @@ export default function Hero() {
   async function handleCopy() {
     try {
       await navigator.clipboard.writeText(DEMO_COPY_COMMAND);
+      if (copyTimerRef.current) clearTimeout(copyTimerRef.current);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      copyTimerRef.current = setTimeout(() => setCopied(false), 2000);
     } catch {
-      // clipboard unavailable (HTTP context, old browser) — silently ignore
+      // clipboard unavailable — silently ignore
     }
   }
 
