@@ -20,25 +20,25 @@ export default function Hero() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
-    <div className='container mx-auto max-w-7xl flex my-20 flex-col pt-0 md:flex-row md:items-center md:pt-10'>
-      {/* Left: the essence + the primary conversion path */}
-      <div className='flex-1 flex flex-col items-center md:items-start text-center md:text-left px-5 md:px-0'>
+    <div className='container mx-auto max-w-7xl my-20 px-5 md:pt-10'>
+      {/* Centered hero: one clear message, one primary path. */}
+      <div className='flex flex-col items-center text-center max-w-3xl mx-auto'>
         <span className='inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-blue-600 bg-blue-50 rounded-full px-3 py-1'>
           Open source · self-hosted
         </span>
 
-        <h1 className='mt-5 font-extrabold text-m-h1 text-[length:48px] leading-[48px] md:text-[length:48px] md:leading-[48px] xl:text-d-j text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-pink-300'>
+        <h1 className='mt-6 font-extrabold text-m-h1 text-[length:44px] leading-[46px] md:text-[length:60px] md:leading-[64px] text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-pink-300'>
           Own your identity layer
         </h1>
 
-        <p className='text-xl text-gray-600 mt-4 max-w-xl'>
+        <p className='text-xl text-gray-600 mt-5 max-w-2xl'>
           The open-source auth platform you run yourself—authentication,
           fine-grained authorization, and permission-aware AI, with every user
           in <span className='font-semibold text-gray-800'>your own database</span>.
         </p>
 
-        {/* Primary + secondary CTAs, high on the page */}
-        <div className='mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto'>
+        {/* Primary + secondary CTAs */}
+        <div className='mt-9 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto'>
           <a
             href='https://railway.app/new/template/nwXp1C?referralCode=FEF4uT'
             target='_blank'
@@ -65,7 +65,7 @@ export default function Hero() {
         </button>
 
         {/* Compact trust strip + social proof */}
-        <ul className='mt-8 flex flex-wrap items-center justify-center md:justify-start gap-x-5 gap-y-2 text-sm text-gray-500'>
+        <ul className='mt-10 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-500'>
           {TRUST_SIGNALS.map((signal) => (
             <li key={signal} className='flex items-center'>
               <span className='w-1.5 h-1.5 rounded-full bg-green-400 mr-2' />
@@ -87,36 +87,6 @@ export default function Hero() {
             priority
           />
         </a>
-      </div>
-
-      {/* Right: conversion-focused live-demo card (triggers the demo modal) */}
-      <div className='flex-1 flex flex-col justify-center items-center p-6 md:p-10 ml-0 md:ml-10 mt-12 md:mt-0'>
-        <div className='w-full max-w-sm bg-white rounded-2xl border border-gray-200 shadow-lg p-8 text-center'>
-          <span className='inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-blue-600 bg-blue-50 rounded-full px-3 py-1'>
-            <span className='w-2 h-2 rounded-full bg-green-500 animate-pulse' />
-            Live demo
-          </span>
-          <div className='mt-5 flex justify-center'>
-            <FaUserShield className='text-blue-500 text-5xl' />
-          </div>
-          <h2 className='mt-4 text-2xl font-bold text-gray-800'>
-            See exactly what your users see
-          </h2>
-          <p className='mt-2 text-gray-500'>
-            The real hosted sign-in experience—social login, magic link,
-            email/password and MFA. No install required.
-          </p>
-          <button
-            type='button'
-            onClick={() => setIsTryModalOpen(true)}
-            className='mt-6 w-full flex items-center justify-center text-white bg-blue-500 hover:bg-blue-400 font-semibold rounded-lg text-lg px-8 py-3 transition-colors duration-200'
-          >
-            Try the demo <FaArrowRight className='ml-2 text-sm' />
-          </button>
-          <p className='mt-4 text-sm text-gray-400'>
-            No credit card · runs on demo.authorizer.dev
-          </p>
-        </div>
       </div>
 
       {/* Live demo modal: the Authorizer component + OSS-supporter consent notice */}
