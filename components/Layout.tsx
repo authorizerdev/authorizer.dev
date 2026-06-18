@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Fraunces } from 'next/font/google';
 import Nav from "./Nav";
 import Footer from "./Footer";
 import SeoJsonLd from "./SeoJsonLd";
@@ -12,6 +13,12 @@ import {
   OG_IMAGE_TYPE,
   TWITTER_CARD_IMAGE_URL,
 } from "../constants/site";
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-fraunces',
+  display: 'swap',
+});
 
 const PAGE_TITLE = `${SITE_NAME} | Self-hosted auth, fine-grained authorization & permission-aware AI`;
 
@@ -135,7 +142,7 @@ export default function Layout({ children }) {
           zIndex: 100,
         }}
       />
-      <div className="min-h-screen">
+      <div className={`min-h-screen ${fraunces.variable}`}>
         <Nav />
         <main className="pt-10">{children}</main>
         <Footer />

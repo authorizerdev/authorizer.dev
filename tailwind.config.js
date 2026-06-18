@@ -7,7 +7,11 @@ module.exports = {
 		fontFamily: {
 			'major-mono': ['Major Mono Display', 'monospace'],
 		},
-		extend: {},
+		extend: {
+			fontFamily: {
+				fraunces: ['var(--font-fraunces)', 'Georgia', 'serif'],
+			},
+		},
 	},
 	plugins: [],
 };
