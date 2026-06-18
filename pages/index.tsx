@@ -6,6 +6,7 @@ import GettingStarted from "../components/GettingStarted";
 import MarketPosition from "../components/MarketPosition";
 import AiUseCase from "../components/AiUseCase";
 import DeveloperApi from "../components/DeveloperApi";
+import AppPreview from "../components/AppPreview";
 
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <Layout>
       <Hero />
+      <AppPreview />
       <CompareAlternatives />
       <Features />
       <AiUseCase />
@@ -24,7 +26,6 @@ export default function Home() {
       <Testimonials />
       <GettingStarted />
       <Faq />
-      {/* <Contributors /> */}
     </Layout>
   );
 }
