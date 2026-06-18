@@ -79,7 +79,7 @@ export default function Hero({ stars = 0 }: { stars?: number }) {
             Cloud-native · Open source · Apache-2.0
           </span>
 
-          <h1 className='mt-6 font-fraunces font-extrabold text-[44px] leading-[50px] md:text-[60px] md:leading-[66px] text-gray-900'>
+          <h1 className='mt-6 font-roboto font-extrabold text-[44px] leading-[50px] md:text-[60px] md:leading-[66px] text-gray-900'>
             Own your{' '}
             <span className='text-blue-600'>identity</span>{' '}
             layer

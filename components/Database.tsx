@@ -72,7 +72,7 @@ export default function Database() {
   return (
     <div className="bg-slate-50 my-20">
       <div className="container mx-auto max-w-7xl py-16 px-10">
-        <h2 className="font-fraunces text-3xl sm:text-4xl font-semibold tracking-tight text-center text-gray-900">
+        <h2 className="font-roboto text-3xl sm:text-4xl font-semibold tracking-tight text-center text-gray-900">
           Bring your own database
         </h2>
         <p className="mt-4 text-center text-lg text-gray-600 max-w-2xl mx-auto">

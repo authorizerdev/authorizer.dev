@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Fraunces } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import Nav from "./Nav";
 import Footer from "./Footer";
 import SeoJsonLd from "./SeoJsonLd";
@@ -14,9 +14,10 @@ import {
   TWITTER_CARD_IMAGE_URL,
 } from "../constants/site";
 
-const fraunces = Fraunces({
+const roboto = Roboto({
+  weight: ["400", "500", "700", "900"],
   subsets: ['latin'],
-  variable: '--font-fraunces',
+  variable: '--font-roboto',
   display: 'swap',
 });
 
@@ -142,7 +143,7 @@ export default function Layout({ children }) {
           zIndex: 100,
         }}
       />
-      <div className={`min-h-screen ${fraunces.variable}`}>
+      <div className={`min-h-screen ${roboto.variable}`}>
         <Nav />
         <main className="pt-10">{children}</main>
         <Footer />
