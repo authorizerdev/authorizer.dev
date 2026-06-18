@@ -40,7 +40,7 @@ export default function Hero() {
         {/* Primary + secondary CTAs */}
         <div className='mt-9 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto'>
           <a
-            href='https://railway.app/new/template/nwXp1C?referralCode=FEF4uT'
+            href='https://railway.com/deploy/authorizer-1?referralCode=FEF4uT&utm_medium=integration&utm_source=template&utm_campaign=generic'
             target='_blank'
             rel='noopener noreferrer'
             className='w-full sm:w-auto text-center text-white bg-blue-500 hover:bg-blue-400 font-semibold rounded-lg text-lg px-8 py-4 shadow-sm hover:shadow-md transition-all duration-200'

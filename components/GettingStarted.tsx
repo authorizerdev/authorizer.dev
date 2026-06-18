@@ -30,7 +30,7 @@ const COLORS = {
 
 const deploymentButtons = [
   {
-    href: `https://railway.app/new/template/nwXp1C?referralCode=FEF4uT`,
+    href: `https://railway.com/deploy/authorizer-1?referralCode=FEF4uT&utm_medium=integration&utm_source=template&utm_campaign=generic`,
     label: "Deploy to Railway",
     bgColor: COLORS.railway,
   },
