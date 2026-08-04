@@ -1,15 +1,21 @@
 import {
+	FaBuilding,
 	FaCloud,
 	FaCode,
 	FaConnectdevelop,
 	FaDatabase,
+	FaExchangeAlt,
+	FaFingerprint,
 	FaLock,
 	FaMailBulk,
 	FaNetworkWired,
 	FaPlug,
 	FaProjectDiagram,
 	FaRobot,
+	FaServer,
 	FaShieldAlt,
+	FaSitemap,
+	FaSyncAlt,
 	FaUserAstronaut,
 	FaUsers,
 } from 'react-icons/fa';
@@ -68,7 +74,7 @@ const features = [
 		label: 'GraphQL, REST & gRPC APIs',
 		icon: <FaNetworkWired className="text-blue-500 text-2xl" />,
 		description:
-			'Integrate over three protocols on standard OAuth2 and OpenID Connect, with official SDKs for Go, Python, JavaScript, and React (Vue, Svelte, and Flutter coming soon).',
+			'Full parity across three protocols on standard OAuth2 and OpenID Connect—every operation available over GraphQL, REST, and gRPC. Official SDKs for Go, Python, JavaScript, React, Vue, and Svelte.',
 		position: 12,
 	},
 	{
@@ -107,8 +113,50 @@ const features = [
 
 		icon: <FaLock className="text-blue-500 text-2xl" />,
 		description:
-			'Added layer of security with email based OTP for your basic authentication recipe',
+			'TOTP authenticator apps, email and SMS one-time codes, and passkeys as a second factor—on by default, optional per user, with brute-force lockout and admin recovery.',
 		position: 9,
+	},
+	{
+		label: 'PASSKEYS & WEBAUTHN',
+		icon: <FaFingerprint className="text-blue-500 text-2xl" />,
+		description:
+			'Phishing-resistant passwordless login with WebAuthn passkeys—Touch ID, Face ID, Windows Hello, and hardware keys. Use them to sign in, or as a second factor.',
+		position: 14,
+	},
+	{
+		label: 'ENTERPRISE SSO (SAML & OIDC)',
+		icon: <FaBuilding className="text-blue-500 text-2xl" />,
+		description:
+			'Per-organization SAML 2.0 and OIDC single sign-on to Okta, Entra ID, Google Workspace, and any compliant IdP. Authorizer also runs as a SAML 2.0 Identity Provider for your own downstream apps.',
+		position: 15,
+	},
+	{
+		label: 'ORGANIZATIONS & MULTI-TENANCY',
+		icon: <FaSitemap className="text-blue-500 text-2xl" />,
+		description:
+			'First-class organizations with memberships, org-scoped admins, verified email domains, and home-realm discovery that routes users to their own identity provider.',
+		position: 16,
+	},
+	{
+		label: 'SCIM 2.0 PROVISIONING',
+		icon: <FaSyncAlt className="text-blue-500 text-2xl" />,
+		description:
+			'Inbound SCIM 2.0 keeps users and groups in sync from your customers’ directories—automatic joiner, mover, and leaver handling, with SCIM groups mapped to roles.',
+		position: 17,
+	},
+	{
+		label: 'MACHINE-TO-MACHINE AUTH',
+		icon: <FaServer className="text-blue-500 text-2xl" />,
+		description:
+			'Service accounts with the client_credentials grant, plus workload identity that needs no shared secret—private-key JWT (RFC 7523), SPIFFE JWT-SVIDs, and Kubernetes TokenReview.',
+		position: 18,
+	},
+	{
+		label: 'DELEGATION FOR AI AGENTS',
+		icon: <FaExchangeAlt className="text-blue-500 text-2xl" />,
+		description:
+			'RFC 8693 token exchange lets an agent act on a user’s behalf with a verifiable actor chain—delegation only, never silent impersonation, with the full chain visible in the token.',
+		position: 19,
 	},
 ];
 
