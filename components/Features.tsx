@@ -155,7 +155,7 @@ const features = [
 		label: 'DELEGATION FOR AI AGENTS',
 		icon: <FaExchangeAlt className="text-blue-500 text-2xl" />,
 		description:
-			'RFC 8693 token exchange lets an agent act on a user’s behalf with a verifiable actor chain—delegation only, never silent impersonation, with the full chain visible in the token.',
+			'RFC 8693 token exchange lets an agent act on a user’s behalf with a verifiable actor chain—delegation only, never silent impersonation. Give each agent its own permissions: it gets what it AND the user are allowed, never the user’s full reach.',
 		position: 19,
 	},
 ];
