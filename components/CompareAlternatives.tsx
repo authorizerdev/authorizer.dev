@@ -22,7 +22,8 @@ const rows = [
   },
   {
     factor: "Enterprise SSO (SAML/OIDC IdPs)",
-    authorizer: "Core OAuth2/OIDC server; extend for your SSO needs",
+    authorizer:
+      "Per-organization SAML 2.0 (as Service Provider and Identity Provider), OIDC federation, SCIM 2.0 provisioning, and home-realm discovery built in",
     others: "Mature multi-IdP SSO marketplaces and B2B org patterns",
   },
   {
@@ -45,7 +46,7 @@ const rows = [
   {
     factor: "APIs & SDKs",
     authorizer:
-      "GraphQL, REST, and gRPC with SDKs for Go, Python, JS, and React (Vue, Svelte, Flutter coming soon)",
+      "GraphQL, REST, and gRPC with SDKs for Go, JavaScript/TypeScript, and React (Python pre-release; Vue and Svelte in beta; Flutter in progress)",
     others: "Mature REST/OIDC APIs and a broad SDK catalog",
   },
   {

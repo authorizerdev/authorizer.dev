@@ -1,6 +1,8 @@
 import Image from "next/image";
+import ExtLink from "./ExtLink";
+import { DATABASE_SITES } from "../constants/links";
 
-const databases = [
+const databases: { label: keyof typeof DATABASE_SITES; img: string; position: number }[] = [
   {
     label: "MongoDB",
     img: "/images/db/mongodb.svg",
@@ -81,33 +83,39 @@ export default function Database() {
         </p>
         <ul className="flex flex-wrap justify-center mt-10">
           {databases.map((item) => (
-            <li
-              key={item.position}
-              className="m-3 h-20 w-40 rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200"
-              title={item.label}
-            >
-              <div className="relative h-full w-full">
-                <Image
-                  src={item.img}
-                  alt={item.label}
-                  fill
-                  sizes="160px"
-                  style={{ objectFit: "contain" }}
-                  unoptimized
-                />
-              </div>
+            <li key={item.position} className="m-3">
+              <ExtLink
+                href={DATABASE_SITES[item.label]}
+                title={item.label}
+                className="block h-20 w-40 rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-blue-200 transition-all duration-200"
+              >
+                <div className="relative h-full w-full">
+                  <Image
+                    src={item.img}
+                    alt={item.label}
+                    fill
+                    sizes="160px"
+                    style={{ objectFit: "contain" }}
+                    unoptimized
+                  />
+                </div>
+              </ExtLink>
             </li>
           ))}
         </ul>
-        <div className="flex justify-center mt-10">
-          <a
+        <div className="flex flex-wrap items-center justify-center gap-2 mt-10">
+          <ExtLink
             href="https://github.com/authorizerdev/authorizer/issues/new?assignees=&labels=enhancement&template=feature_request.md&title="
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white bg-blue-500 hover:bg-blue-400 font-medium rounded-lg text-lg px-8 py-4 mr-2 mb-2 shadow-sm hover:shadow-md transition-all duration-200"
+            className="text-white bg-blue-500 hover:bg-blue-400 font-medium rounded-lg text-lg px-8 py-4 shadow-sm hover:shadow-md transition-all duration-200"
           >
             Request new Database Support
-          </a>
+          </ExtLink>
+          <ExtLink
+            href="https://docs.authorizer.dev/core/databases"
+            className="text-blue-600 hover:text-blue-500 font-medium text-lg px-6 py-4 underline-offset-2 hover:underline"
+          >
+            Database setup docs →
+          </ExtLink>
         </div>
       </div>
     </div>

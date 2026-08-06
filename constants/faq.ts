@@ -17,7 +17,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "What is Authorizer?",
     answer:
-      "Authorizer is an open-source authentication and authorization server you deploy on your own infrastructure. It supports OAuth2 and OpenID Connect, social logins, magic links, email/password, multi-factor authentication, webhooks, and role-based access control—while storing users in a database you control.",
+      "Authorizer is an open-source (Apache-2.0) authentication and authorization server you deploy on your own infrastructure. It supports OAuth2 and OpenID Connect, social logins, magic links, email/password, WebAuthn passkeys, multi-factor authentication, SAML 2.0 and OIDC enterprise SSO, SCIM 2.0 provisioning, webhooks, role-based access control, and fine-grained authorization—while storing users in a database you control.",
   },
   {
     question: "How is Authorizer different from hosted authentication platforms?",
@@ -47,7 +47,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "What APIs and SDKs does Authorizer provide?",
     answer:
-      "Authorizer exposes GraphQL, REST, and gRPC APIs over standard OAuth2 and OpenID Connect flows. Official SDKs are available for Go, Python, JavaScript/TypeScript, and React, with Vue, Svelte, and Flutter coming soon. The fine-grained authorization helpers (check_permissions and list_permissions) ship in the Go, JavaScript, and Python SDKs.",
+      "Authorizer exposes GraphQL, REST, and gRPC APIs over standard OAuth2 and OpenID Connect flows. Official SDKs are available for Go, JavaScript/TypeScript, and React; the Python SDK is a pre-release, Vue and Svelte are in beta, and Flutter is in progress. The fine-grained authorization helpers (check_permissions and list_permissions) ship in the Go, JavaScript, and Python SDKs.",
   },
   {
     question: "Can I use Authorizer in production?",

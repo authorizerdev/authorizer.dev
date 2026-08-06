@@ -6,9 +6,15 @@ import { FaPlay, FaArrowRight, FaGithub, FaCopy, FaCheck } from 'react-icons/fa'
 import { IoClose } from 'react-icons/io5';
 import Loader from './Loader';
 import Modal from './Modal';
+import ExtLink from './ExtLink';
+import { REFS, DATABASE_SITES } from '../constants/links';
 
 const DEMO_VIDEO_ID = 'aQrpYCyrDjU';
 
+// Mirrors the README/docs quickstart. `--encryption-key` is separate from
+// `--jwt-secret` since 2.4.0 — an asymmetric-JWT deployment refuses to start
+// without it, and sharing the JWT secret makes rotation lock out enrolled
+// TOTP users. Keep this in step with docs.authorizer.dev/core/server-config.
 const DEMO_COPY_COMMAND = `docker run -p 8080:8080 -u root \\
   -v authorizer_data:/authorizer/data \\
   quay.io/authorizer/authorizer \\
@@ -18,11 +24,24 @@ const DEMO_COPY_COMMAND = `docker run -p 8080:8080 -u root \\
   --client-secret=secret \\
   --admin-secret=admin \\
   --jwt-type=HS256 \\
-  --jwt-secret=test`;
+  --jwt-secret=test \\
+  --encryption-key=test-encryption-key`;
 
-const TRUST_SIGNALS = ['Apache-2.0 open source', 'Self-host in minutes', 'OAuth2 & OIDC', '13+ databases'];
+const TRUST_SIGNALS: { label: string; href?: string }[] = [
+  { label: 'Apache-2.0 open source', href: REFS.apache2 },
+  { label: 'Self-host in minutes' },
+  { label: 'OAuth2 & OIDC', href: REFS.oidc },
+  { label: '13+ databases' },
+];
 
-const ECOSYSTEM = ['Kubernetes', 'Docker', 'Helm', 'Railway', 'PostgreSQL', 'MongoDB'];
+const ECOSYSTEM = [
+  { label: 'Kubernetes', href: REFS.kubernetes },
+  { label: 'Docker', href: REFS.docker },
+  { label: 'Helm', href: REFS.helm },
+  { label: 'Railway', href: REFS.railway },
+  { label: 'PostgreSQL', href: DATABASE_SITES.PostgreSQL },
+  { label: 'MongoDB', href: DATABASE_SITES.MongoDB },
+];
 
 function formatStars(n: number): string {
   if (n >= 1000) return `${(Math.round(n / 100) / 10).toFixed(1)}k`;
@@ -114,10 +133,19 @@ export default function Hero({ stars = 0 }: { stars?: number }) {
           </div>
 
           <ul className='mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-gray-500'>
-            {TRUST_SIGNALS.map((signal) => (
-              <li key={signal} className='flex items-center'>
+            {TRUST_SIGNALS.map(({ label, href }) => (
+              <li key={label} className='flex items-center'>
                 <span className='w-1.5 h-1.5 rounded-full bg-green-400 mr-2' />
-                {signal}
+                {href ? (
+                  <ExtLink
+                    href={href}
+                    className='hover:text-blue-600 underline-offset-2 hover:underline'
+                  >
+                    {label}
+                  </ExtLink>
+                ) : (
+                  label
+                )}
               </li>
             ))}
           </ul>
@@ -156,7 +184,8 @@ export default function Hero({ stars = 0 }: { stars?: number }) {
             {`\n`}<span className='text-gray-100'>{`    --client-secret=secret \\`}</span>
             {`\n`}<span className='text-gray-100'>{`    --admin-secret=admin \\`}</span>
             {`\n`}<span className='text-gray-100'>{`    --jwt-type=HS256 \\`}</span>
-            {`\n`}<span className='text-gray-100'>{`    --jwt-secret=test`}</span>
+            {`\n`}<span className='text-gray-100'>{`    --jwt-secret=test \\`}</span>
+            {`\n`}<span className='text-gray-100'>{`    --encryption-key=test-encryption-key`}</span>
           </pre>
 
           {/* Output lines */}
@@ -177,7 +206,15 @@ export default function Hero({ stars = 0 }: { stars?: number }) {
               <span className='text-blue-300'>http://localhost:8080/.well-known/openid-configuration</span>
             </div>
             <div className='flex items-center gap-2 mt-2 pt-2 border-t border-gray-800'>
-              <span className='text-gray-500 text-xs'>OpenFGA engine embedded · 13+ databases · OAuth2/OIDC</span>
+              <span className='text-gray-500 text-xs'>
+                <ExtLink href={REFS.openfga} className='hover:text-gray-300 underline-offset-2 hover:underline'>
+                  OpenFGA
+                </ExtLink>{' '}
+                engine embedded · 13+ databases ·{' '}
+                <ExtLink href={REFS.oidc} className='hover:text-gray-300 underline-offset-2 hover:underline'>
+                  OAuth2/OIDC
+                </ExtLink>
+              </span>
             </div>
           </div>
         </div>
@@ -189,9 +226,14 @@ export default function Hero({ stars = 0 }: { stars?: number }) {
           Runs on
         </p>
         <ul className='flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-gray-400'>
-          {ECOSYSTEM.map((name, i) => (
-            <li key={name} className='flex items-center gap-6'>
-              {name}
+          {ECOSYSTEM.map(({ label, href }, i) => (
+            <li key={label} className='flex items-center gap-6'>
+              <ExtLink
+                href={href}
+                className='hover:text-blue-600 transition-colors duration-200'
+              >
+                {label}
+              </ExtLink>
               {i < ECOSYSTEM.length - 1 && (
                 <span className='text-gray-200' aria-hidden>·</span>
               )}
