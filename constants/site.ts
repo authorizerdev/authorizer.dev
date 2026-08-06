@@ -36,7 +36,7 @@ export const TWITTER_CARD_IMAGE_HEIGHT = 600;
 
 /** ~155 chars for meta description snippets */
 export const META_DESCRIPTION =
-  "Own your identity layer. Self-host open-source auth & fine-grained authorization—OAuth2, OIDC, RBAC, MFA, OpenFGA—with permission-aware AI on your data.";
+  "Own your identity layer. Self-host open-source auth—OAuth2, OIDC, SAML SSO, SCIM, passkeys, MFA, OpenFGA—with permission-aware AI on your own data.";
 
 export const DEFAULT_DESCRIPTION =
-  "Own your identity layer with open-source authentication and authorization you self-host. OAuth2, OpenID Connect, social login, magic links, RBAC, MFA, and fine-grained authorization (OpenFGA) for permission-aware AI and RAG. GraphQL, REST, and gRPC APIs with Go, Python, and JS SDKs—your users stay in your own database, not someone else's dashboard. No per-seat auth tax.";
+  "Own your identity layer with open-source authentication and authorization you self-host. OAuth2, OpenID Connect, SAML 2.0 enterprise SSO, SCIM 2.0 provisioning, passkeys, MFA, organizations, machine-to-machine auth, and fine-grained authorization (OpenFGA) for permission-aware AI and RAG. GraphQL, REST, and gRPC APIs with Go, Python, JS, React, Vue, and Svelte SDKs—your users stay in your own database, not someone else's dashboard. No per-seat auth tax.";

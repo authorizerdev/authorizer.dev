@@ -27,8 +27,8 @@ const guarantees = [
   },
   {
     icon: <FaRobot className="text-blue-500 text-2xl" />,
-    title: "Prompt-injection safe",
-    body: "The agent calls Authorizer with the end user’s JWT and the subject is pinned server-side. A hijacked agent holds no privileged credential—it asks as the user, and gets the user’s answer.",
+    title: "A hijacked agent can’t reach further than it was trusted with",
+    body: "The subject is pinned server-side—an agent can never ask on someone else’s behalf. And an agent acting for a user gets the intersection of what the agent is trusted with and what that user can see, never the user’s full reach. Prompt-inject it all you like: it cannot open a door it was not given.",
   },
 ];
 
