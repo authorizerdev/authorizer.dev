@@ -1,4 +1,6 @@
 import { FaRobot, FaUserShield, FaBolt, FaLock, FaPlug } from "react-icons/fa";
+import ExtLink from "./ExtLink";
+import { REFS } from "../constants/links";
 
 /**
  * Flagship use-case section: permission-aware AI / RAG powered by Authorizer's
@@ -50,8 +52,11 @@ export default function AiUseCase() {
         </h2>
         <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
           Authorizer ships an embedded{" "}
-          <span className="font-semibold text-gray-800">OpenFGA</span> engine—the
-          open-source implementation of Google&apos;s Zanzibar relationship-based
+          <ExtLink href={REFS.openfga} className="font-semibold text-blue-600 hover:text-blue-500 underline-offset-2 hover:underline">
+            OpenFGA
+          </ExtLink>{" "}
+          engine—the open-source implementation of Google&apos;s{" "}
+          <ExtLink href={REFS.zanzibar}>Zanzibar</ExtLink> relationship-based
           access control. The same server that logs your users in also answers{" "}
           <span className="font-semibold text-gray-800">
             “can this user view this document?”
@@ -168,9 +173,12 @@ export default function AiUseCase() {
             </div>
             <p className="text-gray-700 leading-relaxed max-w-2xl">
               Authorizer ships a built-in{" "}
-              <span className="font-semibold text-gray-900">
+              <ExtLink
+                href={REFS.mcp}
+                className="font-semibold text-blue-700 hover:text-blue-600 underline-offset-2 hover:underline"
+              >
                 Model Context Protocol (MCP)
-              </span>{" "}
+              </ExtLink>{" "}
               server, so an AI assistant can ask{" "}
               <span className="font-semibold text-gray-900">
                 “is this user allowed to see this?”

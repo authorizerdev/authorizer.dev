@@ -64,7 +64,11 @@ export default function Testimonials() {
 							</p>
 							<div className="flex items-center mt-4">
 								<div className="flex flex-col ml-2 justify-between">
-									<a href={item.link}>
+									<a
+										href={item.link}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
 										<span className="font-semibold text-blue-500 text-sm">
 											- {item.user}
 										</span>

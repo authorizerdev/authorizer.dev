@@ -1,10 +1,13 @@
 import Link from "next/link";
+import { REFS } from "../constants/links";
 
 const links = [
-  { href: "https://docs.authorizer.dev", label: "Documentation" },
-  { href: "https://github.com/authorizerdev/authorizer", label: "GitHub" },
-  { href: "https://blog.authorizer.dev", label: "Blog" },
-  { href: "https://discord.gg/Zv2D5h6kkK", label: "Discord" },
+  { href: REFS.docs, label: "Documentation" },
+  { href: REFS.github, label: "GitHub" },
+  { href: REFS.blog, label: "Blog" },
+  { href: REFS.discord, label: "Discord" },
+  { href: REFS.changelog, label: "Changelog" },
+  { href: REFS.license, label: "Apache-2.0 License" },
 ];
 
 export default function Footer() {

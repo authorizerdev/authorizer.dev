@@ -10,39 +10,88 @@ import {
   SiGraphql,
 } from "react-icons/si";
 import { FaServer, FaExchangeAlt } from "react-icons/fa";
+import ExtLink from "./ExtLink";
+import { REFS, SDK_REPOS } from "../constants/links";
 
 /**
  * Developer-experience section: the three API protocols Authorizer speaks
  * (GraphQL, REST, gRPC) and the official SDKs. Reinforces "standards your stack
  * already understands" with concrete, scannable proof for SEO/AEO.
+ *
+ * SDK status mirrors docs.authorizer.dev/introduction — anything short of a
+ * stable release carries a badge rather than being listed as if it shipped.
  */
 const protocols = [
   {
     icon: <SiGraphql className="text-pink-500 text-3xl" />,
     label: "GraphQL",
     body: "A GraphQL-first API for auth, user management, RBAC, and fine-grained authorization—typed, introspectable, and one round trip per screen.",
+    refs: [{ label: "GraphQL", href: REFS.graphql }],
   },
   {
     icon: <FaExchangeAlt className="text-blue-500 text-3xl" />,
     label: "REST",
     body: "Standard OAuth2 and OpenID Connect REST endpoints—authorize, token, userinfo, JWKS—so any client or language integrates with the flows it already knows.",
+    refs: [
+      { label: "OAuth 2.0 (RFC 6749)", href: REFS.oauth2 },
+      { label: "OIDC Core", href: REFS.oidc },
+      { label: "OIDC Discovery", href: REFS.oidcDiscovery },
+    ],
   },
   {
     icon: <FaServer className="text-emerald-500 text-3xl" />,
     label: "gRPC",
     body: "A high-performance gRPC API for service-to-service auth and low-latency backends—strongly typed contracts from the same protobuf definitions.",
+    refs: [{ label: "gRPC", href: REFS.grpc }],
   },
 ];
 
-const sdks = [
-  { icon: <SiGo className="text-sky-500" />, label: "Go" },
-  { icon: <SiPython className="text-blue-500" />, label: "Python" },
-  { icon: <SiJavascript className="text-yellow-500" />, label: "JavaScript" },
-  { icon: <SiTypescript className="text-blue-600" />, label: "TypeScript" },
-  { icon: <SiReact className="text-cyan-400" />, label: "React" },
-  { icon: <SiVuedotjs className="text-green-500" />, label: "Vue", comingSoon: true },
-  { icon: <SiSvelte className="text-orange-500" />, label: "Svelte", comingSoon: true },
-  { icon: <SiFlutter className="text-sky-400" />, label: "Flutter", comingSoon: true },
+const sdks: {
+  icon: JSX.Element;
+  label: string;
+  href: string;
+  badge?: string;
+}[] = [
+  { icon: <SiGo className="text-sky-500" />, label: "Go", href: SDK_REPOS.go },
+  {
+    icon: <SiPython className="text-blue-500" />,
+    label: "Python",
+    href: SDK_REPOS.python,
+    badge: "Pre-release",
+  },
+  {
+    icon: <SiJavascript className="text-yellow-500" />,
+    label: "JavaScript",
+    href: SDK_REPOS.js,
+  },
+  {
+    icon: <SiTypescript className="text-blue-600" />,
+    label: "TypeScript",
+    href: SDK_REPOS.js,
+  },
+  {
+    icon: <SiReact className="text-cyan-400" />,
+    label: "React",
+    href: SDK_REPOS.react,
+  },
+  {
+    icon: <SiVuedotjs className="text-green-500" />,
+    label: "Vue",
+    href: SDK_REPOS.vue,
+    badge: "Beta",
+  },
+  {
+    icon: <SiSvelte className="text-orange-500" />,
+    label: "Svelte",
+    href: SDK_REPOS.svelte,
+    badge: "Beta",
+  },
+  {
+    icon: <SiFlutter className="text-sky-400" />,
+    label: "Flutter",
+    href: SDK_REPOS.flutter,
+    badge: "In progress",
+  },
 ];
 
 export default function DeveloperApi() {
@@ -83,6 +132,18 @@ export default function DeveloperApi() {
                 </h3>
               </div>
               <p className="text-gray-600 leading-relaxed">{p.body}</p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {p.refs.map((ref) => (
+                  <li key={ref.href}>
+                    <ExtLink
+                      href={ref.href}
+                      className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-2.5 py-1 text-xs font-medium text-gray-600 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200"
+                    >
+                      {ref.label} ↗
+                    </ExtLink>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
@@ -97,29 +158,32 @@ export default function DeveloperApi() {
           </p>
           <ul className="mt-8 flex flex-wrap justify-center gap-4">
             {sdks.map((s) => (
-              <li
-                key={s.label}
-                className={`flex items-center gap-2 rounded-lg border px-5 py-3 ${
-                  s.comingSoon
-                    ? "border-dashed border-gray-300 bg-white"
-                    : "border-gray-200 bg-gray-50"
-                }`}
-              >
-                <span className={`text-2xl ${s.comingSoon ? "opacity-60" : ""}`}>
-                  {s.icon}
-                </span>
-                <span
-                  className={`font-semibold ${
-                    s.comingSoon ? "text-gray-500" : "text-gray-700"
+              <li key={s.label}>
+                <ExtLink
+                  href={s.href}
+                  title={`${s.label} SDK on GitHub`}
+                  className={`flex items-center gap-2 rounded-lg border px-5 py-3 transition-colors duration-200 hover:border-blue-200 hover:bg-blue-50 ${
+                    s.badge
+                      ? "border-dashed border-gray-300 bg-white"
+                      : "border-gray-200 bg-gray-50"
                   }`}
                 >
-                  {s.label}
-                </span>
-                {s.comingSoon && (
-                  <span className="ml-1 text-[10px] font-semibold uppercase tracking-wide text-amber-700 bg-amber-100 rounded-full px-2 py-0.5">
-                    Coming soon
+                  <span className={`text-2xl ${s.badge ? "opacity-60" : ""}`}>
+                    {s.icon}
                   </span>
-                )}
+                  <span
+                    className={`font-semibold ${
+                      s.badge ? "text-gray-500" : "text-gray-700"
+                    }`}
+                  >
+                    {s.label}
+                  </span>
+                  {s.badge && (
+                    <span className="ml-1 text-[10px] font-semibold uppercase tracking-wide text-amber-700 bg-amber-100 rounded-full px-2 py-0.5">
+                      {s.badge}
+                    </span>
+                  )}
+                </ExtLink>
               </li>
             ))}
           </ul>
