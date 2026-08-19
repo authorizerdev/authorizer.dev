@@ -10,7 +10,7 @@ const startingSteps = [
   {
     label: "Setup instance",
     description:
-      "Open authorizer instance endpoint in browser. Sign up as an admin with a secure password. Configure environment variables from dashboard",
+      "Configure the server at startup: v2 takes all configuration as CLI flags — there is no .env file, and the dashboard can no longer change server config. --url, --client-id, --client-secret, --admin-secret, --jwt-* and --encryption-key are required. Then open the instance in your browser and sign in with your admin secret.",
     link: "https://docs.authorizer.dev/getting-started",
   },
   {
