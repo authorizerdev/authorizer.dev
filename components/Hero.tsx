@@ -20,6 +20,7 @@ const DEMO_COPY_COMMAND = `docker run -p 8080:8080 -u root \\
   quay.io/authorizer/authorizer \\
   --database-type=sqlite \\
   --database-url=/authorizer/data/data.db \\
+  --url=http://localhost:8080 \\
   --client-id=123456 \\
   --client-secret=secret \\
   --admin-secret=admin \\
