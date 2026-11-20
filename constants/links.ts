@@ -84,4 +84,6 @@ export const DATABASE_SITES = {
   Scylla: "https://www.scylladb.com/",
   "AWS DynamoDB": "https://aws.amazon.com/dynamodb/",
   Couchbase: "https://www.couchbase.com/",
+  CockroachDB: "https://www.cockroachlabs.com/",
+  SereneDB: "https://www.serenedb.com/",
 } as const;

@@ -57,7 +57,7 @@ const features: {
 		label: 'CONNECT TO YOUR DATABASE',
 		icon: <FaDatabase className="text-blue-500 text-2xl" />,
 		description:
-			'It supports 13+ databases including major SQL, NoSQL and GraphDBs',
+			'It supports 16 databases including major SQL, NoSQL and GraphDBs',
 		position: 3,
 	},
 	{

@@ -32,7 +32,7 @@ const TRUST_SIGNALS: { label: string; href?: string }[] = [
   { label: 'Apache-2.0 open source', href: REFS.apache2 },
   { label: 'Self-host in minutes' },
   { label: 'OAuth2 & OIDC', href: REFS.oidc },
-  { label: '13+ databases' },
+  { label: '16 databases' },
 ];
 
 const ECOSYSTEM = [
@@ -211,7 +211,7 @@ export default function Hero({ stars = 0 }: { stars?: number }) {
                 <ExtLink href={REFS.openfga} className='hover:text-gray-300 underline-offset-2 hover:underline'>
                   OpenFGA
                 </ExtLink>{' '}
-                engine embedded · 13+ databases ·{' '}
+                engine embedded · 16 databases ·{' '}
                 <ExtLink href={REFS.oidc} className='hover:text-gray-300 underline-offset-2 hover:underline'>
                   OAuth2/OIDC
                 </ExtLink>
