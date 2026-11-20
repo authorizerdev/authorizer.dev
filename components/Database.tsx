@@ -69,9 +69,14 @@ const databases: { label: keyof typeof DATABASE_SITES; img: string; position: nu
     position: 13,
   },
   {
+    label: "CockroachDB",
+    img: "/images/db/cockroachdb.png",
+    position: 14,
+  },
+  {
     label: "SereneDB",
     img: "/images/db/serenedb.svg",
-    position: 14,
+    position: 15,
   },
 ];
 
