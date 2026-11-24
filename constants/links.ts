@@ -86,4 +86,5 @@ export const DATABASE_SITES = {
   Couchbase: "https://www.couchbase.com/",
   CockroachDB: "https://www.cockroachlabs.com/",
   SereneDB: "https://www.serenedb.com/",
+  SurrealDB: "https://surrealdb.com/",
 } as const;

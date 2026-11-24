@@ -64,7 +64,7 @@ const software = {
     "Built-in Model Context Protocol (MCP) server for AI agents",
     "GraphQL, REST, and gRPC APIs",
     "SDKs for Go, JavaScript/TypeScript, and React (Python pre-release; Vue and Svelte beta)",
-    "16 SQL, NoSQL, and graph database backends",
+    "17 SQL, NoSQL, and graph database backends",
     "Prometheus metrics, audit logs, and rate limiting",
     "Self-hosted on Docker, Kubernetes, and cloud PaaS",
   ],

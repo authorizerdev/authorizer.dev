@@ -12,7 +12,7 @@
 
 ## Key differentiators
 - Data sovereignty: user directory lives in your own database, not a vendor dashboard.
-- Database-agnostic: 16 backends across SQL, NoSQL, and graph (PostgreSQL, MySQL, MariaDB, SQLite, libSQL/Turso, SQL Server, YugabyteDB, CockroachDB, PlanetScale, SereneDB, MongoDB, Cassandra, ScyllaDB, ArangoDB, AWS DynamoDB, Couchbase).
+- Database-agnostic: 17 backends across SQL, NoSQL, and graph (PostgreSQL, MySQL, MariaDB, SQLite, libSQL/Turso, SQL Server, YugabyteDB, CockroachDB, PlanetScale, SereneDB, MongoDB, Cassandra, ScyllaDB, ArangoDB, AWS DynamoDB, Couchbase, SurrealDB).
 - Cost predictable: open source; pay for infrastructure, not per-seat usage.
 - Deploy anywhere: Railway, Heroku, Render, Docker, Kubernetes.
 
