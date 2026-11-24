@@ -27,7 +27,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Which databases does Authorizer support?",
     answer:
-      "Authorizer supports 16 databases across SQL, NoSQL, and graph: PostgreSQL, MySQL, MariaDB, SQLite, libSQL (Turso), SQL Server, YugabyteDB, CockroachDB, PlanetScale, SereneDB, MongoDB, Cassandra, ScyllaDB, ArangoDB, AWS DynamoDB, and Couchbase. Your users live in the database your application already uses.",
+      "Authorizer supports 17 databases across SQL, NoSQL, and graph: PostgreSQL, MySQL, MariaDB, SQLite, libSQL (Turso), SQL Server, YugabyteDB, CockroachDB, PlanetScale, SereneDB, MongoDB, Cassandra, ScyllaDB, ArangoDB, AWS DynamoDB, Couchbase, and SurrealDB. Your users live in the database your application already uses.",
   },
   {
     question: "Does Authorizer support fine-grained authorization (FGA)?",

@@ -78,6 +78,11 @@ const databases: { label: keyof typeof DATABASE_SITES; img: string; position: nu
     img: "/images/db/serenedb.svg",
     position: 15,
   },
+  {
+    label: "SurrealDB",
+    img: "/images/db/surrealdb.svg",
+    position: 16,
+  },
 ];
 
 export default function Database() {
@@ -88,7 +93,7 @@ export default function Database() {
           Bring your own database
         </h2>
         <p className="mt-4 text-center text-lg text-gray-600 max-w-2xl mx-auto">
-          Your users live where your app already lives—16 SQL, NoSQL, and graph
+          Your users live where your app already lives—17 SQL, NoSQL, and graph
           databases supported out of the box.
         </p>
         <ul className="flex flex-wrap justify-center mt-10">
