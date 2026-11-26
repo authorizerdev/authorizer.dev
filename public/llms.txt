@@ -1,29 +1,48 @@
 # Authorizer
 
-> Authorizer is an open-source authentication and authorization server you self-host on your own infrastructure. It implements OAuth2 and OpenID Connect and lets you keep every user record in a database you control—the "own your identity layer" alternative to hosted identity platforms, with no per-seat auth tax.
+> Authorizer is an open-source authentication and authorization server you self-host on your own infrastructure. It implements OAuth2 and OpenID Connect, adds fine-grained authorization (embedded OpenFGA), and ships auth for AI agents (built-in MCP server, RFC 8693 delegation). Every user record stays in a database you control—the "own your identity layer" alternative to hosted identity platforms, with no per-seat auth tax.
 
 ## What it is
-- Open-source (self-hosted) authentication and authorization server.
-- Standards-based: OAuth2 and OpenID Connect.
-- Auth methods: social login, email/password, magic link, multi-factor authentication (MFA).
-- Authorization: role-based access control (RBAC) with role-based session tokens.
-- Extensibility: webhooks for events, customizable email templates, REST + GraphQL APIs, and SDKs (JavaScript, React, and more).
-- Single-binary Go service—no JVM or application server required.
+- Open-source (self-hosted) authentication and authorization server; a single Go binary configured entirely by CLI flags.
+- Standards-based: OAuth 2.0 and OpenID Connect provider (authorization code + PKCE, client credentials, refresh tokens, discovery, JWKS).
+- Auth methods: email/password, social login, magic link, WebAuthn passkeys, MFA (TOTP, email OTP, SMS OTP).
+- Enterprise: organizations and multi-tenancy, SAML 2.0 (Service Provider and Identity Provider), per-org OIDC SSO, SCIM 2.0 provisioning, verified domains with home-realm discovery.
+- Authorization: role-based access control (RBAC) plus fine-grained, relationship-based authorization with an embedded OpenFGA (Zanzibar) engine.
+- Machine identity: service accounts, client credentials, and secretless workload identity (RFC 7523 JWT client assertions, SPIFFE, Kubernetes).
+- APIs: GraphQL, REST, and gRPC, all generated from one service definition. SDKs for Go, JavaScript/TypeScript, and React (Python pre-release; Vue and Svelte beta).
+- Operations: webhooks, audit logs, Prometheus metrics, rate limiting, customizable email templates.
+
+## AI agents and MCP
+- Built-in Model Context Protocol (MCP) server at /mcp: MCP hosts such as Claude and Cursor sign users in with OAuth 2.1 and call profile and permission-check tools.
+- MCP-ready OAuth: protected resource metadata (RFC 9728), authorization server metadata (RFC 8414), resource indicators (RFC 8707), Client ID Metadata Documents, and optional Dynamic Client Registration, behind a consent screen.
+- Agent delegation: RFC 8693 token exchange issues a token carrying both the user (sub) and the agent (act), with scopes narrowed to what both are allowed.
+- Agent-aware authorization: FGA checks for a delegated token require both the agent and the user to hold the permission; audit logs record the acting agent.
+- Permission-aware RAG: filter retrieved documents by the user's FGA permissions before they reach the model.
 
 ## Key differentiators
 - Data sovereignty: user directory lives in your own database, not a vendor dashboard.
 - Database-agnostic: 17 backends across SQL, NoSQL, and graph (PostgreSQL, MySQL, MariaDB, SQLite, libSQL/Turso, SQL Server, YugabyteDB, CockroachDB, PlanetScale, SereneDB, MongoDB, Cassandra, ScyllaDB, ArangoDB, AWS DynamoDB, Couchbase, SurrealDB).
 - Cost predictable: open source; pay for infrastructure, not per-seat usage.
-- Deploy anywhere: Railway, Heroku, Render, Docker, Kubernetes.
+- Deploy anywhere: Docker, Kubernetes (Helm), binary, Railway, Render, Heroku, Fly.io, Koyeb.
 
 ## Best for
-Teams with data-residency or compliance needs (GDPR/HIPAA), cost-conscious developers avoiding per-seat SaaS pricing, and engineering teams that want to own and operate their authentication infrastructure.
+Teams with data-residency or compliance needs (GDPR/HIPAA), cost-conscious developers avoiding per-seat SaaS pricing, engineering teams that want to own their authentication infrastructure, and teams building AI agents or MCP servers that need user-delegated, auditable access.
+
+## Docs
+- Full documentation index for LLMs: https://docs.authorizer.dev/llms.txt
+- All documentation in one file: https://docs.authorizer.dev/llms-full.txt
+- Getting started: https://docs.authorizer.dev/getting-started
+- Server configuration (all CLI flags): https://docs.authorizer.dev/core/server-config
+- MCP server: https://docs.authorizer.dev/core/mcp
+- Fine-grained authorization (OpenFGA): https://docs.authorizer.dev/core/authorization
+- Token exchange and delegation: https://docs.authorizer.dev/enterprise/token-exchange
+- Agent identity and permissions: https://docs.authorizer.dev/enterprise/agent-identity
 
 ## Links
 - Website: https://authorizer.dev
 - Documentation: https://docs.authorizer.dev
-- Getting started: https://docs.authorizer.dev/getting-started
 - Blog: https://blog.authorizer.dev
 - Source code (GitHub): https://github.com/authorizerdev/authorizer
+- Changelog: https://github.com/authorizerdev/authorizer/blob/main/CHANGELOG.md
 - npm (JS SDK): https://www.npmjs.com/package/@authorizerdev/authorizer-js
 - Community (Discord): https://discord.gg/Zv2D5h6kkK
