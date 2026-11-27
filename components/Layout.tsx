@@ -56,14 +56,33 @@ const KEYWORDS = [
   "postgres authentication",
 ].join(", ");
 
-export default function Layout({ children }) {
-  const canonicalUrl = `${SITE_URL}/`;
+interface LayoutProps {
+  children: React.ReactNode;
+  /** Page title; defaults to the homepage title. */
+  title?: string;
+  /** Meta description (~155 chars); defaults to the homepage description. */
+  description?: string;
+  /** Path of this page ("/ai-agents"); drives canonical, og:url and hreflang. */
+  path?: string;
+  /** Extra JSON-LD for this page (e.g. BreadcrumbList, FAQPage). */
+  jsonLd?: Record<string, unknown>[];
+}
+
+export default function Layout({
+  children,
+  title = PAGE_TITLE,
+  description = META_DESCRIPTION,
+  path = "/",
+  jsonLd,
+}: LayoutProps) {
+  const canonicalUrl = `${SITE_URL}${path === "/" ? "/" : path}`;
+  const isHome = path === "/";
 
   return (
     <>
       <Head>
-        <title>{PAGE_TITLE}</title>
-        <meta name="description" content={META_DESCRIPTION} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -74,8 +93,8 @@ export default function Layout({ children }) {
         <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
 
         <meta property="og:site_name" content={SITE_NAME} />
-        <meta property="og:title" content={PAGE_TITLE} />
-        <meta property="og:description" content={META_DESCRIPTION} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={OG_IMAGE_URL} />
@@ -90,8 +109,8 @@ export default function Layout({ children }) {
         <meta property="og:locale" content="en_US" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={PAGE_TITLE} />
-        <meta name="twitter:description" content={META_DESCRIPTION} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={TWITTER_CARD_IMAGE_URL} />
         <meta
           name="twitter:image:alt"
@@ -127,8 +146,19 @@ export default function Layout({ children }) {
           sizes="512x512"
           href="/images/favicon_io/android-chrome-512x512.png"
         />
+        {jsonLd && (
+          <script
+            type="application/ld+json"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({ "@context": "https://schema.org", "@graph": jsonLd }),
+            }}
+          />
+        )}
       </Head>
-      <SeoJsonLd />
+      {/* Organization / WebSite / SoftwareApplication / FAQPage describe the
+          homepage; other pages carry their own JSON-LD via `jsonLd`. */}
+      {isHome && <SeoJsonLd />}
       <iframe
         src="https://ghbtns.com/github-btn.html?user=authorizerdev&repo=authorizer&type=star&count=true&size=large"
         frameBorder="0"

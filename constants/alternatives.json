@@ -1,0 +1,332 @@
+[
+  {
+    "slug": "auth0",
+    "name": "Auth0",
+    "vendor": "Okta",
+    "summary": "Auth0 is a managed identity platform run by Okta; Authorizer is an open-source server you run yourself, with your users in your own database.",
+    "rows": [
+      {
+        "factor": "License",
+        "authorizer": "Open source, Apache-2.0",
+        "them": "Proprietary, closed-source service",
+        "source": "https://auth0.com/docs/deploy-monitor/deployment-options"
+      },
+      {
+        "factor": "Self-hosting",
+        "authorizer": "Self-hosted: one Go binary or Docker image you run on your own infrastructure",
+        "them": "Not self-hostable: Public Cloud and Private Cloud deployments are managed by Auth0",
+        "source": "https://auth0.com/docs/deploy-monitor/deployment-options"
+      },
+      {
+        "factor": "Pricing",
+        "authorizer": "Free and open source; you pay only for the infrastructure you run it on",
+        "them": "Paid plans priced by monthly active users (MAU)",
+        "source": "https://auth0.com/pricing"
+      },
+      {
+        "factor": "OAuth 2.0 / OIDC",
+        "authorizer": "OAuth 2.0 / OpenID Connect provider (authorization code + PKCE, client credentials, refresh, discovery, JWKS)",
+        "them": "OAuth 2.1 / OIDC",
+        "source": "https://auth0.com/ai/docs/mcp/auth-for-mcp"
+      },
+      {
+        "factor": "SAML 2.0",
+        "authorizer": "Per-organization SAML 2.0 as Service Provider and as Identity Provider",
+        "them": "SAML as Identity Provider, Service Provider, or both",
+        "source": "https://auth0.com/docs/authenticate/protocols/saml"
+      },
+      {
+        "factor": "SCIM 2.0",
+        "authorizer": "Per-organization inbound SCIM 2.0 (RFC 7644)",
+        "them": "Inbound SCIM 2.0; requires Enterprise Connections on your plan",
+        "source": "https://auth0.com/docs/authenticate/protocols/scim/configure-inbound-scim"
+      },
+      {
+        "factor": "Fine-grained authorization",
+        "authorizer": "Embedded OpenFGA (Zanzibar-style ReBAC) in the same binary, including conditional, time-limited grants",
+        "them": "Auth0 FGA, a separate hosted ReBAC product based on OpenFGA",
+        "source": "https://docs.fga.dev/openfga-vs-auth0-fga"
+      },
+      {
+        "factor": "AI agents & MCP",
+        "authorizer": "Built-in MCP server; RFC 8693 delegation where every check requires both the agent and the user; RFC 9728 / RFC 8707 / Client ID Metadata Documents",
+        "them": "Auth for MCP and On-Behalf-Of token exchange; agent identity in tokens is in Early Access; Auth0 for AI Agents is a paid add-on",
+        "source": "https://auth0.com/docs/ai-agents-mcp/agents-as-principal/agent-identity-in-tokens"
+      }
+    ],
+    "themFit": "Teams that want a fully managed CIAM platform with enterprise SSO and SCIM, and accept Auth0-hosted deployment only."
+  },
+  {
+    "slug": "clerk",
+    "name": "Clerk",
+    "vendor": "Clerk",
+    "summary": "Clerk is a hosted authentication service with prebuilt UI components; Authorizer is an open-source server you self-host, with its own login UI and headless APIs.",
+    "rows": [
+      {
+        "factor": "License",
+        "authorizer": "Open source, Apache-2.0",
+        "them": "SDKs are MIT-licensed; the service itself is not open source",
+        "source": "https://github.com/clerk/javascript"
+      },
+      {
+        "factor": "Self-hosting",
+        "authorizer": "Self-hosted: one Go binary or Docker image you run on your own infrastructure",
+        "them": "No self-hosted option is listed",
+        "source": "https://clerk.com/pricing"
+      },
+      {
+        "factor": "Pricing",
+        "authorizer": "Free and open source; you pay only for the infrastructure you run it on",
+        "them": "Billed on retained users (MRU), not MAU",
+        "source": "https://clerk.com/pricing"
+      },
+      {
+        "factor": "OAuth 2.0 / OIDC",
+        "authorizer": "OAuth 2.0 / OpenID Connect provider (authorization code + PKCE, client credentials, refresh, discovery, JWKS)",
+        "them": "Acts as an OAuth 2.0 / OIDC authorization server",
+        "source": "https://clerk.com/docs/guides/configure/auth-strategies/oauth/how-clerk-implements-oauth"
+      },
+      {
+        "factor": "SAML 2.0",
+        "authorizer": "Per-organization SAML 2.0 as Service Provider and as Identity Provider",
+        "them": "SAML for enterprise SSO (as Service Provider)",
+        "source": "https://clerk.com/docs/guides/configure/auth-strategies/enterprise-connections/overview"
+      },
+      {
+        "factor": "SCIM 2.0",
+        "authorizer": "Per-organization inbound SCIM 2.0 (RFC 7644)",
+        "them": "SCIM 2.0 Directory Sync on Pro and Business plans",
+        "source": "https://clerk.com/docs/guides/configure/auth-strategies/enterprise-connections/directory-sync"
+      },
+      {
+        "factor": "Fine-grained authorization",
+        "authorizer": "Embedded OpenFGA (Zanzibar-style ReBAC) in the same binary, including conditional, time-limited grants",
+        "them": "Organization roles and custom permissions",
+        "source": "https://clerk.com/docs/nextjs/guides/organizations/control-access/check-access"
+      },
+      {
+        "factor": "AI agents & MCP",
+        "authorizer": "Built-in MCP server; RFC 8693 delegation where every check requires both the agent and the user; RFC 9728 / RFC 8707 / Client ID Metadata Documents",
+        "them": "Guide for building an MCP server with Clerk OAuth, RFC 9728 metadata and Client ID Metadata Documents",
+        "source": "https://clerk.com/docs/nextjs/guides/ai/mcp/build-mcp-server"
+      }
+    ],
+    "themFit": "JavaScript and React apps that want hosted auth with prebuilt UI components and B2B organizations."
+  },
+  {
+    "slug": "keycloak",
+    "name": "Keycloak",
+    "vendor": "Keycloak project",
+    "summary": "Keycloak and Authorizer are both open source and self-hosted. Keycloak is a Java (Quarkus) IAM server; Authorizer is a single Go binary with OpenFGA and an MCP server built in.",
+    "rows": [
+      {
+        "factor": "License",
+        "authorizer": "Open source, Apache-2.0",
+        "them": "Open source, Apache-2.0",
+        "source": "https://github.com/keycloak/keycloak"
+      },
+      {
+        "factor": "Self-hosting",
+        "authorizer": "Self-hosted: one Go binary or Docker image you run on your own infrastructure",
+        "them": "Self-hosted; Red Hat offers no managed Keycloak service",
+        "source": "https://access.redhat.com/articles/7044244"
+      },
+      {
+        "factor": "OAuth 2.0 / OIDC",
+        "authorizer": "OAuth 2.0 / OpenID Connect provider (authorization code + PKCE, client credentials, refresh, discovery, JWKS)",
+        "them": "OpenID Connect and OAuth 2.0",
+        "source": "https://www.keycloak.org/"
+      },
+      {
+        "factor": "SAML 2.0",
+        "authorizer": "Per-organization SAML 2.0 as Service Provider and as Identity Provider",
+        "them": "SAML Identity Provider and SAML identity brokering",
+        "source": "https://www.keycloak.org/docs/latest/server_admin/index.html"
+      },
+      {
+        "factor": "SCIM 2.0",
+        "authorizer": "Per-organization inbound SCIM 2.0 (RFC 7644)",
+        "them": "SCIM API is experimental (26.6, behind the scim-api feature flag)",
+        "source": "https://www.keycloak.org/2026/04/scim-as-experimental-feature"
+      },
+      {
+        "factor": "Fine-grained authorization",
+        "authorizer": "Embedded OpenFGA (Zanzibar-style ReBAC) in the same binary, including conditional, time-limited grants",
+        "them": "Built-in Authorization Services: role-, attribute-, user- and context-based policies and UMA",
+        "source": "https://www.keycloak.org/docs/latest/authorization_services/index.html"
+      },
+      {
+        "factor": "AI agents & MCP",
+        "authorizer": "Built-in MCP server; RFC 8693 delegation where every check requires both the agent and the user; RFC 9728 / RFC 8707 / Client ID Metadata Documents",
+        "them": "MCP authorization-server guide (newer MCP spec features experimental); RFC 8693 token exchange enabled by default",
+        "source": "https://www.keycloak.org/securing-apps/mcp-authz-server"
+      }
+    ],
+    "themFit": "Organizations that want a mature, self-operated, Java-based IAM with SAML and identity federation."
+  },
+  {
+    "slug": "supertokens",
+    "name": "SuperTokens",
+    "vendor": "SuperTokens",
+    "summary": "SuperTokens has an open-source core with managed and licensed add-ons; Authorizer is fully Apache-2.0, with SAML, SCIM and fine-grained authorization in the open-source server.",
+    "rows": [
+      {
+        "factor": "License",
+        "authorizer": "Open source, Apache-2.0",
+        "them": "Core is Apache-2.0; the ee/ directory is under the proprietary SuperTokens Enterprise License",
+        "source": "https://github.com/supertokens/supertokens-core/blob/master/ee/LICENSE.md"
+      },
+      {
+        "factor": "Self-hosting",
+        "authorizer": "Self-hosted: one Go binary or Docker image you run on your own infrastructure",
+        "them": "Partially: some features need a license key, and the OAuth2 provider (unified login) is not in the self-hosted version",
+        "source": "https://supertokens.com/docs/authentication/unified-login/introduction"
+      },
+      {
+        "factor": "Pricing",
+        "authorizer": "Free and open source; you pay only for the infrastructure you run it on",
+        "them": "Priced per monthly active user (MAU), with paid add-ons",
+        "source": "https://supertokens.com/pricing"
+      },
+      {
+        "factor": "OAuth 2.0 / OIDC",
+        "authorizer": "OAuth 2.0 / OpenID Connect provider (authorization code + PKCE, client credentials, refresh, discovery, JWKS)",
+        "them": "OAuth2 provider is managed-only",
+        "source": "https://supertokens.com/docs/authentication/unified-login/introduction"
+      },
+      {
+        "factor": "SAML 2.0",
+        "authorizer": "Per-organization SAML 2.0 as Service Provider and as Identity Provider",
+        "them": "SAML as Service Provider, a paid feature",
+        "source": "https://supertokens.com/docs/authentication/enterprise/saml"
+      },
+      {
+        "factor": "Fine-grained authorization",
+        "authorizer": "Embedded OpenFGA (Zanzibar-style ReBAC) in the same binary, including conditional, time-limited grants",
+        "them": "User roles and permissions",
+        "source": "https://supertokens.com/docs/additional-verification/user-roles/introduction"
+      },
+      {
+        "factor": "AI agents & MCP",
+        "authorizer": "Built-in MCP server; RFC 8693 delegation where every check requires both the agent and the user; RFC 9728 / RFC 8707 / Client ID Metadata Documents",
+        "them": "MCP authentication in beta, Node SDK only, managed-only",
+        "source": "https://supertokens.com/docs/authentication/ai-authentication"
+      }
+    ],
+    "themFit": "Apps that want an embeddable auth layer with an open-source core and managed add-ons."
+  },
+  {
+    "slug": "zitadel",
+    "name": "Zitadel",
+    "vendor": "ZITADEL",
+    "summary": "Zitadel and Authorizer are both Go servers you can self-host. Zitadel is AGPL-3.0 and also offered as SaaS; Authorizer is Apache-2.0 and adds embedded OpenFGA and an MCP server.",
+    "rows": [
+      {
+        "factor": "License",
+        "authorizer": "Open source, Apache-2.0",
+        "them": "AGPL-3.0 (some components Apache-2.0 or MIT)",
+        "source": "https://github.com/zitadel/zitadel/blob/main/LICENSING.md"
+      },
+      {
+        "factor": "Self-hosting",
+        "authorizer": "Self-hosted: one Go binary or Docker image you run on your own infrastructure",
+        "them": "Self-hostable (Docker Compose, Kubernetes/Helm; requires PostgreSQL) and available as managed cloud",
+        "source": "https://zitadel.com/docs/self-hosting/deploy/overview"
+      },
+      {
+        "factor": "Pricing",
+        "authorizer": "Free and open source; you pay only for the infrastructure you run it on",
+        "them": "Managed cloud priced per daily active user (DAU)",
+        "source": "https://zitadel.com/pricing"
+      },
+      {
+        "factor": "OAuth 2.0 / OIDC",
+        "authorizer": "OAuth 2.0 / OpenID Connect provider (authorization code + PKCE, client credentials, refresh, discovery, JWKS)",
+        "them": "OpenID Connect certified",
+        "source": "https://github.com/zitadel/zitadel"
+      },
+      {
+        "factor": "SAML 2.0",
+        "authorizer": "Per-organization SAML 2.0 as Service Provider and as Identity Provider",
+        "them": "SAML 2.0 Identity Provider (SP-initiated) and external SAML identity providers",
+        "source": "https://zitadel.com/docs/guides/integrate/login/saml"
+      },
+      {
+        "factor": "SCIM 2.0",
+        "authorizer": "Per-organization inbound SCIM 2.0 (RFC 7644)",
+        "them": "SCIM 2.0 server",
+        "source": "https://github.com/zitadel/zitadel"
+      },
+      {
+        "factor": "Fine-grained authorization",
+        "authorizer": "Embedded OpenFGA (Zanzibar-style ReBAC) in the same binary, including conditional, time-limited grants",
+        "them": "Roles and delegated project grants",
+        "source": "https://zitadel.com/blog/fine-grained-authorization"
+      },
+      {
+        "factor": "AI agents & MCP",
+        "authorizer": "Built-in MCP server; RFC 8693 delegation where every check requires both the agent and the user; RFC 9728 / RFC 8707 / Client ID Metadata Documents",
+        "them": "RFC 8693 token exchange and impersonation; AI-agent identity patterns guide",
+        "source": "https://zitadel.com/docs/guides/integrate/token-exchange"
+      }
+    ],
+    "themFit": "Multi-tenant B2B identity, either self-hosted under AGPL or used as SaaS."
+  },
+  {
+    "slug": "ory",
+    "name": "Ory",
+    "vendor": "Ory",
+    "summary": "Ory is a set of composable services (Kratos, Hydra, Keto) plus Ory Network; Authorizer puts authentication, OAuth/OIDC, enterprise SSO and OpenFGA authorization in one binary.",
+    "rows": [
+      {
+        "factor": "License",
+        "authorizer": "Open source, Apache-2.0",
+        "them": "Kratos, Hydra, Keto and Polis are Apache-2.0; SAML, SCIM and organization SSO need the commercial Ory Enterprise License",
+        "source": "https://github.com/ory/kratos"
+      },
+      {
+        "factor": "Self-hosting",
+        "authorizer": "Self-hosted: one Go binary or Docker image you run on your own infrastructure",
+        "them": "Open-source components are self-hostable; some enterprise features are not in the open-source version",
+        "source": "https://github.com/ory/kratos"
+      },
+      {
+        "factor": "Pricing",
+        "authorizer": "Free and open source; you pay only for the infrastructure you run it on",
+        "them": "Ory Network priced per average daily active user (aDAU)",
+        "source": "https://www.ory.com/pricing"
+      },
+      {
+        "factor": "OAuth 2.0 / OIDC",
+        "authorizer": "OAuth 2.0 / OpenID Connect provider (authorization code + PKCE, client credentials, refresh, discovery, JWKS)",
+        "them": "Ory Hydra is an OpenID-certified OAuth 2.0 / OIDC provider",
+        "source": "https://github.com/ory/hydra"
+      },
+      {
+        "factor": "SAML 2.0",
+        "authorizer": "Per-organization SAML 2.0 as Service Provider and as Identity Provider",
+        "them": "SAML Service Provider on select Enterprise plans",
+        "source": "https://www.ory.com/docs/kratos/organizations"
+      },
+      {
+        "factor": "SCIM 2.0",
+        "authorizer": "Per-organization inbound SCIM 2.0 (RFC 7644)",
+        "them": "Organization-level SCIM on Ory Network",
+        "source": "https://www.ory.com/docs/kratos/manage-identities/scim"
+      },
+      {
+        "factor": "Fine-grained authorization",
+        "authorizer": "Embedded OpenFGA (Zanzibar-style ReBAC) in the same binary, including conditional, time-limited grants",
+        "them": "Ory Keto, an open-source Zanzibar (ReBAC) implementation, also offered as Ory Network Permissions",
+        "source": "https://github.com/ory/keto"
+      },
+      {
+        "factor": "AI agents & MCP",
+        "authorizer": "Built-in MCP server; RFC 8693 delegation where every check requires both the agent and the user; RFC 9728 / RFC 8707 / Client ID Metadata Documents",
+        "them": "Guide to OAuth 2.1 for MCP with Hydra or Ory Network",
+        "source": "https://www.ory.com/blog/agentic-ai-security-mcp-oauth"
+      }
+    ],
+    "themFit": "Teams that want composable, API-first identity components, self-hosted or on Ory Network."
+  }
+]
