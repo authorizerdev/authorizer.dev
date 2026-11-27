@@ -11,11 +11,13 @@ import { REFS, DATABASE_SITES } from '../constants/links';
 
 const DEMO_VIDEO_ID = 'aQrpYCyrDjU';
 
-// Mirrors the README/docs quickstart. `--encryption-key` is separate from
-// `--jwt-secret` since 2.4.0 — an asymmetric-JWT deployment refuses to start
-// without it, and sharing the JWT secret makes rotation lock out enrolled
-// TOTP users. Keep this in step with docs.authorizer.dev/core/server-config.
-const DEMO_COPY_COMMAND = `docker run -p 8080:8080 -u root \\
+// Mirrors the README/docs quickstart. `--url` is required (the server refuses
+// to start without it). `--encryption-key` is separate from `--jwt-secret`
+// since 2.4.0. No `-u root`: since v2.4.9 the image's non-root user owns
+// /authorizer/data, so the named volume is writable. Both the copied text and
+// the rendered block come from this one string so they cannot drift apart.
+// Keep this in step with docs.authorizer.dev/deployment/docker.
+const DEMO_COPY_COMMAND = `docker run -p 8080:8080 \\
   -v authorizer_data:/authorizer/data \\
   quay.io/authorizer/authorizer \\
   --database-type=sqlite \\
@@ -176,17 +178,11 @@ export default function Hero({ stars = 0 }: { stars?: number }) {
           {/* Command */}
           <pre className='font-mono text-xs sm:text-sm text-gray-100 overflow-x-auto whitespace-pre leading-relaxed'>
             <span className='text-gray-500'>$ </span>
-            <span>{`docker run -p 8080:8080 -u root \\`}</span>
-            {`\n`}<span className='text-gray-100'>{`    -v authorizer_data:/authorizer/data \\`}</span>
-            {`\n`}<span className='text-blue-300'>{`    quay.io/authorizer/authorizer \\`}</span>
-            {`\n`}<span className='text-gray-100'>{`    --database-type=sqlite \\`}</span>
-            {`\n`}<span className='text-gray-100'>{`    --database-url=/authorizer/data/data.db \\`}</span>
-            {`\n`}<span className='text-gray-100'>{`    --client-id=123456 \\`}</span>
-            {`\n`}<span className='text-gray-100'>{`    --client-secret=secret \\`}</span>
-            {`\n`}<span className='text-gray-100'>{`    --admin-secret=admin \\`}</span>
-            {`\n`}<span className='text-gray-100'>{`    --jwt-type=HS256 \\`}</span>
-            {`\n`}<span className='text-gray-100'>{`    --jwt-secret=test \\`}</span>
-            {`\n`}<span className='text-gray-100'>{`    --encryption-key=test-encryption-key`}</span>
+            {DEMO_COPY_COMMAND.split('\n').map((line, i) => (
+              <span key={i} className={line.includes('quay.io/') ? 'text-blue-300' : 'text-gray-100'}>
+                {i > 0 ? `\n    ${line.trim()}` : line}
+              </span>
+            ))}
           </pre>
 
           {/* Output lines */}
