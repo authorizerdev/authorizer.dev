@@ -38,6 +38,12 @@ Teams with data-residency or compliance needs (GDPR/HIPAA), cost-conscious devel
 - Token exchange and delegation: https://docs.authorizer.dev/enterprise/token-exchange
 - Agent identity and permissions: https://docs.authorizer.dev/enterprise/agent-identity
 
+## Pages
+- AI agents (delegation, agent ∩ user permissions, time-limited grants): https://authorizer.dev/ai-agents
+- MCP authentication and authorization: https://authorizer.dev/mcp-auth
+- Fine-grained authorization (embedded OpenFGA): https://authorizer.dev/fine-grained-authorization
+- Comparisons with Auth0, Clerk, Keycloak, SuperTokens, Zitadel and Ory (sourced): https://authorizer.dev/alternatives
+
 ## Links
 - Website: https://authorizer.dev
 - Documentation: https://docs.authorizer.dev

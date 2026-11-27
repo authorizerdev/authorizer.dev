@@ -10,9 +10,24 @@ const links = [
   { href: REFS.license, label: "Apache-2.0 License" },
 ];
 
+// Internal solution pages (same tab; crawlable internal links).
+const solutions = [
+  { href: "/ai-agents", label: "AI agents" },
+  { href: "/mcp-auth", label: "MCP auth" },
+  { href: "/fine-grained-authorization", label: "Fine-grained authorization" },
+  { href: "/alternatives", label: "Alternatives" },
+];
+
 export default function Footer() {
   return (
     <footer className="flex justify-center items-center flex-col p-8 bg-gray-50 flex-wrap gap-4 text-gray-700">
+      <nav aria-label="Solutions" className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium">
+        {solutions.map(({ href, label }) => (
+          <Link key={href} href={href} className="hover:text-blue-600">
+            {label}
+          </Link>
+        ))}
+      </nav>
       <nav aria-label="Footer" className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium">
         {links.map(({ href, label }) => (
           <Link
